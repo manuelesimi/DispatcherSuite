@@ -24,14 +24,14 @@ public class DispatcherTest {
     @Test
     public void noParamAboutShouldReturnDefaultMessage() throws Exception {
 
-        this.mockMvc.perform(get("/about")).andDo(print()).andExpect(status().isOk())
+        this.mockMvc.perform(get("/dispatcher/about")).andDo(print()).andExpect(status().isOk())
                 .andExpect(jsonPath("$.content").value("Dispatcher 1.0 says: hello client"));
     }
 
     @Test
     public void paramGreetingShouldReturnTailoredMessage() throws Exception {
 
-        this.mockMvc.perform(get("/about").param("name", "EIPM"))
+        this.mockMvc.perform(get("/dispatcher/about").param("name", "EIPM"))
                 .andDo(print()).andExpect(status().isOk())
                 .andExpect(jsonPath("$.content").value("Dispatcher 1.0 says: hello EIPM"));
     }

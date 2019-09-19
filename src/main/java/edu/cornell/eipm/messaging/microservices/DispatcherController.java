@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DispatcherController {
 
-    @RequestMapping("/about")
+    @RequestMapping("/dispatcher/about")
     public About greeting(@RequestParam(value="name", defaultValue="client") String name) {
         return new About(name);
     }
