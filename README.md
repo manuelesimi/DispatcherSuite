@@ -21,6 +21,7 @@ server:
 ~~~
 ./mvnw spring-boot:run
 ~~~
+![Emb start](doc/EmbTomcatStart.png)
 ## Interface
 
 TBP
