@@ -1,0 +1,11 @@
+dispatcher:
+  actions:
+    - topic: topic
+      message: message
+      trigger: command/URL
+    - topic: topic
+      message: message
+      trigger: command/URL
+    - topic: topic
+      message: message
+      trigger: command/URL

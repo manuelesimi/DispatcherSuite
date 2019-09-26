@@ -3,6 +3,11 @@ package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Main app for Dispatcher.
+ *
+ * @author Manuele Simi
+ */
 @SpringBootApplication
 public class Dispatcher {
 
