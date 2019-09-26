@@ -1,4 +1,4 @@
-package edu.cornell.eipm.messaging.microservices;
+package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
 
 public class About {
 
