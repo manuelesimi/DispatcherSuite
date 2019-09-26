@@ -1,8 +1,19 @@
-#Description
+Dispatcher Microservice
+----
+A microservice project based on Spring Boot.
 
-A microservice project with Spring Boot.
+## Configuration
+Mostly focused on the embedded Tomcat server, it is available in  _application.yml_:
+```yaml
+server:
+    port: 8080
+    servlet:
+        context-path: /dispatcher
+```
 
-## Building and  Packaging
+
+
+## Building and Packaging
 ~~~
 ./mvnw clean package
 ~~~
@@ -10,3 +21,11 @@ A microservice project with Spring Boot.
 ~~~
 ./mvnw spring-boot:run
 ~~~
+## Interface
+
+TBP
+
+## Built With
+* [Spring Boot](https://spring.io/projects/spring-boot) - A framework that makes it easy to create stand-alone, production-grade Spring-based Applications
+* [OpenJDK](https://openjdk.java.net/) - A free and open-source implementation of the Java Platform, Standard Edition
+* [Maven](https://maven.apache.org/) - For dependency management
