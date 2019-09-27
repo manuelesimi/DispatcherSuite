@@ -39,6 +39,17 @@ class ConfigParser {
     }
 
     /**
+     * Gets the dispatcher configuration
+     * @throws NullPointerException if {@code config} is {@code null}
+     * @throws IOException if {@code config} is {@code invalid}
+     */
+    static ConfiguredActions getConfig() throws IOException {
+        if (Objects.isNull(config))
+            parse();
+        return Objects.requireNonNull(config,"config is not available at this time");
+    }
+
+    /**
      * Returns a string representation of the configuration.
      * @return the serialized configuration
      */

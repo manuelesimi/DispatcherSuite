@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Rest Controller for the Dispatcher service.
@@ -23,6 +25,12 @@ public class DispatcherController {
     public String config() throws IOException {
         ConfigParser.parse();
         return ConfigParser.configToString();
+    }
+
+    @RequestMapping("/configuration/topics")
+    public Set<String> configTopics() throws IOException {
+        ConfigParser.parse();
+        return ConfigParser.getConfig().getTopics();
     }
 
     @RequestMapping("/about")
