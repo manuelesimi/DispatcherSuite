@@ -17,14 +17,14 @@ For each message under the topic of interest, the Dispatcher runs the associated
 
 ```yaml
 actions:
-- topic: topicA
+- topic: seq_done
   messages:
-    - message: messageA.1
-      trigger: nextflow main.nf --some parameters = values
-    - message: messageA.2
-      trigger: https://mymicroservice/name/api?param=value&param2=value2
-    - message: messageA.3
-      trigger: whatever you want
+    - message: sample_ready
+      trigger: nextflow main.nf --sampleID=${payload}
+    - message: sample_failed
+      trigger: https://mymicroservice/name/api?param=value&sampleID=${payload}
+    - message: sample_processed
+      trigger: whatever you want with ${payload}
 - topic: topicB
   messages:
     - message: messageB.1
@@ -42,8 +42,6 @@ actions:
       trigger: command/URL for C.2
     - message: messageC.3
       trigger: command/URL for C.3
-
-
 ```
 The above YAML must be passed as property with
 
@@ -68,9 +66,9 @@ http://localhost:8080/dispatcher/ (welcome message)
 http://localhost:8080/dispatcher/configuration (shows the entire configuration)
 http://localhost:8080/dispatcher/configuration/topics (shows all topics of interest)
 http://localhost:8080/dispatcher/configuration/messages?topic=topicA (shows all messages of interest for the topic)
-http://localhost:8080/dispatcher/dispatch?topic=topicA&message=messageA.2 (simulate a message, shows the trigger)
+http://localhost:8080/dispatcher/dispatch?topic=seq_done&message=sample_ready&payload=sampleA.1 (simulate a message, shows the trigger with payload)
 ~~~
-
+The (optional) value of _payload_ replaces the _${payload}_ placeholder in the trigger, if used.
 ## Built With
 * [Spring Boot](https://spring.io/projects/spring-boot) - A framework that makes it easy to create stand-alone, production-grade Spring-based Applications
 * [OpenJDK](https://openjdk.java.net/) - A free and open-source implementation of the Java Platform, Standard Edition

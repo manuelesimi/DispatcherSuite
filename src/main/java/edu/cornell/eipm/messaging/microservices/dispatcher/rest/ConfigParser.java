@@ -25,7 +25,7 @@ class ConfigParser {
      * @throws IOException if the file is not found
      */
     static void parse() throws IOException {
-        if (Objects.nonNull(ConfigAccess.config)) //config already loded
+        if (Objects.nonNull(ConfigAccess.config)) //config already loaded
             return;
         try( InputStream ios = new FileInputStream(new File(CONFIG_FILE));) {
             ConfigAccess.config = new Yaml(new Constructor(ConfiguredActions.class)).load(ios);

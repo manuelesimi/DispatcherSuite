@@ -45,11 +45,12 @@ public class DispatcherController {
 
     @RequestMapping("/dispatch")
     public String dispatch(@RequestParam(required = true, value="topic") String topic,
-                                @RequestParam(required = true, value="message") String message
+                                @RequestParam(required = true, value="message") String message,
+                                @RequestParam(required = false, value="payload") String payload
             ) throws IOException {
         if (topic.isEmpty()|| message.isEmpty())
             return "Topic and/or message cannot be empty";
-        String trigger = ConfigAccess.getTrigger(topic,message);
+        String trigger = ConfigAccess.getTrigger(topic,message,payload);
         return "About to run: " +trigger;
     }
 

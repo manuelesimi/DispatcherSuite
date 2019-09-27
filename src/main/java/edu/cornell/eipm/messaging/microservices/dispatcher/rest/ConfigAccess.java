@@ -11,30 +11,32 @@ import java.util.stream.Collectors;
 
 /**
  * Access to the Dispatcher's configuration.
+ *
  * @author Manuele Simi
  */
-public class ConfigAccess {
+class ConfigAccess {
 
     protected static ConfiguredActions config;
 
     /**
      * Gets the dispatcher configuration
+     *
      * @throws NullPointerException if {@code config} is {@code null}
-     * @throws IOException if {@code config} is {@code invalid}
+     * @throws IOException          if {@code config} is {@code invalid}
      */
     static ConfiguredActions getConfig() {
-        if (Objects.isNull(config)) {
-            try {
-                ConfigParser.parse();
-            } catch (IOException e) {
-                throw new NullPointerException("Unable to parse/access the config");
-            }
+        try {
+            ConfigParser.parse();
+        } catch (IOException e) {
+            throw new NullPointerException("Unable to parse/access the config");
         }
-        return Objects.requireNonNull(config,"config is not available at this time");
+
+        return Objects.requireNonNull(config, "config is not available at this time");
     }
 
     /**
      * Gets all the topics of interest.
+     *
      * @return the names of the topics
      */
     protected static Set<String> getTopicNames() {
@@ -43,6 +45,7 @@ public class ConfigAccess {
 
     /**
      * Gets all the messages of interest associated to the topic.
+     *
      * @param topic topic name
      * @return
      */
@@ -52,22 +55,30 @@ public class ConfigAccess {
 
     /**
      * Returns a string representation of the configuration.
+     *
      * @return the serialized configuration
      */
     static String configToString() {
         return config.toString();
     }
 
-    public static String getTrigger(String topic, String message) {
+    /**
+     * Gets the trigger associated to the topic/message.
+     * @param topic
+     * @param message
+     * @param payload the payload to replace in the trigger, if anys
+     * @return
+     */
+    protected static String getTrigger(String topic, String message, String payload) {
         Message found = getConfig().getMessages(topic).stream().filter(m -> m.getMessage().equalsIgnoreCase(message))
                 .findFirst().orElse(null);
-        return found.getTrigger();
+        return found.getTrigger().replace("${payload}", payload);
     }
 
     @Override
     public String toString() {
         return "ConfigAccess{" +
-                    config.toString() +
+                config.toString() +
                 "}";
     }
 }

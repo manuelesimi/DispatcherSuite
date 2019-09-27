@@ -1,13 +1,13 @@
 ---
 actions:
-- topic: topicA
+- topic: seq_done
   messages:
-    - message: messageA.1
-      trigger: nextflow main.nf --some parameters = values
-    - message: messageA.2
-      trigger: https://mymicroservice/name/api?param=value&param2=value2
-    - message: messageA.3
-      trigger: whatever you want
+    - message: sample_ready
+      trigger: nextflow main.nf --sampleID=${payload}
+    - message: sample_failed
+      trigger: https://mymicroservice/name/api?param=value&sampleID=${payload}
+    - message: sample_processed
+      trigger: whatever you want with ${payload}
 - topic: topicB
   messages:
     - message: messageB.1
