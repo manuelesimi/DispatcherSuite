@@ -27,20 +27,30 @@ public class DispatcherController {
     @RequestMapping("/configuration")
     public String config() throws IOException {
         ConfigParser.parse();
-        return ConfigParser.configToString();
+        return ConfigAccess.configToString();
     }
 
     @RequestMapping("/configuration/topics")
     public Set<String> configTopics() throws IOException {
-        return ConfigParser.getConfig().getTopicNames();
+        return ConfigAccess.getTopicNames();
     }
 
     @RequestMapping("/configuration/topic")
     public List<String> configMessages(@RequestParam(required = true, value="name") String name) throws IOException {
         if (name.isEmpty())
             return Collections.emptyList();
-        return ConfigParser.getConfig().getMessages(name).stream().map(Message::toString).collect(Collectors.toList());
+        return ConfigAccess.getMessages(name);
     }
+
+    @RequestMapping("/dispatch")
+    public String dispatch(@RequestParam(required = true, value="topic") String topic,
+                                @RequestParam(required = true, value="message") String message
+            ) throws IOException {
+        if (topic.isEmpty()|| message.isEmpty())
+            return "Topic and/or message cannot be empty";
+        return "";
+    }
+
 
     @RequestMapping("/about")
     public About greeting(@RequestParam(value="name", defaultValue="client") String name) {

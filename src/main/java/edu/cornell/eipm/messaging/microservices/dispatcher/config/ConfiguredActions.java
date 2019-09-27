@@ -19,8 +19,25 @@ public class ConfiguredActions {
         this.actions = actions;
     }
 
+    /**
+     * Gets all registered topics.
+     * @return the names
+     */
     public Set<String> getTopicNames() {
         return actions.stream().map(Action::getTopic).collect(Collectors.toSet());
+    }
+
+    /**
+     * Gets the messages of interest for the given topic.
+     * @param topic the topic name
+     * @return the list of messages
+     */
+    public List<Message> getMessages(String topic) {
+        Action action = actions.stream()
+                .filter(t -> topic.equals(t.getTopic()))
+                .findAny()
+                .orElse(null);
+        return action.getMessages();
     }
 
     @Override
@@ -30,11 +47,5 @@ public class ConfiguredActions {
                 '}';
     }
 
-    public List<Message> getMessages(String topic) {
-        Action action = actions.stream()
-                .filter(t -> topic.equals(t.getTopic()))
-                .findAny()
-                .orElse(null);
-        return action.getMessages();
-    }
+
 }

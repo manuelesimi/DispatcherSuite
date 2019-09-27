@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Capable to load the YAML dispatcher configuration.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/ConfigAccess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/ConfiguredActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/ConfiguredActions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/ConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/ConfigParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/DispatcherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/DispatcherController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -31,11 +34,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/ConfigParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-169">
-              <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+            <state relative-caret-position="540">
+              <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1837#1838#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/ConfigAccess.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1022#1023#0" expanded="true" />
+                <element signature="e#1067#1068#0" expanded="true" />
+                <element signature="e#934#935#0" expanded="true" />
+                <element signature="e#974#975#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,16 +80,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/ConfiguredActions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="143">
+              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#196#197#0" expanded="true" />
                 <element signature="e#226#227#0" expanded="true" />
                 <element signature="e#278#279#0" expanded="true" />
                 <element signature="e#316#317#0" expanded="true" />
-                <element signature="e#500#501#0" expanded="true" />
-                <element signature="e#590#591#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
+                <element signature="e#579#580#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -108,11 +126,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/DispatcherController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+            <state relative-caret-position="167">
+              <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,15 +153,6 @@
                 <element signature="e#409#410#0" expanded="true" />
                 <element signature="e#449#450#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.9.RELEASE/spring-webmvc-5.1.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="565" selection-start-line="565" selection-end-line="565" />
             </state>
           </provider>
         </entry>
@@ -189,10 +198,11 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Action.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Topic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/Dispatcher.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/ConfiguredActions.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/ConfigParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/Dispatcher.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/DispatcherController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/ConfigAccess.java" />
       </list>
     </option>
   </component>
@@ -519,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569603985453</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Make the name required. Manage empty topic name.">
+      <created>1569605275173</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1569605275173</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -558,7 +575,7 @@
     <frame x="0" y="23" width="1383" height="793" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26398212" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26398212" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -572,7 +589,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29056048" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29056048" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32890856" />
@@ -630,7 +647,8 @@
     <MESSAGE value="New configuration/topics method to list configured topics of interest." />
     <MESSAGE value="List messages per topic." />
     <MESSAGE value="Optimize imports." />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimize imports." />
+    <MESSAGE value="Make the name required. Manage empty topic name." />
+    <option name="LAST_COMMIT_MESSAGE" value="Make the name required. Manage empty topic name." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -788,13 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/Objects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="223" column="57" selection-start-line="223" selection-end-line="224" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dispatcher-config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
@@ -843,33 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/ConfiguredActions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-            <element signature="e#278#279#0" expanded="true" />
-            <element signature="e#316#317#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/ConfigParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-169">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1837#1838#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/Dispatcher.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -880,12 +864,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/DispatcherController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/ConfigParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+        <state relative-caret-position="540">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/Objects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="223" column="57" selection-start-line="223" selection-end-line="224" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/ConfiguredActions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#196#197#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#278#279#0" expanded="true" />
+            <element signature="e#316#317#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#579#580#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/DispatcherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="29" column="37" lean-forward="true" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/ConfigAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="39" column="40" selection-start-line="39" selection-start-column="40" selection-end-line="39" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1022#1023#0" expanded="true" />
+            <element signature="e#1067#1068#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#974#975#0" expanded="true" />
           </folding>
         </state>
       </provider>
