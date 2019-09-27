@@ -31,4 +31,12 @@ public class ConfiguredActions {
                 "actions=" + actions +
                 '}';
     }
+
+    public List<Message> getMessages(String topic) {
+        Action action = actions.stream()
+                .filter(t -> topic.equals(t.getTopic()))
+                .findAny()
+                .orElse(null);
+        return action.getMessages();
+    }
 }

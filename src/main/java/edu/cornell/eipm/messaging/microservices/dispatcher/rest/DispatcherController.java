@@ -1,5 +1,6 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
 
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.Message;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * Rest Controller for the Dispatcher service.
@@ -31,6 +34,12 @@ public class DispatcherController {
     public Set<String> configTopics() throws IOException {
         ConfigParser.parse();
         return ConfigParser.getConfig().getTopics();
+    }
+
+    @RequestMapping("/configuration/topic")
+    public List<String> configMessages(@RequestParam(value="name", defaultValue="") String name) throws IOException {
+        ConfigParser.parse();
+        return ConfigParser.getConfig().getMessages(name).stream().map(Message::toString).collect(Collectors.toList());
     }
 
     @RequestMapping("/about")
