@@ -13,12 +13,6 @@ server:
 ```
 
 ### For the application logic:
-The following YAML must be passed as property with
-
-    -Ddispatcher.config=path/dispatcher-config.yml
-
-to the server application. 
-
 For each message under the topic of interest, the Dispatcher runs the associated trigger. The following sample instance shows the expected format of this part of the configuration:
 
 ```yaml
@@ -51,6 +45,11 @@ actions:
 
 
 ```
+The above YAML must be passed as property with
+
+    -Ddispatcher.config=path/dispatcher-config.yml
+
+to the server application. 
 
 ## Building and Packaging
 ~~~

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -138,8 +135,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="275">
-                <caret line="21" column="125" selection-start-line="21" selection-start-column="125" selection-end-line="21" selection-end-column="125" />
+              <first_editor relative-caret-position="395">
+                <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
               </first_editor>
               <second_editor />
             </state>
@@ -548,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569609964402</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="More doc.">
+      <created>1569610660721</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1569610660721</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -651,7 +655,6 @@
     <MESSAGE value="Package reorganization." />
     <MESSAGE value="Add home method to the controller." />
     <MESSAGE value="More documentation on the README." />
-    <MESSAGE value="More doc." />
     <MESSAGE value="Start working on the configuration for the actions. Add SnakeYAML as dependency of the project." />
     <MESSAGE value="Capable to load the YAML dispatcher configuration." />
     <MESSAGE value="Capable to load the YAML dispatcher configuration. Clean up the YAML format." />
@@ -664,7 +667,8 @@
     <MESSAGE value="Add dispatch method." />
     <MESSAGE value="Extend documentation in the README." />
     <MESSAGE value="Tweake some responses. Rename dispatcher/topic to dispatcher/messages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tweake some responses. Rename dispatcher/topic to dispatcher/messages." />
+    <MESSAGE value="More doc." />
+    <option name="LAST_COMMIT_MESSAGE" value="More doc." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -937,8 +941,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="275">
-            <caret line="21" column="125" selection-start-line="21" selection-start-column="125" selection-end-line="21" selection-end-column="125" />
+          <first_editor relative-caret-position="395">
+            <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
           </first_editor>
           <second_editor />
         </state>
