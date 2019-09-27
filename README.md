@@ -13,7 +13,7 @@ server:
 ```
 
 ### For the application logic:
-For each message under the topic of interest, the Dispatcher runs the associated trigger. The following sample instance shows the expected format of this part of the configuration:
+For each message under the topic of interest, the Dispatcher launches the associated trigger. The following sample instance shows the expected format of this part of the configuration:
 
 ```yaml
 actions:

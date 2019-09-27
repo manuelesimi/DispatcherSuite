@@ -6,6 +6,7 @@ import edu.cornell.eipm.messaging.microservices.dispatcher.config.Message;
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -64,15 +65,17 @@ class ConfigAccess {
 
     /**
      * Gets the trigger associated to the topic/message.
+     *
      * @param topic
      * @param message
      * @param payload the payload to replace in the trigger, if anys
      * @return
      */
     protected static String getTrigger(String topic, String message, String payload) {
-        Message found = getConfig().getMessages(topic).stream().filter(m -> m.getMessage().equalsIgnoreCase(message))
-                .findFirst().orElse(null);
-        return found.getTrigger().replace("${payload}", payload);
+        Optional<Message> found = getConfig().getMessages(topic).stream()
+                .filter(m -> m.getMessage().equalsIgnoreCase(message))
+                .findFirst();
+        return found.map(value -> value.getTrigger().replace("${payload}", payload)).orElse("");
     }
 
     @Override

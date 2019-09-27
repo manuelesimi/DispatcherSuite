@@ -1,6 +1,8 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.config;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -33,11 +35,10 @@ public class ConfiguredActions {
      * @return the list of messages
      */
     public List<Message> getMessages(String topic) {
-        Action action = actions.stream()
+        Optional<Action> action = actions.stream()
                 .filter(t -> topic.equals(t.getTopic()))
-                .findAny()
-                .orElse(null);
-        return action.getMessages();
+                .findAny();
+        return action.orElse(new Action()).getMessages();
     }
 
     @Override

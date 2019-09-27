@@ -20,7 +20,7 @@ actions:
 - topic: topicC
   messages:
     - message: messageC.1
-      trigger: command/URL for C.1
+      trigger: command/ URL for C.1
     - message: messageC.2
       trigger: command/URL for C.2
     - message: messageC.3
