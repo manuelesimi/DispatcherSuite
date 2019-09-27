@@ -48,7 +48,8 @@ public class DispatcherController {
             ) throws IOException {
         if (topic.isEmpty()|| message.isEmpty())
             return "Topic and/or message cannot be empty";
-        return "";
+        String trigger = ConfigAccess.getTrigger(topic,message);
+        return "About to run: " +trigger;
     }
 
 

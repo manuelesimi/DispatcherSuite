@@ -4,27 +4,27 @@ actions:
   topic: topicA
   messages:
     - message: messageA.1
-      trigger: command/URL
+      trigger: nextflow main.nf --some parameters = values
     - message: messageA.2
-      trigger: command/URL
+      trigger: https://mymicroservice/name/api?param=value&param2=value2
     - message: messageA.3
-      trigger: command/URL
+      trigger: whatever you want
 -
   topic: topicB
   messages:
     - message: messageB.1
-      trigger: command/URL
+      trigger: command/URL for B.1
     - message: messageB.2
-      trigger: command/URL
+      trigger: command/URL for B.2
     - message: messageB.3
-      trigger: command/URL
+      trigger: command/URL for B.3
 
 -
   topic: topicC
   messages:
     - message: messageC.1
-      trigger: command/URL
+      trigger: command/URL for C.1
     - message: messageC.2
-      trigger: command/URL
+      trigger: command/URL for C.2
     - message: messageC.3
-      trigger: command/URL
+      trigger: command/URL for C.3

@@ -22,9 +22,14 @@ public class ConfigAccess {
      * @throws NullPointerException if {@code config} is {@code null}
      * @throws IOException if {@code config} is {@code invalid}
      */
-    static ConfiguredActions getConfig() throws IOException {
-        if (Objects.isNull(config))
-            ConfigParser.parse();
+    static ConfiguredActions getConfig() {
+        if (Objects.isNull(config)) {
+            try {
+                ConfigParser.parse();
+            } catch (IOException e) {
+                throw new NullPointerException("Unable to parse/access the config");
+            }
+        }
         return Objects.requireNonNull(config,"config is not available at this time");
     }
 
@@ -33,16 +38,16 @@ public class ConfigAccess {
      * @return the names of the topics
      */
     protected static Set<String> getTopicNames() {
-        return config.getTopicNames();
+        return getConfig().getTopicNames();
     }
 
     /**
      * Gets all the messages of interest associated to the topic.
-     * @param name topic name
+     * @param topic topic name
      * @return
      */
-    protected static List<String> getMessages(String name) {
-        return config.getMessages(name).stream().map(Message::toString).collect(Collectors.toList());
+    protected static List<String> getMessages(String topic) {
+        return getConfig().getMessages(topic).stream().map(Message::toString).collect(Collectors.toList());
     }
 
     /**
@@ -51,5 +56,11 @@ public class ConfigAccess {
      */
     static String configToString() {
         return config.toString();
+    }
+
+    public static String getTrigger(String topic, String message) {
+        Message found = getConfig().getMessages(topic).stream().filter(m -> m.getMessage().equalsIgnoreCase(message))
+                .findFirst().orElse(null);
+        return found.getTrigger();
     }
 }
