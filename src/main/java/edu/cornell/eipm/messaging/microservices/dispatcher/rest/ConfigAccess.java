@@ -63,4 +63,11 @@ public class ConfigAccess {
                 .findFirst().orElse(null);
         return found.getTrigger();
     }
+
+    @Override
+    public String toString() {
+        return "ConfigAccess{" +
+                    config.toString() +
+                "}";
+    }
 }

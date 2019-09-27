@@ -51,7 +51,7 @@ actions:
 ~~~
 ## Activation with the embedded Tomcat server
 ~~~
-./mvnw spring-boot:run
+./startDispatcher.sh
 ~~~
 ![Emb start](doc/EmbTomcatStart.png)
 ## Interface
@@ -61,7 +61,7 @@ Sample invocations:
 http://localhost:8080/dispatcher/ (welcome message)
 http://localhost:8080/dispatcher/configuration (shows the entire configuration)
 http://localhost:8080/dispatcher/configuration/topics (shows all topics of interest)
-http://localhost:8080/dispatcher/configuration/topic?name=topicA (shows all messages of interest for the topic)
+http://localhost:8080/dispatcher/configuration/messages?topic=topicA (shows all messages of interest for the topic)
 http://localhost:8080/dispatcher/dispatch?topic=topicA&message=messageA.2 (simulate a message, shows the trigger)
 ~~~
 

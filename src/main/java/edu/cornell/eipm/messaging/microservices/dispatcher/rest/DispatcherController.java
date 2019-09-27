@@ -1,5 +1,6 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
 
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.ConfiguredActions;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.Message;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,11 +36,11 @@ public class DispatcherController {
         return ConfigAccess.getTopicNames();
     }
 
-    @RequestMapping("/configuration/topic")
-    public List<String> configMessages(@RequestParam(required = true, value="name") String name) throws IOException {
-        if (name.isEmpty())
+    @RequestMapping("/configuration/messages")
+    public List<String> configMessages(@RequestParam(required = true, value="topic") String topic) throws IOException {
+        if (topic.isEmpty())
             return Collections.emptyList();
-        return ConfigAccess.getMessages(name);
+        return ConfigAccess.getMessages(topic);
     }
 
     @RequestMapping("/dispatch")
