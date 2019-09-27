@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -21,7 +20,7 @@ public class DispatcherController {
 
     @RequestMapping("/")
     public String home() {
-        return "Hello from the Microservice Dispatcher";
+        return "Hello from the Dispatcher Microservice";
     }
 
     @RequestMapping("/configuration")
@@ -32,13 +31,11 @@ public class DispatcherController {
 
     @RequestMapping("/configuration/topics")
     public Set<String> configTopics() throws IOException {
-        ConfigParser.parse();
-        return ConfigParser.getConfig().getTopics();
+        return ConfigParser.getConfig().getTopicNames();
     }
 
     @RequestMapping("/configuration/topic")
     public List<String> configMessages(@RequestParam(value="name", defaultValue="") String name) throws IOException {
-        ConfigParser.parse();
         return ConfigParser.getConfig().getMessages(name).stream().map(Message::toString).collect(Collectors.toList());
     }
 

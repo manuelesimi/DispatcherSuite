@@ -1,7 +1,5 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.config;
 
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -21,7 +19,7 @@ public class ConfiguredActions {
         this.actions = actions;
     }
 
-    public Set<String> getTopics() {
+    public Set<String> getTopicNames() {
         return actions.stream().map(Action::getTopic).collect(Collectors.toSet());
     }
 
