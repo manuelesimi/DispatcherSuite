@@ -3,7 +3,8 @@ Dispatcher Microservice
 A microservice project based on Spring Boot.
 
 ## Configuration
-For the embedded Tomcat server, it is available in  _application.yml_:
+### For the embedded Tomcat server
+the configuration is available in  _application.yml_ inside the app distribution:
 ```yaml
 server:
     port: 8080
@@ -11,7 +12,15 @@ server:
         context-path: /dispatcher
 ```
 
-For the microservice logic:
+### For the application logic:
+The following YAML must be passed as property with
+
+    -Ddispatcher.config=path/dispatcher-config.yml
+
+to the server application. 
+
+For each message under the topic of interest, the Dispatcher runs the associated trigger. The following sample instance shows the expected format of this part of the configuration:
+
 ```yaml
 actions:
 -
