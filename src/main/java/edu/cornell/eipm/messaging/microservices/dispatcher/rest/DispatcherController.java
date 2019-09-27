@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -35,7 +36,9 @@ public class DispatcherController {
     }
 
     @RequestMapping("/configuration/topic")
-    public List<String> configMessages(@RequestParam(value="name", defaultValue="") String name) throws IOException {
+    public List<String> configMessages(@RequestParam(required = true, value="name") String name) throws IOException {
+        if (name.isEmpty())
+            return Collections.emptyList();
         return ConfigParser.getConfig().getMessages(name).stream().map(Message::toString).collect(Collectors.toList());
     }
 
