@@ -1,28 +1,30 @@
-dispatcher:
-  actions:
-    - topic: topicA
-      messages:
-        - message: messageA.1
-          trigger: command/URL
-        - message: messageA.2
-          trigger: command/URL
-        - message: messageA.3
-          trigger: command/URL
+---
+actions:
+-
+  topic: topicA
+  messages:
+    - message: messageA.1
+      trigger: command/URL
+    - message: messageA.2
+      trigger: command/URL
+    - message: messageA.3
+      trigger: command/URL
+-
+  topic: topicB
+  messages:
+    - message: messageB.1
+      trigger: command/URL
+    - message: messageB.2
+      trigger: command/URL
+    - message: messageB.3
+      trigger: command/URL
 
-    - topic: topicB
-      messages:
-        - message: messageB.1
-          trigger: command/URL
-        - message: messageB.2
-          trigger: command/URL
-        - message: messageB.3
-          trigger: command/URL
-
-    - topic: topicC
-      messages:
-        - message: messageC.1
-          trigger: command/URL
-        - message: messageC.2
-          trigger: command/URL
-        - message: messageC.3
-          trigger: command/URL
+-
+  topic: topicC
+  messages:
+    - message: messageC.1
+      trigger: command/URL
+    - message: messageC.2
+      trigger: command/URL
+    - message: messageC.3
+      trigger: command/URL
