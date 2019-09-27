@@ -23,8 +23,7 @@ For each message under the topic of interest, the Dispatcher runs the associated
 
 ```yaml
 actions:
--
-  topic: topicA
+- topic: topicA
   messages:
     - message: messageA.1
       trigger: nextflow main.nf --some parameters = values
@@ -32,8 +31,7 @@ actions:
       trigger: https://mymicroservice/name/api?param=value&param2=value2
     - message: messageA.3
       trigger: whatever you want
--
-  topic: topicB
+- topic: topicB
   messages:
     - message: messageB.1
       trigger: command/URL for B.1
@@ -42,8 +40,7 @@ actions:
     - message: messageB.3
       trigger: command/URL for B.3
 
--
-  topic: topicC
+- topic: topicC
   messages:
     - message: messageC.1
       trigger: command/URL for C.1
@@ -51,6 +48,7 @@ actions:
       trigger: command/URL for C.2
     - message: messageC.3
       trigger: command/URL for C.3
+
 
 ```
 
