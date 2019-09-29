@@ -51,10 +51,18 @@ public class DispatcherController {
         if (topic.isEmpty()|| message.isEmpty())
             return "Topic and/or message cannot be empty";
         String trigger = ConfigAccess.getTrigger(topic,message,payload);
-        return "About to run: " +trigger;
+        return "About to launch: " +trigger;
     }
 
-
+    @RequestMapping("/publish")
+    public String publish(@RequestParam(required = true, value="topic") String topic,
+                           @RequestParam(required = true, value="message") String message,
+                           @RequestParam(required = false, value="payload") String payload
+    ) throws IOException {
+        if (topic.isEmpty()|| message.isEmpty())
+            return "Topic and/or message cannot be empty";
+        return "About to publish: " + payload;
+    }
     @RequestMapping("/about")
     public About greeting(@RequestParam(value="name", defaultValue="client") String name) {
         return new About(name);

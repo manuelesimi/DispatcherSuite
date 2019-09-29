@@ -25,3 +25,7 @@ actions:
       trigger: command/URL for C.2
     - message: messageC.3
       trigger: command/URL for C.3
+
+kafka:
+  broker: kafka.med.cornell.edu:9092
+  group-id: consumerGroup1

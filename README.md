@@ -67,6 +67,8 @@ http://localhost:8080/dispatcher/configuration (shows the entire configuration)
 http://localhost:8080/dispatcher/configuration/topics (shows all topics of interest)
 http://localhost:8080/dispatcher/configuration/messages?topic=topicA (shows all messages of interest for the topic)
 http://localhost:8080/dispatcher/dispatch?topic=seq_done&message=sample_ready&payload=sampleA.1 (simulate a message, shows the trigger with payload)
+http://localhost:8080/dispatcher/publish?topic=seq_done&message=sample_published&payload=sampleA.1 (simulate a message, shows the message to send with payload)
+
 ~~~
 The (optional) value of _payload_ replaces the _${payload}_ placeholder in the trigger, if used.
 ## Built With
