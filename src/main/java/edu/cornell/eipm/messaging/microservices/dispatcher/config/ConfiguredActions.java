@@ -13,6 +13,17 @@ public class ConfiguredActions {
 
     private List<Action> actions;
 
+    private Kafka kafka;
+
+    public Kafka getKafka() {
+        return kafka;
+    }
+
+    public void setKafka(Kafka kafka) {
+        this.kafka = kafka;
+    }
+
+
     public List<Action> getActions() {
         return actions;
     }

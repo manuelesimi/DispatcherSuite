@@ -28,4 +28,4 @@ actions:
 
 kafka:
   broker: kafka.med.cornell.edu:9092
-  group-id: consumerGroup1
+  groupId: consumerGroup1
