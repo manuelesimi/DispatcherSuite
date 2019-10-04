@@ -1,6 +1,6 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
 
-import edu.cornell.eipm.messaging.microservices.dispatcher.config.ConfiguredActions;
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.DispatcherConfiguration;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
 
@@ -28,7 +28,7 @@ class ConfigParser {
         if (Objects.nonNull(ConfigAccess.config)) //config already loaded
             return;
         try( InputStream ios = new FileInputStream(new File(CONFIG_FILE));) {
-            ConfigAccess.config = new Yaml(new Constructor(ConfiguredActions.class)).load(ios);
+            ConfigAccess.config = new Yaml(new Constructor(DispatcherConfiguration.class)).load(ios);
         } catch (IOException e) {
             throw e;
         }

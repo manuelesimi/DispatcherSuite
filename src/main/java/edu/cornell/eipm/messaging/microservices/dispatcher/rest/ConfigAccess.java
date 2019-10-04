@@ -1,14 +1,12 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
 
-import edu.cornell.eipm.messaging.microservices.dispatcher.config.ConfiguredActions;
-import edu.cornell.eipm.messaging.microservices.dispatcher.config.Message;
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.DispatcherConfiguration;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Access to the Dispatcher's configuration.
@@ -17,7 +15,7 @@ import java.util.stream.Collectors;
  */
 class ConfigAccess {
 
-    protected static ConfiguredActions config;
+    protected static DispatcherConfiguration config;
 
     /**
      * Gets the dispatcher configuration
@@ -25,7 +23,7 @@ class ConfigAccess {
      * @throws NullPointerException if {@code config} is {@code null}
      * @throws IOException          if {@code config} is {@code invalid}
      */
-    static ConfiguredActions getConfig() {
+    static DispatcherConfiguration getConfig() {
         try {
             ConfigParser.parse();
         } catch (IOException e) {
@@ -44,15 +42,6 @@ class ConfigAccess {
         return getConfig().getTopicNames();
     }
 
-    /**
-     * Gets all the messages of interest associated to the topic.
-     *
-     * @param topic topic name
-     * @return
-     */
-    protected static List<String> getMessages(String topic) {
-        return getConfig().getMessages(topic).stream().map(Message::toString).collect(Collectors.toList());
-    }
 
     /**
      * Returns a string representation of the configuration.
@@ -64,18 +53,17 @@ class ConfigAccess {
     }
 
     /**
-     * Gets the trigger associated to the topic/message.
+     * Gets the action(s) associated to the topic.
      *
-     * @param topic
-     * @param message
-     * @param payload the payload to replace in the trigger, if anys
+     * @param topic the topic name
      * @return
      */
-    protected static String getTrigger(String topic, String message, String payload) {
-        Optional<Message> found = getConfig().getMessages(topic).stream()
-                .filter(m -> m.getMessage().equalsIgnoreCase(message))
-                .findFirst();
-        return found.map(value -> value.getTrigger().replace("${payload}", payload)).orElse("");
+    protected static List<Action> getActions(String topic) {
+        return getConfig().getActions(topic);
+        /*Optional<Action> found = getConfig().getActions(topic).stream()
+                .filter(m -> m.ge().equalsIgnoreCase(message))
+                .findAny();
+        return actions.map(value -> actions.getTrigger().replace("${payload}", payload)).orElse("");*/
     }
 
     @Override

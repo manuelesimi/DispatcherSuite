@@ -7,31 +7,23 @@ import java.util.List;
  */
 public class Action {
 
-    private String topic;
-    private List<Message> messages;
+    private String trigger;
+    private Reply reply;
 
 
-    public String getTopic() {
-        return topic;
+    public String getTrigger() {
+        return trigger;
     }
 
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setTrigger(String trigger) {
+        this.trigger = trigger;
     }
 
-    public List<Message> getMessages() {
-        return messages;
+    public Reply getReply() {
+        return reply;
     }
 
-    public void setMessages(List<Message> messages) {
-        this.messages = messages;
-    }
-
-    @Override
-    public String toString() {
-        return "Action{" +
-                "topic='" + topic + '\'' +
-                ", messages=" + messages +
-                '}';
+    public void setReply(Reply reply) {
+        this.reply = reply;
     }
 }

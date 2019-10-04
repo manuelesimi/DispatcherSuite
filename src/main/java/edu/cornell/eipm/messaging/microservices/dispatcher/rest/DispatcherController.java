@@ -1,7 +1,6 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
 
-import edu.cornell.eipm.messaging.microservices.dispatcher.config.ConfiguredActions;
-import edu.cornell.eipm.messaging.microservices.dispatcher.config.Message;
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,7 +9,6 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * Rest Controller for the Dispatcher service.
@@ -36,33 +34,35 @@ public class DispatcherController {
         return ConfigAccess.getTopicNames();
     }
 
-    @RequestMapping("/configuration/messages")
-    public List<String> configMessages(@RequestParam(required = true, value="topic") String topic) throws IOException {
+    @RequestMapping("/configuration/actions")
+    public List<Action> configMessages(@RequestParam(required = true, value="topic") String topic) throws IOException {
         if (topic.isEmpty())
             return Collections.emptyList();
-        return ConfigAccess.getMessages(topic);
+        return ConfigAccess.getActions(topic);
     }
 
     @RequestMapping("/dispatch")
-    public String dispatch(@RequestParam(required = true, value="topic") String topic,
-                                @RequestParam(required = true, value="message") String message,
+    public DispatchReply dispatch(@RequestParam(required = true, value="topic") String topic,
                                 @RequestParam(required = false, value="payload") String payload
             ) throws IOException {
-        if (topic.isEmpty()|| message.isEmpty())
-            return "Topic and/or message cannot be empty";
-        String trigger = ConfigAccess.getTrigger(topic,message,payload);
-        return "About to launch: " +trigger;
+
+        List<Action> actions = ConfigAccess.getActions(topic);
+        DispatchReply dispatchReply = new DispatchReply();
+        actions.forEach(action -> dispatchReply.addTrigger(action.getTrigger().replace("${payload}",payload) ));
+        actions.forEach(action -> dispatchReply.addReply(action.getReply().getTopic(), action.getReply().getPayload().replace("${payload}",payload) ));
+
+        return dispatchReply;
     }
 
     @RequestMapping("/publish")
     public String publish(@RequestParam(required = true, value="topic") String topic,
-                           @RequestParam(required = true, value="message") String message,
                            @RequestParam(required = false, value="payload") String payload
     ) throws IOException {
-        if (topic.isEmpty()|| message.isEmpty())
-            return "Topic and/or message cannot be empty";
-        return "About to publish: " + payload;
+        if (topic.isEmpty())
+            return "Topic cannot be empty";
+        return "About to publish " + payload + " in Topic " + topic;
     }
+
     @RequestMapping("/about")
     public About greeting(@RequestParam(value="name", defaultValue="client") String name) {
         return new About(name);

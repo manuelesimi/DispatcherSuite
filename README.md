@@ -4,7 +4,7 @@ A microservice project based on Spring Boot.
 
 ## Configuration
 ### For the embedded Tomcat server
-the configuration is available in  _application.yml_ inside the app distribution:
+The configuration is available in  _application.yml_ inside the app distribution:
 ```yaml
 server:
     port: 8080
@@ -13,35 +13,48 @@ server:
 ```
 
 ### For the application logic:
-For each message under the topic of interest, the Dispatcher launches the associated trigger. The following sample instance shows the expected format of this part of the configuration:
+For each message under the topic of interest, the Dispatcher launches the associated trigger(s). The following sample instance shows the expected format for this part of the configuration:
 
 ```yaml
-actions:
-- topic: seq_done
-  messages:
-    - message: sample_ready
-      trigger: nextflow main.nf --sampleID=${payload}
-    - message: sample_failed
-      trigger: https://mymicroservice/name/api?param=value&sampleID=${payload}
-    - message: sample_processed
-      trigger: whatever you want with ${payload}
-- topic: topicB
-  messages:
-    - message: messageB.1
-      trigger: command/URL for B.1
-    - message: messageB.2
-      trigger: command/URL for B.2
-    - message: messageB.3
-      trigger: command/URL for B.3
+dispatcher:
+  - topic: seq_complete
+    actions:
+      - trigger: nextflow main.nf --sampleID=${payload}
+        reply:
+          topic: annotation_started
+          payload: ${payload}
+      - trigger: https://mymicroservice/name/api?param=value&sampleID=${payload}
+        reply:
+            topic: annotation_started
+            payload: ${payload}
+      - trigger: whatever you want with ${payload}
+        reply:
+            topic: annotation_started
+            payload: ${payload}
 
-- topic: topicC
-  messages:
-    - message: messageC.1
-      trigger: command/URL for C.1
-    - message: messageC.2
-      trigger: command/URL for C.2
-    - message: messageC.3
-      trigger: command/URL for C.3
+  - topic: seq_failed
+    actions:
+      - trigger: command/URL for seq_failed
+        reply:
+          topic: annotation_started
+          payload: ${payload}
+      - trigger: another command/URL for seq_failed
+        reply:
+          topic: annotation_started
+          payload: ${payload}
+
+  - topic: analysis_started
+    actions:
+      - trigger: command/URL for analysis_started
+        reply:
+          topic: analysis_in_progress
+          payload: ${payload}
+
+
+kafka:
+  broker: kafka.med.cornell.edu:9092
+  groupId: consumerGroup1
+
 ```
 The above YAML must be passed as property with
 
@@ -65,9 +78,9 @@ Sample invocations:
 http://localhost:8080/dispatcher/ (welcome message)
 http://localhost:8080/dispatcher/configuration (shows the entire configuration)
 http://localhost:8080/dispatcher/configuration/topics (shows all topics of interest)
-http://localhost:8080/dispatcher/configuration/messages?topic=topicA (shows all messages of interest for the topic)
-http://localhost:8080/dispatcher/dispatch?topic=seq_done&message=sample_ready&payload=sampleA.1 (simulate a message, shows the trigger with payload)
-http://localhost:8080/dispatcher/publish?topic=seq_done&message=sample_published&payload=sampleA.1 (simulate a message, shows the message to send with payload)
+http://localhost:8080/dispatcher/configuration/actions?topic=topicA (shows all actions of interest for the topic)
+http://localhost:8080/dispatcher/dispatch?topic=seq_complete&payload=sample123 (simulate a message, shows the trigger(s) with payload)
+http://localhost:8080/dispatcher/publish?topic=annotation_done&payload=sample123 (simulate a message, shows the message to send with payload)
 
 ~~~
 The (optional) value of _payload_ replaces the _${payload}_ placeholder in the trigger, if used.
