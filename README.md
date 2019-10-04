@@ -17,19 +17,19 @@ For each message under the topic of interest, the Dispatcher launches the associ
 
 ```yaml
 dispatcher:
-  - topic: seq_complete
+  - topic: oncorseq.sequencing.in_progress
     actions:
       - trigger: nextflow main.nf --sampleID=${payload}
         reply:
-          topic: annotation_started
+          topic: oncorseq.sequencing.pipeline_initialized
           payload: ${payload}
       - trigger: https://mymicroservice/name/api?param=value&sampleID=${payload}
         reply:
-            topic: annotation_started
+            topic: oncorseq.sequencing.antoher1
             payload: ${payload}
       - trigger: whatever you want with ${payload}
         reply:
-            topic: annotation_started
+            topic: oncorseq.sequencing.another2
             payload: ${payload}
 
   - topic: seq_failed
