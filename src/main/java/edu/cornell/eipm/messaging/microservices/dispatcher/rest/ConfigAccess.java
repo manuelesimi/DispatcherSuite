@@ -9,7 +9,7 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * Access to the Dispatcher's configuration.
+ * Access to the DispatcherApp's configuration.
  *
  * @author Manuele Simi
  */

@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.util.Objects;
 
 /**
- * Parser for the Dispatcher YAML configuration.
+ * Parser for the DispatcherApp YAML configuration.
  *
  * @author Manuele Simi
  */

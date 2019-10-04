@@ -1,9 +1,10 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
 
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import edu.cornell.eipm.messaging.microservices.dispatcher.kafka.ProducerPayload;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -11,16 +12,25 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Rest Controller for the Dispatcher service.
+ * Rest Controller for the DispatcherApp service.
  *
  * @author Manuele Simi
  */
 @RestController
 public class DispatcherController {
 
+    @Autowired
+    private KafkaTemplate<Object, Object> template;
+
+    @PostMapping(path = "/publish/kafka")
+    public void sendFoo(@RequestParam(required = true, value="topic") String topic,
+                        @RequestParam(required = true, value="payload") String payload) {
+        this.template.send(topic, new ProducerPayload(payload));
+    }
+
     @RequestMapping("/")
     public String home() {
-        return "Hello from the Dispatcher Microservice";
+        return "Hello from the DispatcherApp Microservice";
     }
 
     @RequestMapping("/configuration")

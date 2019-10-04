@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.8.RELEASE</version>
+        <version>2.1.9.RELEASE</version>
     </parent>
     <groupId>edu.cornell.eipm.messaging.microservices</groupId>
     <artifactId>dispatcher</artifactId>
@@ -32,6 +32,15 @@
         <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
+        </dependency>
+
+        <!-- Instead of using the latest version of Jackson,
+        it's recommended to use the version which
+        is added to the pom.xml of spring-kafka.-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.7</version>
         </dependency>
 
         <dependency>
