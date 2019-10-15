@@ -14,9 +14,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Dispatcher.class)
+@SpringBootTest(classes = DispatcherApp.class)
 @AutoConfigureMockMvc
-public class DispatcherTest {
+public class DispatcherAppTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -24,14 +24,14 @@ public class DispatcherTest {
     @Test
     public void noParamAboutShouldReturnDefaultMessage() throws Exception {
         this.mockMvc.perform(get("/about")).andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Dispatcher 1.0 says: hello client"));
+                .andExpect(jsonPath("$.content").value("DispatcherApp 1.0 says: hello client"));
     }
 
     @Test
     public void paramGreetingShouldReturnTailoredMessage() throws Exception {
         this.mockMvc.perform(get("/about").param("name", "EIPM"))
                 .andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("Dispatcher 1.0 says: hello EIPM"));
+                .andExpect(jsonPath("$.content").value("DispatcherApp 1.0 says: hello EIPM"));
     }
 
     @Test

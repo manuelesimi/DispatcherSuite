@@ -2,7 +2,7 @@ package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
 
 public class About {
 
-    private String component = "Dispatcher";
+    private String component = "DispatcherApp";
     private String version = "1.0";
     final private String name;
     private final String content;
