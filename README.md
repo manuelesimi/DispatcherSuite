@@ -86,5 +86,6 @@ http://localhost:8080/dispatcher/publish?topic=annotation_done&payload=sample123
 The (optional) value of _payload_ replaces the _${payload}_ placeholder in the trigger, if used.
 ## Built With
 * [Spring Boot](https://spring.io/projects/spring-boot) - A framework that makes it easy to create stand-alone, production-grade Spring-based Applications
+* [Spring Kafka](https://spring.io/projects/spring-kafka) - Spring concepts for the development of Kafka-based messaging solutions
 * [OpenJDK](https://openjdk.java.net/) - A free and open-source implementation of the Java Platform, Standard Edition
 * [Maven](https://maven.apache.org/) - For dependency management
