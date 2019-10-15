@@ -2,3 +2,10 @@ server:
     port: 8080
     servlet:
         context-path: /dispatcher
+
+# see https://github.com/spring-projects/spring-boot/blob/v2.1.9.RELEASE/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/kafka/KafkaProperties.java
+spring:
+    kafka:
+        bootstrap-servers: localhost:9092
+        consumer.group-id: eipm-dispatcher
+        topics: A,B,C
