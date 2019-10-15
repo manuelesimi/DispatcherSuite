@@ -13,9 +13,16 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 
+/**
+ *
+ *
+ * See {@link https://kafka.apache.org/20/javadoc/index.html?org/apache/kafka/clients/consumer/DConsumerConfig.html}
+ *
+ * @author Manuele Simi
+ */
 @Configuration
 @EnableKafka
-public class ConsumerConfig {
+public class DConsumerConfig {
 
     @Value("${kafka.bootstrap-servers}")
     private String bootstrapServers;
@@ -56,7 +63,7 @@ public class ConsumerConfig {
     }
 
     @Bean
-    public Consumer receiver() {
-        return new Consumer();
+    public DConsumer receiver() {
+        return new DConsumer();
     }
 }

@@ -5,10 +5,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.concurrent.CountDownLatch;
 
-public class Consumer {
+/**
+ * Configurable Kafka consumer for plain strings as payload.
+ *
+ * @author Manuele Simi
+ */
+public class DConsumer {
 
     private static final Logger LOGGER =
-            LoggerFactory.getLogger(Consumer.class);
+            LoggerFactory.getLogger(DConsumer.class);
 
     private CountDownLatch latch = new CountDownLatch(1);
 
