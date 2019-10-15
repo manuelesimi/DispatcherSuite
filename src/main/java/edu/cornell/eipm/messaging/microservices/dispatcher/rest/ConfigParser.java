@@ -17,7 +17,7 @@ import java.util.Objects;
  */
 class ConfigParser {
 
-    private static String CONFIG_FILE = "/Users/manuelesimi/EIPM/KafkaDispatcher/dispatcher-config.yml";
+    private static String CONFIG_FILE = "/Users/mas2182/WORK/EIPM/KafkaDispatcher/dispatcher-config.yml";
 
     /**
      * Parses the configuration from the YAML file.

@@ -1,9 +1,6 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
 
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
-import edu.cornell.eipm.messaging.microservices.dispatcher.kafka.ProducerPayload;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -19,14 +16,6 @@ import java.util.Set;
 @RestController
 public class DispatcherController {
 
-    @Autowired
-    private KafkaTemplate<Object, Object> template;
-
-    @PostMapping(path = "/publish/kafka")
-    public void sendFoo(@RequestParam(required = true, value="topic") String topic,
-                        @RequestParam(required = true, value="payload") String payload) {
-        this.template.send(topic, new ProducerPayload(payload));
-    }
 
     @RequestMapping("/")
     public String home() {

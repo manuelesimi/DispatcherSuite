@@ -1,15 +1,14 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.kafka;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.concurrent.CountDownLatch;
 
-public class Receiver {
+public class Consumer {
 
     private static final Logger LOGGER =
-            LoggerFactory.getLogger(Receiver.class);
+            LoggerFactory.getLogger(Consumer.class);
 
     private CountDownLatch latch = new CountDownLatch(1);
 

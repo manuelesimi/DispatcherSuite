@@ -1,17 +1,17 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.kafka;
 
 /**
- * The payload to publish.
+ * A String payload.
  *
  * @author Manuele Simi
  */
-public class ProducerPayload {
+public class StringPayload {
 
     /**
-     * Create the payload to publish
+     * Creates the payload
      * @param payload the serialized payload
      */
-    public ProducerPayload(String payload) {
+    public StringPayload(String payload) {
 
     }
 }
