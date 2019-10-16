@@ -1,4 +1,4 @@
-package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
+package edu.cornell.eipm.messaging.microservices.dispatcher;
 
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.DispatcherConfiguration;

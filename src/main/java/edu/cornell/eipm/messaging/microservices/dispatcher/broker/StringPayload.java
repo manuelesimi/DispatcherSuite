@@ -1,4 +1,4 @@
-package edu.cornell.eipm.messaging.microservices.dispatcher.kafka;
+package edu.cornell.eipm.messaging.microservices.dispatcher.broker;
 
 /**
  * A String payload.

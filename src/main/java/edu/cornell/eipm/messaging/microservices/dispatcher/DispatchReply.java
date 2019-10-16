@@ -1,4 +1,4 @@
-package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
+package edu.cornell.eipm.messaging.microservices.dispatcher;
 
 import java.util.ArrayList;
 import java.util.List;

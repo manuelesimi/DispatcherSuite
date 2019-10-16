@@ -1,10 +1,11 @@
-package edu.cornell.eipm.messaging.microservices.dispatcher.rest;
+package edu.cornell.eipm.messaging.microservices.dispatcher;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import edu.cornell.eipm.messaging.microservices.dispatcher.DispatcherApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
