@@ -22,8 +22,8 @@ public class Sender {
    * Sends the payload.
    * @param payload
    */
-  public void send(String payload) {
+  public void send(String topic, String payload) {
     LOGGER.info("sending payload='{}'", payload);
-    kafkaTemplate.send("broker.t", payload);
+    kafkaTemplate.send(topic, payload);
   }
 }
