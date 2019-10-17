@@ -3,4 +3,5 @@ kafka:
   consumer:
     auto-offset-reset: earliest
     group-id: kafka-dispatcher
+    client-id: receiver
     topics: topic1.t,topic2.t,topic3.t,topic4.t
