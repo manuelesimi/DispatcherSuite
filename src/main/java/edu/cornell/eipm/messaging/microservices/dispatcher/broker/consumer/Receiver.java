@@ -27,15 +27,12 @@ public class Receiver {
     @Value("${kafka.consumer.group-id}")
     private String groupId;
 
-    @Value("${kafka.consumer.client-id}")
-    private String clientId;
-
     public CountDownLatch getLatch() {
         return latch;
     }
 
     @KafkaListener(id = "#{'${kafka.consumer.group-id}'}",
-            clientIdPrefix = "#{'${kafka.consumer.client-id}'}",
+            clientIdPrefix = "receiver",
             topics = "#{'${kafka.consumer.topics}'.split(',')}")
     public void receive(ConsumerRecord<?, Map<String, String>> message) {
         LOGGER.info("Received messages on topic [{}]: [{}]", message.topic(), message.value());
