@@ -1,7 +1,7 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher;
 
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
-import edu.cornell.eipm.messaging.microservices.dispatcher.config.DispatcherConfiguration;
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.Set;
  */
 class ConfigAccess {
 
-    protected static DispatcherConfiguration config;
+    protected static TopicConfigurations config;
 
     /**
      * Gets the dispatcher configuration
@@ -23,7 +23,7 @@ class ConfigAccess {
      * @throws NullPointerException if {@code config} is {@code null}
      * @throws IOException          if {@code config} is {@code invalid}
      */
-    static DispatcherConfiguration getConfig() {
+    static TopicConfigurations getConfig() {
         try {
             ConfigParser.parse();
         } catch (IOException e) {

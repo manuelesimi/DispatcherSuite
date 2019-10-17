@@ -9,14 +9,14 @@ The configuration is available in  _application.yml_ inside the app distribution
 server:
     port: 8080
     servlet:
-        context-path: /dispatcher
+        context-path: /topics
 ```
 
 ### For the application logic:
 For each message under the topic of interest, the Dispatcher launches the associated trigger(s). The following sample instance shows the expected format for this part of the configuration:
 
 ```yaml
-dispatcher:
+topics:
   - topic: oncorseq.sequencing.in_progress
     actions:
       - trigger: nextflow main.nf --sampleID=${payload}
@@ -58,7 +58,7 @@ kafka:
 ```
 The above YAML must be passed as property with
 
-    -Ddispatcher.config=path/dispatcher-config.yml
+    -Ddispatcher.config=path/topics-config.yml
 
 to the server application. 
 
@@ -75,12 +75,12 @@ to the server application.
 
 Sample invocations:
 ~~~
-http://localhost:8080/dispatcher/ (welcome message)
-http://localhost:8080/dispatcher/configuration (shows the entire configuration)
-http://localhost:8080/dispatcher/configuration/topics (shows all topics of interest)
-http://localhost:8080/dispatcher/configuration/actions?topic=topicA (shows all actions of interest for the topic)
-http://localhost:8080/dispatcher/dispatch?topic=seq_complete&payload=sample123 (simulate a message, shows the trigger(s) with payload)
-http://localhost:8080/dispatcher/publish?topic=annotation_done&payload=sample123 (simulate a message, shows the message to send with payload)
+http://localhost:8080/topics/ (welcome message)
+http://localhost:8080/topics/configuration (shows the entire configuration)
+http://localhost:8080/topics/configuration/topics (shows all topics of interest)
+http://localhost:8080/topics/configuration/actions?topic=topicA (shows all actions of interest for the topic)
+http://localhost:8080/topics/dispatch?topic=seq_complete&payload=sample123 (simulate a message, shows the trigger(s) with payload)
+http://localhost:8080/topics/publish?topic=annotation_done&payload=sample123 (simulate a message, shows the message to send with payload)
 
 ~~~
 The (optional) value of _payload_ replaces the _${payload}_ placeholder in the trigger, if used.

@@ -1,5 +1,7 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.config;
 
+import org.apache.kafka.clients.admin.NewTopic;
+
 import java.util.List;
 
 /**
@@ -33,5 +35,9 @@ public class Topic {
                 "topic='" + topic + '\'' +
                 ", actions=" + actions +
                 '}';
+    }
+
+    NewTopic toNewTopic() {
+        return new NewTopic(this.topic, 3, (short) 1);
     }
 }

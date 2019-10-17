@@ -1,5 +1,6 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.broker.producer;
 
+import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,6 +23,9 @@ public class SenderConfig {
 
   @Value("${kafka.bootstrap-servers}")
   private String bootstrapServers;
+
+  @Value("${kafka.consumer.topics}")
+  private String[] topics;
 
   @Bean
   public Map<String, Object> producerConfigs() {

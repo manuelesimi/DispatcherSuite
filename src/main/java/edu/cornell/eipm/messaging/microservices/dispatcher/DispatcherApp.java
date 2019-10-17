@@ -33,8 +33,7 @@ public class DispatcherApp {
 
     @PostConstruct
     private void init() throws IOException {
-        ConfigParser.parse();
+        //ConfigParser.parse();
     }
-
 
 }
