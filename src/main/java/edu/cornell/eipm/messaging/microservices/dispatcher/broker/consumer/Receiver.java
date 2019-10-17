@@ -16,24 +16,29 @@ import java.util.concurrent.CountDownLatch;
  */
 public class Receiver {
 
-  private static final Logger LOGGER =
-      LoggerFactory.getLogger(Receiver.class);
+    private static final Logger LOGGER =
+            LoggerFactory.getLogger(Receiver.class);
 
-  private CountDownLatch latch = new CountDownLatch(1);
+    private CountDownLatch latch = new CountDownLatch(1);
 
     @Value("${kafka.consumer.topics}")
     private String[] topics;
 
-  @Value("${kafka.consumer.group-id}")
-  private String groupId;
+    @Value("${kafka.consumer.group-id}")
+    private String groupId;
+
+    @Value("${kafka.consumer.client-id}")
+    private String clientId;
 
     public CountDownLatch getLatch() {
-    return latch;
-  }
+        return latch;
+    }
 
-  @KafkaListener(id = "#{'${kafka.consumer.group-id}'}", topics = "#{'${kafka.consumer.topics}'.split(',')}")
-  public void receive(ConsumerRecord<?, Map<String, String>> message) {
-      LOGGER.info("Received messages on topic [{}]: [{}]", message.topic(), message.value());
-      latch.countDown();
-  }
+    @KafkaListener(id = "#{'${kafka.consumer.group-id}'}",
+            clientIdPrefix = "#{'${kafka.consumer.client-id}'}",
+            topics = "#{'${kafka.consumer.topics}'.split(',')}")
+    public void receive(ConsumerRecord<?, Map<String, String>> message) {
+        LOGGER.info("Received messages on topic [{}]: [{}]", message.topic(), message.value());
+        latch.countDown();
+    }
 }
