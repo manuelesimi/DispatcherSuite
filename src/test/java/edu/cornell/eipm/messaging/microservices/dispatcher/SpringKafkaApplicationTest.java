@@ -30,10 +30,9 @@ public class SpringKafkaApplicationTest {
   @Autowired
   private Sender sender;
 
-  //@Test
+  @Test
   public void testSendReceive() throws Exception {
     sender.send(HELLOWORLD_TOPIC,"Hello from Spring Kafka Send/Receive!");
-
     receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
     assertThat(receiver.getLatch().getCount()).isEqualTo(0);
   }
