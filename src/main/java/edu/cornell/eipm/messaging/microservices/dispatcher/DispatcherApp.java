@@ -21,6 +21,12 @@ public class DispatcherApp {
 
     private final Logger logger = LoggerFactory.getLogger(DispatcherApp.class);
 
+    @Autowired
+    private Receiver receiver;
+
+    @Autowired
+    private Sender sender;
+
     public static void main(String[] args) {
         SpringApplication.run(DispatcherApp.class, args);
     }

@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.kafka.test.context.EmbeddedKafka;
+import org.springframework.kafka.test.rule.KafkaEmbedded;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -24,13 +25,13 @@ public class SpringKafkaApplicationTest {
 
   static final String HELLOWORLD_TOPIC = "topic1.t";
 
-  @Autowired
-  private Receiver receiver;
+    @Autowired
+    private Sender sender;
 
-  @Autowired
-  private Sender sender;
+    @Autowired
+    private Receiver receiver;
 
-  @Test
+    @Test
   public void testSendReceive() throws Exception {
     sender.send(HELLOWORLD_TOPIC,"Hello from Spring Kafka Send/Receive!");
     receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);

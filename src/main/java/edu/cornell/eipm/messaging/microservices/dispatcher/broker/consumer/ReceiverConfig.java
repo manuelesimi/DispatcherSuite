@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Configuration for the @{@link Receiver} bean.
+ * Configuration for the batch @{@link Receiver} bean.
  *
  * @author Manuele Simi
  */
@@ -38,9 +38,11 @@ public class ReceiverConfig {
     props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
         StringDeserializer.class);
     // allows a pool of processes to divide the work of consuming and processing records
-    props.put(ConsumerConfig.GROUP_ID_CONFIG, "broker");
+    props.put(ConsumerConfig.GROUP_ID_CONFIG, "receiver");
     // automatically reset the offset to the earliest offset
     props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+    // maximum records per poll
+    props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "10");
 
     return props;
   }
@@ -55,8 +57,9 @@ public class ReceiverConfig {
     ConcurrentKafkaListenerContainerFactory<String, String> factory =
         new ConcurrentKafkaListenerContainerFactory<>();
     factory.setConsumerFactory(consumerFactory());
-
-    return factory;
+      // enable batch listening
+      factory.setBatchListener(true);
+      return factory;
   }
 
   @Bean
