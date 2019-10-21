@@ -63,6 +63,7 @@ The above YAML must be passed as property with
 to the server application. 
 ### Custom configuration
 
+#### Configuration File
 Boot applies its typical convention over configuration approach to property files. This means that we can simply put an “application.yml” file in our “src/main/resources” directory, and it will be auto-detected. We can then inject any loaded properties from it as normal.
 
 So, by using this default file, we don’t have to explicitly register a PropertySource, or even provide a path to a property file.
@@ -71,6 +72,16 @@ We can also configure a different file at runtime if we need to, using an enviro
 	
     java -jar app.jar --spring.config.location=classpath:/another-location/application.yml
 
+#### Properties from Command Line Arguments
+
+As opposed to using files, properties can be passed directly on the command line:
+	
+    java -jar app.jar --property="value"
+
+You can also do this via system properties, which are provided before the -jar command rather than after it:
+	
+    java -Dproperty.name="value" -jar app.jar
+    
 ## Building and Packaging
 ~~~
 ./mvnw clean package
