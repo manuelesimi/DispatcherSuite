@@ -61,6 +61,15 @@ The above YAML must be passed as property with
     -Ddispatcher.config=path/topics-config.yml
 
 to the server application. 
+### Custom configuration
+
+Boot applies its typical convention over configuration approach to property files. This means that we can simply put an “application.yml” file in our “src/main/resources” directory, and it will be auto-detected. We can then inject any loaded properties from it as normal.
+
+So, by using this default file, we don’t have to explicitly register a PropertySource, or even provide a path to a property file.
+
+We can also configure a different file at runtime if we need to, using an environment property:
+	
+    java -jar app.jar --spring.config.location=classpath:/another-location/application.yml
 
 ## Building and Packaging
 ~~~
