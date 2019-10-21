@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Configure the receiver as a batch listener.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicAdministrator.java" afterDir="false" />
+    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Autowire configuration. Topic management (in progress).">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/ConfigAccess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/ConfigAccess.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/ConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/ConfigParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/producer/SenderConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/producer/SenderConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/DispatcherConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicConfigurations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Kafka.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Topic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Topic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicConfigurations.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/SpringKafkaApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/SpringKafkaApplicationTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -29,35 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConfigParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/ConfigParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Receiver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TopicConfigurations.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicConfigurations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            <state relative-caret-position="255">
+              <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#897#898#0" expanded="true" />
@@ -67,70 +38,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DispatcherApp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherApp.java">
+      <file leaf-file-name="Sender.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/producer/Sender.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpringKafkaApplicationTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/SpringKafkaApplicationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Receiver.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
+              <caret line="38" column="4" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#898#899#0" expanded="true" />
+                <element signature="e#928#929#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TopicAdministrator.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicAdministrator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Topic.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Topic.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#713#714#0" expanded="true" />
-                <element signature="e#803#804#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConfigAccess.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/ConfigAccess.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SenderConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/producer/SenderConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="53" column="3" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -138,8 +79,65 @@
       <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="10" selection-start-line="12" selection-end-line="12" selection-end-column="10" />
+            <state relative-caret-position="690">
+              <caret line="46" column="31" selection-start-line="41" selection-start-column="6" selection-end-line="46" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Topic.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Topic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DispatcherController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TopicAdministrator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicAdministrator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="1045">
+                <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-136">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -193,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/kafka/Receiver.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/DispatcherController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/rest/ConfigParser.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/kafka/ConsumerConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/kafka/Consumer.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/kafka/ProducerConfig.java" />
@@ -209,18 +206,19 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/ConfigParser.java" />
         <option value="$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherAppTest.java" />
         <option value="$PROJECT_DIR$/src/test/resources/application.yml" />
-        <option value="$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/SpringKafkaApplicationTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/ReceiverConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/producer/Sender.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/producer/SenderConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/DispatcherConfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Topic.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TocpicAdministrator.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicConfigurations.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherApp.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherApp.java" />
+        <option value="$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/SpringKafkaApplicationTest.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicConfigurations.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Topic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java" />
       </list>
     </option>
   </component>
@@ -359,13 +357,6 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KafkaDispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -755,31 +746,31 @@
       <option name="project" value="LOCAL" />
       <updated>1571329359947</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Autowire configuration. Topic management (in progress).">
+      <created>1571345946721</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1571345946721</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Add custom conf section to README.">
+      <created>1571688502664</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1571688502664</updated>
+    </task>
+    <task id="LOCAL-00039" summary="More doc on custom configuration.">
+      <created>1571688656998</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1571688656998</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.16 at 22h 13m 27s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.16 at 22h 42m 04s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.16 at 22h 42m 47s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.16 at 22h 43m 28s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DispatcherAppTest_configuration - 2019.10.16 at 22h 45m 43s.xml">
-      <configuration name="DispatcherAppTest.configuration" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="DispatcherAppTest_configuration - 2019.10.16 at 22h 46m 40s.xml">
-      <configuration name="DispatcherAppTest.configuration" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.17 at 10h 21m 42s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.17 at 11h 10m 33s.xml">
       <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
     </history-entry>
@@ -787,6 +778,27 @@
       <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
     </history-entry>
     <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.17 at 11h 17m 40s.xml">
+      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.18 at 12h 51m 24s.xml">
+      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.21 at 13h 07m 00s.xml">
+      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.21 at 13h 16m 14s.xml">
+      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.21 at 13h 17m 02s.xml">
+      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.21 at 13h 17m 51s.xml">
+      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.21 at 13h 18m 33s.xml">
+      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.21 at 13h 19m 08s.xml">
       <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -804,7 +816,7 @@
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5633383" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32786885" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.38599107" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.38599107" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2700556" />
@@ -814,7 +826,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.33628318" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3353204" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.24892704" />
       <window_info id="Designer" order="3" />
@@ -903,9 +915,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="List messages per topic." />
-    <MESSAGE value="Optimize imports." />
-    <MESSAGE value="Make the name required. Manage empty topic name." />
     <MESSAGE value="Use a dedicate access class to browse the configuration." />
     <MESSAGE value="Add dispatch method." />
     <MESSAGE value="Extend documentation in the README." />
@@ -928,10 +937,36 @@
     <MESSAGE value="Make topics of interest configurable." />
     <MESSAGE value="Restore tomcat start up." />
     <MESSAGE value="Configure the receiver as a batch listener." />
-    <option name="LAST_COMMIT_MESSAGE" value="Configure the receiver as a batch listener." />
+    <MESSAGE value="Autowire configuration. Topic management (in progress)." />
+    <MESSAGE value="Add custom conf section to README." />
+    <MESSAGE value="More doc on custom configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="More doc on custom configuration." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/SpringKafkaApplicationTest.java</url>
+          <line>41</line>
+          <properties />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherApp.java</url>
+          <line>31</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java</url>
+          <line>49</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="5" />
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.9.RELEASE/spring-webmvc-5.1.9.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/About.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1003,26 +1038,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="25" column="47" selection-start-line="25" selection-start-column="47" selection-end-line="25" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="380">
-            <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/src.zip!/java/lang/annotation/Documented.java" />
     <entry file="file://$PROJECT_DIR$/src/test/application.yml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/kafka/DProducer.java" />
@@ -1045,16 +1060,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherAppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1093,16 +1098,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/SpringKafkaApplicationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/apache/kafka/kafka-clients/2.0.1/kafka-clients-2.0.1.jar!/org/apache/kafka/clients/consumer/ConsumerConfig.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -1110,37 +1105,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/ReceiverConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="33" column="23" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/producer/Sender.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dispatcher-config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="34" column="2" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1168,25 +1136,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Topic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#713#714#0" expanded="true" />
-            <element signature="e#803#804#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="10" selection-start-line="12" selection-end-line="12" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/ConfigParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1197,22 +1146,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicConfigurations.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/ReceiverConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#897#898#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="319">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INSTALL.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="450">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#933#934#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherAppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/SpringKafkaApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1045">
+            <caret line="74" column="19" lean-forward="true" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicAdministrator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1221,17 +1215,68 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="-136">
           <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicAdministrator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/producer/Sender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicConfigurations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+            <element signature="e#947#948#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="31" selection-start-line="41" selection-start-column="6" selection-end-line="46" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/Topic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="34" column="31" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="38" column="4" lean-forward="true" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#898#899#0" expanded="true" />
+            <element signature="e#928#929#0" expanded="true" />
           </folding>
         </state>
       </provider>

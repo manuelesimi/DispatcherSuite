@@ -14,12 +14,10 @@ import java.util.stream.Collectors;
  */
 @Validated
 @Configuration
-@ConfigurationProperties(prefix = "dispatcher")
+@ConfigurationProperties("dispatcher")
 public class TopicConfigurations {
 
     private List<Topic> topics;
-
-
 
     public void setTopics(List<Topic> topics) {
         this.topics = topics;

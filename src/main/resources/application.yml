@@ -9,37 +9,39 @@ server:
   servlet:
     context-path: /dispatcher
 
----
 dispatcher:
-  - topic: oncorseq.sequencing.in_progress
-    actions:
-      - trigger: nextflow main.nf --sampleID=${payload}
-        reply:
-          topic: oncorseq.sequencing.pipeline_initialized
-          payload: ${payload}
-      - trigger: https://mymicroservice/name/api?param=value&sampleID=${payload}
-        reply:
+  - topic:
+      name: oncorseq.sequencing.in_progress
+      actions:
+        - trigger: nextflow main.nf --sampleID=${payload}
+          reply:
             topic: oncorseq.sequencing.pipeline_initialized
             payload: ${payload}
-      - trigger: whatever you want with ${payload}
-        reply:
-            topic: oncorseq.sequencing.pipeline_initialized
+        - trigger: https://mymicroservice/name/api?param=value&sampleID=${payload}
+          reply:
+              topic: oncorseq.sequencing.pipeline_initialized
+              payload: ${payload}
+        - trigger: whatever you want with ${payload}
+          reply:
+              topic: oncorseq.sequencing.pipeline_initialized
+              payload: ${payload}
+
+  - topic:
+      name: oncorseq.sequencing.pipeline_initialized
+      actions:
+        - trigger: command/URL for seq_failed (LIMS updates)
+          reply:
+            topic: annotation_started
+            payload: ${payload}
+        - trigger: another command/URL for seq_failed
+          reply:
+            topic: annotation_started
             payload: ${payload}
 
-  - topic: oncorseq.sequencing.pipeline_initialized
-    actions:
-      - trigger: command/URL for seq_failed (LIMS updates)
-        reply:
-          topic: annotation_started
-          payload: ${payload}
-      - trigger: another command/URL for seq_failed
-        reply:
-          topic: annotation_started
-          payload: ${payload}
-
-  - topic: oncorseq.sequencing.analysis_started
-    actions:
-      - trigger: command/URL for analysis_started
-        reply:
-          topic: analysis_in_progress
-          payload: ${payload}
+  - topic:
+      name: oncorseq.sequencing.analysis_started
+      actions:
+        - trigger: command/URL for analysis_started
+          reply:
+            topic: analysis_in_progress
+            payload: ${payload}

@@ -1,8 +1,10 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.broker.consumer;
 
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 
@@ -27,6 +29,14 @@ public class Receiver {
 
     @Value("${kafka.consumer.group-id}")
     private String groupId;
+
+    private TopicConfigurations topicConfigurations;
+
+    @Autowired
+    public void setTopicConfigurations(TopicConfigurations topics) {
+        this.topicConfigurations = topicConfigurations;
+    }
+
 
     public CountDownLatch getLatch() {
         return latch;

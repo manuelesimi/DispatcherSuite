@@ -9,16 +9,16 @@ import java.util.List;
  */
 public class Topic {
 
-    private String topic;
+    private String name;
     private List<Action> actions;
 
 
     public String getTopic() {
-        return topic;
+        return name;
     }
 
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setTopic(String name) {
+        this.name = name;
     }
 
     public List<Action> getActions() {
@@ -32,12 +32,12 @@ public class Topic {
     @Override
     public String toString() {
         return "Topic{" +
-                "topic='" + topic + '\'' +
+                "name='" + name + '\'' +
                 ", actions=" + actions +
                 '}';
     }
 
     NewTopic toNewTopic() {
-        return new NewTopic(this.topic, 3, (short) 1);
+        return new NewTopic(this.name, 3, (short) 1);
     }
 }
