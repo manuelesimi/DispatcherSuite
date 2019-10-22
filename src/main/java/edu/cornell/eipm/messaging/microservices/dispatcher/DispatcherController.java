@@ -1,6 +1,10 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher;
 
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -16,6 +20,10 @@ import java.util.Set;
 @RestController
 public class DispatcherController {
 
+    private final Logger logger = LoggerFactory.getLogger(DispatcherController.class);
+
+    @Autowired
+    private TopicConfigurations topicConfigurations;
 
     @RequestMapping("/")
     public String home() {
@@ -23,21 +31,20 @@ public class DispatcherController {
     }
 
     @RequestMapping("/configuration")
-    public String config() throws IOException {
-        ConfigParser.parse();
-        return ConfigAccess.configToString();
+    public Set<String> config() throws IOException {
+        return topicConfigurations.getTopicNames();
     }
 
     @RequestMapping("/configuration/topics")
     public Set<String> configTopics() throws IOException {
-        return ConfigAccess.getTopicNames();
+        return topicConfigurations.getTopicNames();
     }
 
     @RequestMapping("/configuration/actions")
     public List<Action> configMessages(@RequestParam(required = true, value="topic") String topic) throws IOException {
         if (topic.isEmpty())
             return Collections.emptyList();
-        return ConfigAccess.getActions(topic);
+        return topicConfigurations.getActions(topic);
     }
 
     @RequestMapping("/dispatch")
