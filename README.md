@@ -69,11 +69,6 @@ kafka:
   groupId: consumerGroup1
 
 ```
-The above YAML must be passed as property with
-
-    -Ddispatcher.config=path/topics-config.yml
-
-to the server application. 
 ### Custom configuration
 
 #### Configuration File
