@@ -1,5 +1,7 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher;
 
+import edu.cornell.eipm.messaging.microservices.dispatcher.broker.consumer.Receiver;
+import edu.cornell.eipm.messaging.microservices.dispatcher.broker.producer.Sender;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
 import org.slf4j.Logger;
@@ -24,6 +26,12 @@ public class DispatcherController {
 
     @Autowired
     private TopicConfigurations topicConfigurations;
+
+    @Autowired
+    private Receiver receiver;
+
+    @Autowired
+    private Sender sender;
 
     @RequestMapping("/")
     public String home() {
@@ -66,7 +74,8 @@ public class DispatcherController {
     ) throws IOException {
         if (topic.isEmpty())
             return "Topic cannot be empty";
-        return "About to publish " + payload + " in Topic " + topic;
+        sender.send(topic,payload);
+        return "Sent payload " + payload + " tp Topic " + topic;
     }
 
     @RequestMapping("/about")

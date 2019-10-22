@@ -23,11 +23,6 @@ public class DispatcherApp implements CommandLineRunner {
 
     private final Logger logger = LoggerFactory.getLogger(DispatcherApp.class);
 
-    @Autowired
-    private Receiver receiver;
-
-    @Autowired
-    private Sender sender;
 
     @Autowired
     private TopicConfigurations topicConfigurations;

@@ -127,6 +127,19 @@ http://localhost:8080/topics/dispatch?topic=seq_complete&payload=sample123 (simu
 http://localhost:8080/topics/publish?topic=annotation_done&payload=sample123 (simulate a message, shows the message to send with payload)
 
 ~~~
+
+Sample log:
+~~~
+http://localhost:8080/dispatcher/publish/?topic=oncorseq_sequencing_in_progress&payload=sample123ID123
+
+14:20:09.389 [http-nio-8080-exec-6] INFO  e.c.e.m.m.d.broker.producer.Sender - sending payload='sample123ID123'
+14:20:09.394 [kafka-dispatcher-0-C-1] DEBUG o.s.k.l.a.BatchMessagingMessageListenerAdapter - Processing [GenericMessage [payload=org.springframework.kafka.support.KafkaNull@edc3d20, headers={id=7146a124-a4d1-3300-b91c-9fa3ed53f698, timestamp=1571768147953}]]
+14:20:09.394 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - start of batch receive
+14:20:09.394 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - Received messages on topic [oncorseq_sequencing_in_progress]: [sample123ID123] '
+14:20:09.394 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - end of batch receive
+
+
+~~~
 The (optional) value of _payload_ replaces the _${payload}_ placeholder in the trigger, if used.
 ## Built With
 * [Spring Boot](https://spring.io/projects/spring-boot) - A framework that makes it easy to create stand-alone, production-grade Spring-based Applications
