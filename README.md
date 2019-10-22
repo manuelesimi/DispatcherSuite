@@ -11,6 +11,19 @@ server:
     servlet:
         context-path: /topics
 ```
+### For the Kafka broker
+```yaml
+kafka:
+  bootstrap-servers: localhost:9092
+  consumer:
+    auto-offset-reset: earliest
+    group-id: kafka-dispatcher
+    topics: oncorseq_sequencing_pipeline_initialized,oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
+```
+Where:
+* _bootstrap-servers_ is the list of kafka brokers to connect to (see [Apache Kafka instructions](APACHE_KAFKA.md))
+* _group_id_ is the ID of the consumer group
+* _topics_ is the comma-separated list of topics of interest (see next section)
 
 ### For the application logic:
 For each message under the topic of interest, the Dispatcher launches the associated trigger(s). The following sample instance shows the expected format for this part of the configuration:
@@ -86,12 +99,23 @@ You can also do this via system properties, which are provided before the -jar c
 ~~~
 ./mvnw clean package
 ~~~
-## Activation with the embedded Tomcat server
+
+## Execution
+### Activation with the embedded Tomcat server
 ~~~
 ./startDispatcher.sh
 ~~~
 ![Emb start](doc/EmbTomcatStart.png)
-## Interface
+
+
+### Or run spring boot directly
+    mvn spring-boot:run
+
+## Or package and run it 
+     mvn package
+     java -jar target/dispatcher-1.0-SNAPSHOT.jar
+
+### Interface
 
 Sample invocations:
 ~~~

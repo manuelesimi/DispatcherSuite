@@ -1,6 +1,5 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.config;
 
-import java.util.List;
 
 /**
  * @author Manuele Simi

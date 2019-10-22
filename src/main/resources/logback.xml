@@ -7,7 +7,7 @@
     </appender>
 
     <logger name="edu.cornell.eipm.messaging" level="TRACE" />
-    <logger name="org.springframework" level="WARN" />
+    <logger name="org.springframework" level="TRACE" />
 
 
     <root level="WARN">

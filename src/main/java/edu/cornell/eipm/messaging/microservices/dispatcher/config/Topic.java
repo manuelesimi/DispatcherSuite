@@ -2,6 +2,7 @@ package edu.cornell.eipm.messaging.microservices.dispatcher.config;
 
 import org.apache.kafka.clients.admin.NewTopic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,15 +10,16 @@ import java.util.List;
  */
 public class Topic {
 
+
     private String name;
-    private List<Action> actions;
+    private List<Action> actions = new ArrayList<>();
 
 
-    public String getTopic() {
+    public String getName() {
         return name;
     }
 
-    public void setTopic(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 

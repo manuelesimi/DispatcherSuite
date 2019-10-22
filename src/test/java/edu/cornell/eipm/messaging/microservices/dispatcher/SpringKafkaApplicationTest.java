@@ -3,6 +3,7 @@ package edu.cornell.eipm.messaging.microservices.dispatcher;
 
 import edu.cornell.eipm.messaging.microservices.dispatcher.broker.consumer.Receiver;
 import edu.cornell.eipm.messaging.microservices.dispatcher.broker.producer.Sender;
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +24,18 @@ import static org.assertj.core.api.Assertions.assertThat;
     topics = {SpringKafkaApplicationTest.HELLOWORLD_TOPIC})
 public class SpringKafkaApplicationTest {
 
-  static final String HELLOWORLD_TOPIC = "topic1.t";
+  static final String HELLOWORLD_TOPIC = "oncorseq_sequencing_in_progress";
 
     @Autowired
     private Sender sender;
 
     @Autowired
     private Receiver receiver;
+
+    @Autowired
+    private TopicConfigurations configurations;
+
+
 
     @Test
   public void testSendReceive() throws Exception {

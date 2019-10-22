@@ -30,13 +30,8 @@ public class Receiver {
     @Value("${kafka.consumer.group-id}")
     private String groupId;
 
-    private TopicConfigurations topicConfigurations;
-
     @Autowired
-    public void setTopicConfigurations(TopicConfigurations topics) {
-        this.topicConfigurations = topicConfigurations;
-    }
-
+    private TopicConfigurations topicConfigurations;
 
     public CountDownLatch getLatch() {
         return latch;

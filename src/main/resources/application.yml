@@ -1,17 +1,17 @@
 kafka:
-  bootstrap-servers: localhost:2181
+  bootstrap-servers: localhost:9092
   consumer:
     auto-offset-reset: earliest
     group-id: kafka-dispatcher
-    topics: topic1.t,topic2.t,topic3.t,topic4.t
+    topics: oncorseq_sequencing_pipeline_initialized,oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
 server:
   port: 8080
   servlet:
     context-path: /dispatcher
 
 dispatcher:
-  - topic:
-      name: oncorseq.sequencing.in_progress
+  topics:
+    - name: oncorseq_sequencing_in_progress
       actions:
         - trigger: nextflow main.nf --sampleID=${payload}
           reply:
@@ -19,15 +19,13 @@ dispatcher:
             payload: ${payload}
         - trigger: https://mymicroservice/name/api?param=value&sampleID=${payload}
           reply:
-              topic: oncorseq.sequencing.pipeline_initialized
-              payload: ${payload}
+             topic: oncorseq.sequencing.pipeline_initialized
+             payload: ${payload}
         - trigger: whatever you want with ${payload}
           reply:
-              topic: oncorseq.sequencing.pipeline_initialized
-              payload: ${payload}
-
-  - topic:
-      name: oncorseq.sequencing.pipeline_initialized
+            topic: oncorseq.sequencing.pipeline_initialized
+            payload: ${payload}
+    - name: oncorseq_sequencing_pipeline_initialized
       actions:
         - trigger: command/URL for seq_failed (LIMS updates)
           reply:
@@ -37,9 +35,7 @@ dispatcher:
           reply:
             topic: annotation_started
             payload: ${payload}
-
-  - topic:
-      name: oncorseq.sequencing.analysis_started
+    - name: oncorseq_sequencing_analysis_started
       actions:
         - trigger: command/URL for analysis_started
           reply:

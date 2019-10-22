@@ -6,6 +6,7 @@ import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigura
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -18,7 +19,7 @@ import java.io.IOException;
  * @author Manuele Simi
  */
 @SpringBootApplication
-public class DispatcherApp {
+public class DispatcherApp implements CommandLineRunner {
 
     private final Logger logger = LoggerFactory.getLogger(DispatcherApp.class);
 
@@ -28,8 +29,16 @@ public class DispatcherApp {
     @Autowired
     private Sender sender;
 
-     public static void main(String[] args) {
+    @Autowired
+    private TopicConfigurations topicConfigurations;
+
+    public static void main(String[] args) {
         SpringApplication.run(DispatcherApp.class, args);
+    }
+
+    @Override
+    public void run(String... args) {
+        System.out.println(topicConfigurations);
     }
 
     @PostConstruct

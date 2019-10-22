@@ -3,4 +3,4 @@ kafka:
   consumer:
     auto-offset-reset: earliest
     group-id: kafka-dispatcher
-    topics: topic1.t,topic2.t,topic3.t,topic4.t
+    topics: oncorseq_sequencing_pipeline_initialized,oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
