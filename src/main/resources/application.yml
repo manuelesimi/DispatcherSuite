@@ -3,7 +3,9 @@ kafka:
   consumer:
     auto-offset-reset: earliest
     group-id: kafka-dispatcher
+    enable-auto-commit: true
     topics: oncorseq_sequencing_pipeline_initialized,oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
+
 server:
   port: 8080
   servlet:

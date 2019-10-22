@@ -6,9 +6,10 @@
         </encoder>
     </appender>
 
-    <logger name="edu.cornell.eipm.messaging" level="TRACE" />
-    <logger name="org.springframework" level="LOG" />
-
+    <logger name="edu.cornell.eipm.messaging" level="DEBUG" />
+    <logger name="org.springframework" level="INFO" />
+    <logger name="org.springframework.kafka.listener" level="DEBUG"/>
+    <logger name="org.springframework.kafka.listener.KafkaMessageListenerContainer$ListenerConsumer" level="INFO" />
 
     <root level="WARN">
         <appender-ref ref="STDOUT" />
