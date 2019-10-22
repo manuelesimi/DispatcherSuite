@@ -43,6 +43,8 @@ public class ReceiverConfig {
     props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
     // maximum records per poll
     props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "10");
+    //If true the consumer's offset will be periodically committed in the background.
+    props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
 
     return props;
   }
