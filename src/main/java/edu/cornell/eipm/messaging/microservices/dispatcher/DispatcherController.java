@@ -52,7 +52,7 @@ public class DispatcherController {
                                 @RequestParam(required = false, value="payload") String payload
             ) throws IOException {
 
-        List<Action> actions = ConfigAccess.getActions(topic);
+        List<Action> actions = topicConfigurations.getActions(topic);
         DispatchReply dispatchReply = new DispatchReply();
         actions.forEach(action -> dispatchReply.addTrigger(action.getTrigger().replace("${payload}",payload) ));
         actions.forEach(action -> dispatchReply.addReply(action.getReply().getTopic(), action.getReply().getPayload().replace("${payload}",payload) ));
