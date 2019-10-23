@@ -106,7 +106,7 @@ You can also do this via system properties, which are provided before the -jar c
 ### Or run spring boot directly
     mvn spring-boot:run
 
-## Or package and run it 
+### Or package and run it 
      mvn package
      java -jar target/dispatcher-1.0-SNAPSHOT.jar
 

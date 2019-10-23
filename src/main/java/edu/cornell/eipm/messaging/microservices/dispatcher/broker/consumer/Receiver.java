@@ -1,6 +1,9 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.broker.consumer;
 
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
+import edu.cornell.eipm.messaging.microservices.dispatcher.executors.ExecutorService;
+import edu.cornell.eipm.messaging.microservices.dispatcher.executors.StringPayload;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,10 +48,11 @@ public class Receiver {
         LOGGER.info("start of batch receive");
         for (int i = 0; i < messages.size(); i++) {
             ConsumerRecord<?, Map<String, String>> message = messages.get(i);
-            LOGGER.info("Received messages on topic [{}]: [{}] '",
+            LOGGER.info("Received messages on topic [{}]: [{}] ",
                     message.topic(), message.value());
-            // TODO: handle the  message
-
+            topicConfigurations.getActions(message.topic()).forEach( action -> {
+                ExecutorService.select(action).execute(action.getTrigger(), new StringPayload(message.value()));
+            });
             latch.countDown();
         }
         LOGGER.info("end of batch receive");
