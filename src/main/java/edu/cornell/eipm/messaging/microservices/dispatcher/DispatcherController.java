@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -68,14 +69,17 @@ public class DispatcherController {
         return dispatchReply;
     }
 
-    @RequestMapping("/publish")
-    public String publish(@RequestParam(required = true, value="topic") String topic,
-                           @RequestParam(required = false, value="payload") String payload
+    @RequestMapping("/publish/{topic}")
+    public String publish(@PathVariable(value="topic") String topic,
+                          @RequestParam Map<String,String> allRequestParams
     ) throws IOException {
         if (topic.isEmpty())
             return "Topic cannot be empty";
-        sender.send(topic,payload);
-        return "Sent payload " + payload + " tp Topic " + topic;
+        logger.info("Sending new message to topic: " + topic);
+        logger.info("Parameters are " + allRequestParams.entrySet());
+
+       // sender.send(topic,allRequestParams);
+        return "Sent payload " + allRequestParams.entrySet() + " to Topic " + topic;
     }
 
     @RequestMapping("/about")
