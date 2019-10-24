@@ -7,14 +7,19 @@ import org.slf4j.LoggerFactory;
 public class LocalCommand implements Executor {
 
     private final Logger logger = LoggerFactory.getLogger(LocalCommand.class);
-    private final Action action;
+    private Action action;
 
     LocalCommand(Action action) {
+        this.setAction(action);
+    }
+
+    @Override
+    public void setAction(Action action) {
         this.action = action;
     }
 
     @Override
-    public void execute(String trigger, StringPayload payload) {
-        logger.info("Local execution for: {}", trigger );
+    public void execute(StringPayload payload) {
+        logger.info("Local execution for: {}", action.getTrigger() );
     }
 }

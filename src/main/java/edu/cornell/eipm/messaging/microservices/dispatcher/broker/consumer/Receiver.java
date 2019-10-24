@@ -51,7 +51,7 @@ public class Receiver {
             LOGGER.info("Received messages on topic [{}]: [{}] ",
                     message.topic(), message.value());
             topicConfigurations.getActions(message.topic()).forEach( action -> {
-                ExecutorService.select(action).execute(action.getTrigger(), new StringPayload(message.value()));
+                ExecutorService.select(action).execute(new StringPayload(message.value()));
             });
             latch.countDown();
         }

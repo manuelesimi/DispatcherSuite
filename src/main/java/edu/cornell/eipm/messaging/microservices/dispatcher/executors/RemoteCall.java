@@ -11,10 +11,20 @@ import org.slf4j.LoggerFactory;
  */
 public class RemoteCall implements Executor {
 
+    private Action action;
     private final Logger logger = LoggerFactory.getLogger(RemoteCall.class);
 
+    public RemoteCall(Action action) {
+        this.setAction(action);
+    }
+
     @Override
-    public void execute(String trigger, StringPayload payload) {
-        logger.info("Remote call to: {}", trigger );
+    public void setAction(Action action) {
+        this.action = action;
+    }
+
+    @Override
+    public void execute(StringPayload payload) {
+        logger.info("Remote call to: {}", action.getTrigger() );
     }
 }
