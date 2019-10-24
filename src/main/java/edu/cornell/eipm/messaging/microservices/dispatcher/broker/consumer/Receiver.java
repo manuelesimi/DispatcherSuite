@@ -44,7 +44,7 @@ public class Receiver {
             topics = "#{'${kafka.consumer.topics}'.split(',')}")
     public void receive(List<ConsumerRecord<?, String>> messages) {
 
-        LOGGER.info("start of batch receive");
+        LOGGER.info("-----start of batch receive-----");
         for (int i = 0; i < messages.size(); i++) {
             ConsumerRecord<?, String> message = messages.get(i);
             LOGGER.info("Received messages on topic [{}]: [{}] ",
@@ -54,6 +54,6 @@ public class Receiver {
             });
             latch.countDown();
         }
-        LOGGER.info("end of batch receive");
+        LOGGER.info("-----end of batch receive-----");
     }
 }

@@ -52,17 +52,22 @@ Now start Zookeeper and then Kafka:
 ~~~
 
 
-## Create a Topic
+## Delete a Topic
 ~~~
 > kafka-topics --delete --zookeeper localhost:2181 --topic oncorseq_sequencing_in_progress
 Topic oncorseq.sequencing.in_progress is marked for deletion.
 ~~~
 
+It needs the following setting set to truein _/usr/local/etc/kafka/server.properties_: 
+~~~
+# Switch to enable topic deletion or not, default value is false
+delete.topic.enable=tru
+~~~
 ## List all Topics
 
 ~~~
 > kafka-topics --list --zookeeper localhost:2181 
-oncorseq_sequencing.pipeline_initialized
+oncorseq_sequencing_pipeline_initialized
 oncorseq_sequencing_analysis_started
 oncorseq_sequencing_in_progress
 ~~~
