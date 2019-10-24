@@ -29,11 +29,11 @@ dispatcher:
             payload: sampleID=${sampleID}
     - name: oncorseq_sequencing_pipeline_initialized
       actions:
-        - trigger: command/URL for seq_failed (LIMS updates)
+        - trigger: do something with "${sampleID}"
           reply:
             topic: annotation_started
             payload: ${sampleID}
-        - trigger: another command/URL for seq_failed
+        - trigger: do something else with "${sampleID}"
           reply:
             topic: annotation_started
             payload: ${sampleID}

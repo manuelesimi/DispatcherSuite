@@ -122,46 +122,60 @@ http://localhost:8080/topics/publish/annotation_done&payload=sample123 (send a m
 
 ~~~
 
-Sample calls and logs:
+### Sample invocations with logs
+**Topic**: oncorseq_sequencing_in_progress
+
 ~~~
 
 http://localhost:8080/dispatcher/publish/oncorseq_sequencing_in_progress?sampleID=sample123ID123565&runID=foo&sayHello=ciao
 
-11:47:32.774 [http-nio-8080-exec-3] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_in_progress
-11:47:32.774 [http-nio-8080-exec-3] INFO  e.c.e.m.m.d.DispatcherController - Parameters are [sampleID=sample123ID123565, runID=foo, sayHello=ciao]
-11:47:32.774 [http-nio-8080-exec-3] INFO  e.c.e.m.m.d.broker.producer.Sender - sending payload='{sampleID=sample123ID123565, runID=foo, sayHello=ciao}'
-11:47:32.785 [kafka-dispatcher-0-C-1] DEBUG o.s.k.l.a.BatchMessagingMessageListenerAdapter - Processing [GenericMessage [payload=org.springframework.kafka.support.KafkaNull@1badf5ba, headers={id=7493de7d-e913-292e-7646-023297dabdb6, timestamp=1571931992219}]]
-11:47:32.786 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - start of batch receive
-11:47:32.786 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - Received messages on topic [oncorseq_sequencing_in_progress]: [{"sampleID":"sample123ID123565","runID":"foo","sayHello":"ciao"}] 
-11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: nextflow main.nf --sampleID=${payload}
-11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao}
-11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.RemoteCall - Remote call to: https://mymicroservice/name/api?param=value&sampleID=${payload}
-11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.RemoteCall - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao}
-11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: whatever you want with ${payload}
-11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao}
-11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - end of batch receive
+--- sender ---
+16:22:26.730 [http-nio-8080-exec-4] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_in_progress
+16:22:26.730 [http-nio-8080-exec-4] INFO  e.c.e.m.m.d.DispatcherController - Parameters are [sampleID=sample123ID123565, runID=foo, sayHello=ciao]
+16:22:26.731 [http-nio-8080-exec-4] INFO  e.c.e.m.m.d.broker.producer.Sender - sending payload='{
+  "sampleID": "sample123ID123565",
+  "runID": "foo",
+  "sayHello": "ciao"
+}' to topic oncorseq_sequencing_in_progress
 
 
-http://localhost:8080/dispatcher/publish/oncorseq_sequencing_in_progress?sampleID=sample123ID123565&runID=foo&sayHello=ciao&oneMoreParam=foo
-
-11:46:40.651 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_in_progress
-11:46:40.651 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.DispatcherController - Parameters are [sampleID=sample123ID123565, runID=foo, sayHello=ciao, oneMoreParam=foo]
-11:46:40.651 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.broker.producer.Sender - sending payload='{sampleID=sample123ID123565, runID=foo, sayHello=ciao, oneMoreParam=foo}'
-11:46:40.715 [kafka-dispatcher-0-C-1] DEBUG o.s.k.l.a.BatchMessagingMessageListenerAdapter - Processing [GenericMessage [payload=org.springframework.kafka.support.KafkaNull@1badf5ba, headers={id=7493de7d-e913-292e-7646-023297dabdb6, timestamp=1571931992219}]]
-11:46:40.716 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - start of batch receive
-11:46:40.716 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - Received messages on topic [oncorseq_sequencing_in_progress]: [{"sampleID":"sample123ID123565","runID":"foo","sayHello":"ciao","oneMoreParam":"foo"}] 
-11:46:40.730 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: nextflow main.nf --sampleID=${payload}
-11:46:40.731 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao, oneMoreParam=foo}
-11:46:40.732 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.RemoteCall - Remote call to: https://mymicroservice/name/api?param=value&sampleID=${payload}
-11:46:40.732 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.RemoteCall - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao, oneMoreParam=foo}
-11:46:40.732 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: whatever you want with ${payload}
-11:46:40.732 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao, oneMoreParam=foo}
-11:46:40.732 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - end of batch receive
-
-
+--- receiver---
+16:22:26.741 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - Received messages on topic [oncorseq_sequencing_in_progress]: [{
+  "sampleID": "sample123ID123565",
+  "runID": "foo",
+  "sayHello": "ciao"
+}] 
+16:22:26.742 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: nextflow main.nf --sampleID sample123ID123565 --run foo --sayHello ciao
+16:22:26.743 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.RemoteCall - Remote call to: https://mymicroservice/name/api?run=foo&sampleID=sample123ID123565&sayHello=ciao
+16:22:26.744 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: whatever you want with "sample123ID123565" "foo" and "ciao"
 
 ~~~
-The (optional) value of _payload_ replaces the _${payload}_ placeholder in the trigger, if used.
+
+**Topic**: oncorseq_sequencing_pipeline_initialized
+
+~~~
+
+http://localhost:8080/dispatcher/publish/oncorseq_sequencing_pipeline_initialized?sampleID=sample123ID123565
+
+--- sender ---
+16:20:28.884 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_pipeline_initialized
+16:20:28.884 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.DispatcherController - Parameters are [sampleID=sample123ID123565, runID=foo, sayHello=ciao]
+16:20:28.909 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.broker.producer.Sender - sending payload='{
+  "sampleID": "sample123ID123565",
+  "runID": "foo",
+  "sayHello": "ciao"
+}' to topic oncorseq_sequencing_pipeline_initialized
+
+--- receiver---
+16:20:28.983 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - Received messages on topic [oncorseq_sequencing_pipeline_initialized]: [{
+  "sampleID": "sample123ID123565",
+  "runID": "foo",
+  "sayHello": "ciao"
+}] 
+16:20:29.006 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: do something with "sample123ID123565"
+16:20:29.006 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: do something else with "sample123ID123565"
+~~~
+
 ## Built With
 * [Spring Boot](https://spring.io/projects/spring-boot) - A framework that makes it easy to create stand-alone, production-grade Spring-based Applications
 * [Spring Kafka](https://spring.io/projects/spring-kafka) - Spring concepts for the development of Kafka-based messaging solutions
