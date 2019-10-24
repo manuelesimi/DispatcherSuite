@@ -43,11 +43,11 @@ public class Receiver {
     @KafkaListener(id = "#{'${kafka.consumer.group-id}'}",
             clientIdPrefix = "receiver",
             topics = "#{'${kafka.consumer.topics}'.split(',')}")
-    public void receive(List<ConsumerRecord<?, Map<String, String>>> messages) {
+    public void receive(List<ConsumerRecord<?, String>> messages) {
 
         LOGGER.info("start of batch receive");
         for (int i = 0; i < messages.size(); i++) {
-            ConsumerRecord<?, Map<String, String>> message = messages.get(i);
+            ConsumerRecord<?, String> message = messages.get(i);
             LOGGER.info("Received messages on topic [{}]: [{}] ",
                     message.topic(), message.value());
             topicConfigurations.getActions(message.topic()).forEach( action -> {
