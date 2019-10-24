@@ -11,9 +11,8 @@ import java.util.Map;
  *
  * @author Manuele Simi
  */
-public class RemoteCall implements Executor {
+public class RemoteCall extends BaseExecutor {
 
-    private Action action;
     private final Logger logger = LoggerFactory.getLogger(RemoteCall.class);
 
     public RemoteCall(Action action) {
@@ -21,14 +20,8 @@ public class RemoteCall implements Executor {
     }
 
     @Override
-    public void setAction(Action action) {
-        this.action = action;
-    }
-
-    @Override
     public void execute(Map<String, String> values) {
-        logger.info("Remote call to: {}", action.getTrigger() );
-        logger.info("with params: " + values.toString());
+        logger.info("Remote call to: {}", this.replace(values)  );
     }
 
 }
