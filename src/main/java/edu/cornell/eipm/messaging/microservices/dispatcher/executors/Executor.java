@@ -2,6 +2,8 @@ package edu.cornell.eipm.messaging.microservices.dispatcher.executors;
 
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 
+import java.util.Map;
+
 /**
  * Inteface for all Executors.
  * @author Manuele Simi
@@ -9,5 +11,5 @@ import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 public interface Executor {
 
     void setAction(Action action);
-    void execute( StringPayload payload);
+    void execute( Map<String,String> values);
 }

@@ -1,9 +1,12 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.broker.producer;
 
+import edu.cornell.eipm.messaging.microservices.dispatcher.executors.JSONPayloadSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
+
+import java.util.Map;
 
 /**
  * Send string payloads to selected topics.
@@ -20,10 +23,10 @@ public class Sender {
 
   /**
    * Sends the payload.
-   * @param payload
+   * @param values
    */
-  public void send(String topic, String payload) {
-    LOGGER.info("sending payload='{}'", payload);
-    kafkaTemplate.send(topic, payload);
+  public void send(String topic, Map<String, String> values) {
+    LOGGER.info("sending payload='{}'", values);
+    kafkaTemplate.send(topic, new JSONPayloadSerializer(values).toJSON());
   }
 }

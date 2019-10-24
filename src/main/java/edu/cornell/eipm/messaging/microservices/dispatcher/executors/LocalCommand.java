@@ -4,6 +4,8 @@ import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.Map;
+
 public class LocalCommand implements Executor {
 
     private final Logger logger = LoggerFactory.getLogger(LocalCommand.class);
@@ -19,7 +21,9 @@ public class LocalCommand implements Executor {
     }
 
     @Override
-    public void execute(StringPayload payload) {
+    public void execute(Map<String, String> values) {
         logger.info("Local execution for: {}", action.getTrigger() );
+        logger.info("with params: " + values.toString());
     }
+
 }

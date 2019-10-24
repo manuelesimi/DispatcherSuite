@@ -78,7 +78,7 @@ public class DispatcherController {
         logger.info("Sending new message to topic: " + topic);
         logger.info("Parameters are " + allRequestParams.entrySet());
 
-       // sender.send(topic,allRequestParams);
+        sender.send(topic,allRequestParams);
         return "Sent payload " + allRequestParams.entrySet() + " to Topic " + topic;
     }
 

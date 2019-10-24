@@ -122,18 +122,43 @@ http://localhost:8080/topics/publish/annotation_done&payload=sample123 (send a m
 
 ~~~
 
-Sample log:
+Sample calls and logs:
 ~~~
+
 http://localhost:8080/dispatcher/publish/oncorseq_sequencing_in_progress?sampleID=sample123ID123565&runID=foo&sayHello=ciao
 
-11:23:30.499 [http-nio-8080-exec-3] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_in_progress
-11:23:30.499 [http-nio-8080-exec-3] INFO  e.c.e.m.m.d.DispatcherController - Parameters are [sampleID=sample123ID123565, runID=foo, sayHello=ciao]
+11:47:32.774 [http-nio-8080-exec-3] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_in_progress
+11:47:32.774 [http-nio-8080-exec-3] INFO  e.c.e.m.m.d.DispatcherController - Parameters are [sampleID=sample123ID123565, runID=foo, sayHello=ciao]
+11:47:32.774 [http-nio-8080-exec-3] INFO  e.c.e.m.m.d.broker.producer.Sender - sending payload='{sampleID=sample123ID123565, runID=foo, sayHello=ciao}'
+11:47:32.785 [kafka-dispatcher-0-C-1] DEBUG o.s.k.l.a.BatchMessagingMessageListenerAdapter - Processing [GenericMessage [payload=org.springframework.kafka.support.KafkaNull@1badf5ba, headers={id=7493de7d-e913-292e-7646-023297dabdb6, timestamp=1571931992219}]]
+11:47:32.786 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - start of batch receive
+11:47:32.786 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - Received messages on topic [oncorseq_sequencing_in_progress]: [{"sampleID":"sample123ID123565","runID":"foo","sayHello":"ciao"}] 
+11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: nextflow main.nf --sampleID=${payload}
+11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao}
+11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.RemoteCall - Remote call to: https://mymicroservice/name/api?param=value&sampleID=${payload}
+11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.RemoteCall - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao}
+11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: whatever you want with ${payload}
+11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao}
+11:47:32.787 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - end of batch receive
 
 
 http://localhost:8080/dispatcher/publish/oncorseq_sequencing_in_progress?sampleID=sample123ID123565&runID=foo&sayHello=ciao&oneMoreParam=foo
 
-11:23:51.897 [http-nio-8080-exec-5] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_in_progress
-11:23:51.897 [http-nio-8080-exec-5] INFO  e.c.e.m.m.d.DispatcherController - Parameters are [sampleID=sample123ID123565, runID=foo, sayHello=ciao, oneMoreParam=foo]
+11:46:40.651 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_in_progress
+11:46:40.651 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.DispatcherController - Parameters are [sampleID=sample123ID123565, runID=foo, sayHello=ciao, oneMoreParam=foo]
+11:46:40.651 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.broker.producer.Sender - sending payload='{sampleID=sample123ID123565, runID=foo, sayHello=ciao, oneMoreParam=foo}'
+11:46:40.715 [kafka-dispatcher-0-C-1] DEBUG o.s.k.l.a.BatchMessagingMessageListenerAdapter - Processing [GenericMessage [payload=org.springframework.kafka.support.KafkaNull@1badf5ba, headers={id=7493de7d-e913-292e-7646-023297dabdb6, timestamp=1571931992219}]]
+11:46:40.716 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - start of batch receive
+11:46:40.716 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - Received messages on topic [oncorseq_sequencing_in_progress]: [{"sampleID":"sample123ID123565","runID":"foo","sayHello":"ciao","oneMoreParam":"foo"}] 
+11:46:40.730 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: nextflow main.nf --sampleID=${payload}
+11:46:40.731 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao, oneMoreParam=foo}
+11:46:40.732 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.RemoteCall - Remote call to: https://mymicroservice/name/api?param=value&sampleID=${payload}
+11:46:40.732 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.RemoteCall - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao, oneMoreParam=foo}
+11:46:40.732 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: whatever you want with ${payload}
+11:46:40.732 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - with params: {sampleID=sample123ID123565, runID=foo, sayHello=ciao, oneMoreParam=foo}
+11:46:40.732 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - end of batch receive
+
+
 
 ~~~
 The (optional) value of _payload_ replaces the _${payload}_ placeholder in the trigger, if used.

@@ -1,9 +1,9 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.broker.consumer;
 
-import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
 import edu.cornell.eipm.messaging.microservices.dispatcher.executors.ExecutorService;
-import edu.cornell.eipm.messaging.microservices.dispatcher.executors.StringPayload;
+import edu.cornell.eipm.messaging.microservices.dispatcher.executors.JSONPayloadDeserializer;
+import edu.cornell.eipm.messaging.microservices.dispatcher.executors.JSONPayloadSerializer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -51,7 +50,7 @@ public class Receiver {
             LOGGER.info("Received messages on topic [{}]: [{}] ",
                     message.topic(), message.value());
             topicConfigurations.getActions(message.topic()).forEach( action -> {
-                ExecutorService.select(action).execute(new StringPayload(message.value()));
+                ExecutorService.select(action).execute(new JSONPayloadDeserializer(message.value()).fromJSON());
             });
             latch.countDown();
         }
