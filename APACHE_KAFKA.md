@@ -58,7 +58,7 @@ Now start Zookeeper and then Kafka:
 Topic oncorseq.sequencing.in_progress is marked for deletion.
 ~~~
 
-It needs the following setting set to truein _/usr/local/etc/kafka/server.properties_: 
+It needs the following setting set to true in _/usr/local/etc/kafka/server.properties_: 
 ~~~
 # Switch to enable topic deletion or not, default value is false
 delete.topic.enable=tru

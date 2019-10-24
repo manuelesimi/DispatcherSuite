@@ -26,7 +26,8 @@ public class Sender {
    * @param values
    */
   public void send(String topic, Map<String, String> values) {
-    LOGGER.info("sending payload='{}' to topic {}", values, topic);
-    kafkaTemplate.send(topic, new JSONPayloadSerializer(values).toJSON());
+    String json = new JSONPayloadSerializer(values).toJSON();
+    LOGGER.info("sending payload='{}' to topic {}", json, topic);
+    kafkaTemplate.send(topic, json);
   }
 }

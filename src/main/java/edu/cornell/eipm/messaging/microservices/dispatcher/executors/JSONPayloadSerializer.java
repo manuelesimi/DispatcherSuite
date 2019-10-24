@@ -1,6 +1,7 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.executors;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.util.Map;
 
@@ -23,6 +24,7 @@ public class JSONPayloadSerializer {
     }
 
     public String toJSON() {
-        return new Gson().toJson(data);
+        Gson prettyGson = new  GsonBuilder().setPrettyPrinting().create();
+        return  prettyGson.toJson(data);
     }
 }

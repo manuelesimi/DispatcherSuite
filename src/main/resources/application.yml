@@ -15,31 +15,31 @@ dispatcher:
   topics:
     - name: oncorseq_sequencing_in_progress
       actions:
-        - trigger: nextflow main.nf --sampleID=${payload}
+        - trigger: nextflow main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
           reply:
             topic: oncorseq.sequencing.pipeline_initialized
-            payload: ${payload}
-        - trigger: https://mymicroservice/name/api?param=value&sampleID=${payload}
+            payload: sampleID=${sampleID}
+        - trigger: https://mymicroservice/name/api?run=${runID}&sampleID=${sampleID}&sayHello=${sayHello}
           reply:
              topic: oncorseq.sequencing.pipeline_initialized
-             payload: ${payload}
-        - trigger: whatever you want with ${payload}
+             payload: sampleID=${sampleID}
+        - trigger: whatever you want with ${sampleID} ${runID} ${sayHello}
           reply:
             topic: oncorseq.sequencing.pipeline_initialized
-            payload: ${payload}
+            payload: sampleID=${sampleID}
     - name: oncorseq_sequencing_pipeline_initialized
       actions:
         - trigger: command/URL for seq_failed (LIMS updates)
           reply:
             topic: annotation_started
-            payload: ${payload}
+            payload: ${sampleID}
         - trigger: another command/URL for seq_failed
           reply:
             topic: annotation_started
-            payload: ${payload}
+            payload: ${sampleID}
     - name: oncorseq_sequencing_analysis_started
       actions:
         - trigger: command/URL for analysis_started
           reply:
             topic: analysis_in_progress
-            payload: ${payload}
+            payload: ${sampleID}
