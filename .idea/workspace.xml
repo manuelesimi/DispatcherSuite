@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -128,8 +124,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="148">
-                <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+              <first_editor relative-caret-position="343">
+                <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
               </first_editor>
               <second_editor />
             </state>
@@ -329,7 +325,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571948614762" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1571948828554" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -414,13 +410,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568814651162</updated>
-    </task>
-    <task id="LOCAL-00004" summary="New wrapper launcher with Maven.">
-      <created>1569457869526</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1569457869526</updated>
     </task>
     <task id="LOCAL-00005" summary="Package reorganization.">
       <created>1569458804171</created>
@@ -758,7 +747,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571948235866</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Update doc.">
+      <created>1571948826884</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1571948826884</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -795,7 +791,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.27544427" />
       <window_info id="Structure" order="1" sideWeight="0.5011287" side_tool="true" visible="true" weight="0.22859451" />
@@ -811,7 +806,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.42097265" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.1656535" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3281471" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32786885" />
@@ -909,7 +904,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove critical vulnerability in jackson.core." />
     <MESSAGE value="Rename consumer, remove the publisher code." />
     <MESSAGE value="Add link to Spring-kafka." />
     <MESSAGE value="Read consumer group from the configuration." />
@@ -934,7 +928,8 @@
     <MESSAGE value="Tweak documentation and logs." />
     <MESSAGE value="Pretty printing of json and set placeholders." />
     <MESSAGE value="Replace placeholders in the trigger with their actual value." />
-    <option name="LAST_COMMIT_MESSAGE" value="Replace placeholders in the trigger with their actual value." />
+    <MESSAGE value="Update doc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update doc." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1283,8 +1278,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="148">
-            <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+          <first_editor relative-caret-position="343">
+            <caret line="177" lean-forward="true" selection-start-line="177" selection-end-line="177" />
           </first_editor>
           <second_editor />
         </state>

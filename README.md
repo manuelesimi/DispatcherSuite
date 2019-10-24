@@ -29,45 +29,38 @@ Where:
 For each message under the topic of interest, the Dispatcher launches the associated trigger(s). The following sample instance shows the expected format for this part of the configuration:
 
 ```yaml
-topics:
-  - topic: oncorseq.sequencing.in_progress
-    actions:
-      - trigger: nextflow main.nf --sampleID=${payload}
-        reply:
-          topic: oncorseq.sequencing.pipeline_initialized
-          payload: ${payload}
-      - trigger: https://mymicroservice/name/api?param=value&sampleID=${payload}
-        reply:
-            topic: oncorseq.sequencing.antoher1
-            payload: ${payload}
-      - trigger: whatever you want with ${payload}
-        reply:
-            topic: oncorseq.sequencing.another2
-            payload: ${payload}
-
-  - topic: seq_failed
-    actions:
-      - trigger: command/URL for seq_failed
-        reply:
-          topic: annotation_started
-          payload: ${payload}
-      - trigger: another command/URL for seq_failed
-        reply:
-          topic: annotation_started
-          payload: ${payload}
-
-  - topic: analysis_started
-    actions:
-      - trigger: command/URL for analysis_started
-        reply:
-          topic: analysis_in_progress
-          payload: ${payload}
-
-
-kafka:
-  broker: kafka.med.cornell.edu:9092
-  groupId: consumerGroup1
-
+dispatcher:
+  topics:
+    - name: oncorseq_sequencing_in_progress
+      actions:
+        - trigger: nextflow main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
+          reply:
+            topic: oncorseq.sequencing.pipeline_initialized
+            payload: sampleID=${sampleID}
+        - trigger: https://mymicroservice/name/api?run=${runID}&sampleID=${sampleID}&sayHello=${sayHello}
+          reply:
+             topic: oncorseq.sequencing.pipeline_initialized
+             payload: sampleID=${sampleID}
+        - trigger: whatever you want with "${sampleID}" "${runID}" and "${sayHello}"
+          reply:
+            topic: oncorseq.sequencing.pipeline_initialized
+            payload: sampleID=${sampleID}
+    - name: oncorseq_sequencing_pipeline_initialized
+      actions:
+        - trigger: do something with "${sampleID}"
+          reply:
+            topic: annotation_started
+            payload: ${sampleID}
+        - trigger: do something else with "${sampleID}"
+          reply:
+            topic: annotation_started
+            payload: ${sampleID}
+    - name: oncorseq_sequencing_analysis_started
+      actions:
+        - trigger: command/URL for analysis_started
+          reply:
+            topic: analysis_in_progress
+            payload: ${sampleID} 
 ```
 ### Custom configuration
 
