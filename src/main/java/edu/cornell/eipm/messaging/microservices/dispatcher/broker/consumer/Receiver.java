@@ -52,8 +52,8 @@ public class Receiver {
             topicConfigurations.getActions(message.topic()).forEach( action -> {
                 ExecutorService.select(action).execute(new JSONPayloadDeserializer(message.value()).fromJSON());
             });
-            latch.countDown();
         }
         LOGGER.info("-----end of batch receive-----");
+        latch.countDown();
     }
 }

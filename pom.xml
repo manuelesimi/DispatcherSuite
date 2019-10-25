@@ -10,6 +10,7 @@
     </parent>
     <groupId>edu.cornell.eipm.messaging.microservices</groupId>
     <artifactId>dispatcher</artifactId>
+    <name>Kafka Dispatcher</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <description>Dispatcher project with Spring Boot</description>

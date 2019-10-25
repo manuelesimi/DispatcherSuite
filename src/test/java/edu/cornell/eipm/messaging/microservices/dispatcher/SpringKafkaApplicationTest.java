@@ -4,6 +4,7 @@ package edu.cornell.eipm.messaging.microservices.dispatcher;
 import edu.cornell.eipm.messaging.microservices.dispatcher.broker.consumer.Receiver;
 import edu.cornell.eipm.messaging.microservices.dispatcher.broker.producer.Sender;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import org.springframework.kafka.test.rule.KafkaEmbedded;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -21,11 +24,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 @DirtiesContext
 @EmbeddedKafka(partitions = 1,
-    topics = {SpringKafkaApplicationTest.HELLOWORLD_TOPIC})
+        topics = {SpringKafkaApplicationTest.HELLOWORLD_TOPIC})
 public class SpringKafkaApplicationTest {
 
-  static final String HELLOWORLD_TOPIC = "oncorseq_sequencing_in_progress";
-
+    static final String HELLOWORLD_TOPIC = "oncorseq_sequencing_in_progress";
+    static  Map<String, String> params = new HashMap<>();
+;
     @Autowired
     private Sender sender;
 
@@ -35,24 +39,28 @@ public class SpringKafkaApplicationTest {
     @Autowired
     private TopicConfigurations configurations;
 
-
+    @BeforeClass
+    public static void setupParameters() {
+        params.put("sampleID","sample123");
+        params.put("runID","run123");
+        params.put("sayHello","Hello from Spring Kafka Send/Receive!");
+    }
 
     @Test
-  public void testSendReceive() throws Exception {
-    //sender.send(HELLOWORLD_TOPIC,"Hello from Spring Kafka Send/Receive!");
-    //receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
-    //assertThat(receiver.getLatch().getCount()).isEqualTo(0);
-  }
+    public void testSendReceive() throws Exception {
+        sender.send(HELLOWORLD_TOPIC, params);
+        receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
+        assertThat(receiver.getLatch().getCount()).isEqualTo(0);
+    }
 
+    @Test
+    public void testSend() {
+        sender.send(HELLOWORLD_TOPIC,params);
+    }
 
-  @Test
-  public void testSend() throws Exception {
-    //sender.send(HELLOWORLD_TOPIC,"Hello from Spring Kafka Send!");
-  }
-
-  @Test
-  public void testReceive() throws Exception {
-    receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
-    assertThat(receiver.getLatch().getCount()).isEqualTo(0);
-  }
+    @Test
+    public void testReceive() throws Exception {
+        receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
+        assertThat(receiver.getLatch().getCount()).isEqualTo(0);
+    }
 }

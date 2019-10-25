@@ -1,4 +1,4 @@
-Dispatcher Microservice
+Kafka Dispatcher Service
 ----
 A microservice project based on Spring Boot.
 

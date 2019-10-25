@@ -3,4 +3,21 @@ kafka:
   consumer:
     auto-offset-reset: earliest
     group-id: kafka-dispatcher
-    topics: oncorseq_sequencing_pipeline_initialized,oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
+    topics: oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
+
+dispatcher:
+  topics:
+    - name: oncorseq_sequencing_in_progress
+      actions:
+        - trigger: nextflow main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
+          reply:
+            topic: oncorseq.sequencing.pipeline_initialized
+            payload: sampleID=${sampleID}
+        - trigger: https://mymicroservice/name/api?run=${runID}&sampleID=${sampleID}&sayHello=${sayHello}
+          reply:
+            topic: oncorseq.sequencing.pipeline_initialized
+            payload: sampleID=${sampleID}
+        - trigger: whatever you want with "${sampleID}" "${runID}" and "${sayHello}"
+          reply:
+            topic: oncorseq.sequencing.pipeline_initialized
+            payload: sampleID=${sampleID}
