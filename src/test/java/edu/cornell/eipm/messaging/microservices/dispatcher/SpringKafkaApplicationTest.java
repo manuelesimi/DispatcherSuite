@@ -3,14 +3,12 @@ package edu.cornell.eipm.messaging.microservices.dispatcher;
 
 import edu.cornell.eipm.messaging.microservices.dispatcher.broker.consumer.Receiver;
 import edu.cornell.eipm.messaging.microservices.dispatcher.broker.producer.Sender;
-import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.kafka.test.context.EmbeddedKafka;
-import org.springframework.kafka.test.rule.KafkaEmbedded;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -24,20 +22,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 @DirtiesContext
 @EmbeddedKafka(partitions = 1,
-        topics = {SpringKafkaApplicationTest.HELLOWORLD_TOPIC})
+        topics = {SpringKafkaApplicationTest.TEST_TOPIC})
 public class SpringKafkaApplicationTest {
 
-    static final String HELLOWORLD_TOPIC = "oncorseq_sequencing_in_progress";
+    static final String TEST_TOPIC = "oncorseq_sequencing_in_progress";
     static  Map<String, String> params = new HashMap<>();
-;
+
     @Autowired
     private Sender sender;
 
     @Autowired
     private Receiver receiver;
-
-    @Autowired
-    private TopicConfigurations configurations;
 
     @BeforeClass
     public static void setupParameters() {
@@ -48,14 +43,14 @@ public class SpringKafkaApplicationTest {
 
     @Test
     public void testSendReceive() throws Exception {
-        sender.send(HELLOWORLD_TOPIC, params);
+        sender.send(TEST_TOPIC, params);
         receiver.getLatch().await(10000, TimeUnit.MILLISECONDS);
         assertThat(receiver.getLatch().getCount()).isEqualTo(0);
     }
 
     @Test
     public void testSend() {
-        sender.send(HELLOWORLD_TOPIC,params);
+        sender.send(TEST_TOPIC,params);
     }
 
     @Test
