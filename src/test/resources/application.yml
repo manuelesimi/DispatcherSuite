@@ -10,6 +10,7 @@ dispatcher:
     - name: oncorseq_sequencing_in_progress
       actions:
         - trigger: nextflow main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
+          workingDir: /home/manuele
           reply:
             topic: oncorseq.sequencing.pipeline_initialized
             payload: sampleID=${sampleID}

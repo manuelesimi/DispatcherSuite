@@ -16,14 +16,7 @@ dispatcher:
     - name: oncorseq_sequencing_in_progress
       actions:
         - trigger: nextflow main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
-          reply:
-            topic: oncorseq.sequencing.pipeline_initialized
-            payload: sampleID=${sampleID}
-        - trigger: https://mymicroservice/name/api?run=${runID}&sampleID=${sampleID}&sayHello=${sayHello}
-          reply:
-             topic: oncorseq.sequencing.pipeline_initialized
-             payload: sampleID=${sampleID}
-        - trigger: whatever you want with "${sampleID}" "${runID}" and "${sayHello}"
+          workingDir: /Users/mas2182/
           reply:
             topic: oncorseq.sequencing.pipeline_initialized
             payload: sampleID=${sampleID}

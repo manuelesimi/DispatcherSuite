@@ -2,6 +2,7 @@ package edu.cornell.eipm.messaging.microservices.dispatcher.executors;
 
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -11,5 +12,5 @@ import java.util.Map;
 public interface Executor {
 
     void setAction(Action action);
-    void execute( Map<String,String> values);
+    void execute( Map<String,String> values) throws IOException;
 }

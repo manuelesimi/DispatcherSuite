@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.annotation.KafkaListener;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
@@ -50,7 +51,11 @@ public class Receiver {
             LOGGER.info("Received messages on topic [{}]: [{}] ",
                     message.topic(), message.value());
             topicConfigurations.getActions(message.topic()).forEach( action -> {
-                ExecutorService.select(action).execute(new JSONPayloadDeserializer(message.value()).fromJSON());
+                try {
+                    ExecutorService.select(action).execute(new JSONPayloadDeserializer(message.value()).fromJSON());
+                } catch (IOException e) {
+                    LOGGER.error("Failed to dispatch action '{}'",action.getTrigger(),e);
+                }
             });
         }
         LOGGER.info("-----end of batch receive-----");

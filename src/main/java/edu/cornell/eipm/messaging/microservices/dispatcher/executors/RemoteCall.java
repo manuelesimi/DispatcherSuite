@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Map;
 
 /**
- * Calls a remote service
+ * A call to a remote service.
  *
  * @author Manuele Simi
  */
