@@ -62,30 +62,10 @@ dispatcher:
             topic: analysis_in_progress
             payload: ${sampleID} 
 ```
-### Custom configuration
-
-#### Configuration File
-Boot applies its typical convention over configuration approach to property files. This means that we can simply put an “application.yml” file in our “src/main/resources” directory, and it will be auto-detected. We can then inject any loaded properties from it as normal.
-
-So, by using this default file, we don’t have to explicitly register a PropertySource, or even provide a path to a property file.
-
-We can also configure a different file at runtime if we need to, using an environment property:
-	
-    java -jar app.jar --spring.config.location=classpath:/another-location/application.yml
-
-#### Properties from Command Line Arguments
-
-As opposed to using files, properties can be passed directly on the command line:
-	
-    java -jar app.jar --property="value"
-
-You can also do this via system properties, which are provided before the -jar command rather than after it:
-	
-    java -Dproperty.name="value" -jar app.jar
-    
+   
 ## Building and Packaging
 ~~~
-./mvnw clean package
+./packageDispatcher.sh
 ~~~
 
 ## Execution
@@ -97,11 +77,25 @@ You can also do this via system properties, which are provided before the -jar c
 
 
 ### Or run spring boot directly
-    mvn spring-boot:run
-
+~~~
+./buildRunDispatcher.sh
+~~~
+    
 ### Or package and run it 
-     mvn package
-     java -jar target/dispatcher-1.0-SNAPSHOT.jar
+~~~
+./packageDispatcher.sh
+./runApp.sh
+~~~
+
+### Custom configuration
+
+Spring Boot applies its typical convention over configuration approach to property files. This means that we can simply put an “application.yml” file in our “src/main/resources” directory, and it will be auto-detected. We can then inject any loaded properties from it as normal.
+
+So, by using this default file, we don’t have to explicitly register a PropertySource, or even provide a path to a property file.
+
+We can also configure a different file at runtime if we need to, using an environment property:
+	
+    ./runApp.sh --spring.config.location=classpath:/another-location/application.yml
 
 ### Interface
 
