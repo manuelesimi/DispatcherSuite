@@ -22,14 +22,10 @@ dispatcher:
             payload: sampleID=${sampleID}
     - name: oncorseq_sequencing_pipeline_initialized
       actions:
-        - trigger: do something with "${sampleID}"
+        - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
           reply:
             topic: annotation_started
-            payload: ${sampleID}
-        - trigger: do something else with "${sampleID}"
-          reply:
-            topic: annotation_started
-            payload: ${sampleID}
+            payload: search started with ${query}
     - name: oncorseq_sequencing_analysis_started
       actions:
         - trigger: command/URL for analysis_started

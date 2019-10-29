@@ -24,17 +24,13 @@ public class LocalCommand extends BaseExecutor {
     }
 
     @Override
-    public void execute(Map<String, String> values) throws IOException {
-        logger.info("Local execution for: {}", this.replace(values) );
-        this.runCommandLine();
-    }
-
-    private boolean runCommandLine() throws IOException {
-        ProcessBuilder processBuilder = new ProcessBuilder(action.getTrigger());
+    protected boolean run(String command) throws IOException {
+        logger.info("Local execution for: {}", command );
+        ProcessBuilder processBuilder = new ProcessBuilder(command);
         if (Objects.nonNull(action.getWorkingDir()))
             processBuilder.directory(new File(action.getWorkingDir()));
         Process process = processBuilder.start();
-        System.out.println("Command Dispatched");
+        logger.info("Local Command Dispatched");
         return process.isAlive();
     }
 
