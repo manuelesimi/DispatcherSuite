@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="First docker version.">
-      <change afterPath="$PROJECT_DIR$/runContainer.sh" afterDir="false" />
+    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Work on external file configuration.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/runApp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/runApp.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,20 +63,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="runApp.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runApp.sh">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="59" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
+            <state relative-caret-position="511">
+              <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="runApp.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/runApp.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="105" selection-start-line="4" selection-start-column="105" selection-end-line="4" selection-end-column="105" />
+            <state relative-caret-position="45">
+              <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -87,7 +94,7 @@
         <entry file="file://$PROJECT_DIR$/runContainer.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="1" column="67" selection-start-line="1" selection-start-column="67" selection-end-line="1" selection-end-column="67" />
+              <caret line="1" column="94" selection-start-line="1" selection-start-column="94" selection-end-line="1" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -104,8 +111,8 @@
       <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+            <state relative-caret-position="285">
+              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -176,17 +183,17 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/BaseExecutor.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/producer/SenderConfig.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/packageDispatcher.sh" />
         <option value="$PROJECT_DIR$/runPackage.sh" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/DOCKERFILE" />
         <option value="$PROJECT_DIR$/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/docker/buildDockerImage.sh" />
-        <option value="$PROJECT_DIR$/runApp.sh" />
-        <option value="$PROJECT_DIR$/application.yml" />
         <option value="$PROJECT_DIR$/runContainer.sh" />
+        <option value="$PROJECT_DIR$/application.yml" />
         <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/runApp.sh" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -340,13 +347,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568814651162</updated>
-    </task>
-    <task id="LOCAL-00012" summary="New configuration/topics method to list configured topics of interest.">
-      <created>1569597375794</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1569597375794</updated>
     </task>
     <task id="LOCAL-00013" summary="List messages per topic.">
       <created>1569603743671</created>
@@ -684,7 +684,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572381919505</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Work on external file configuration.">
+      <created>1572449424923</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1572449424923</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -721,6 +728,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2560" y="23" width="2560" height="1417" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -842,7 +850,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Restore tomcat start up." />
     <MESSAGE value="Configure the receiver as a batch listener." />
     <MESSAGE value="Autowire configuration. Topic management (in progress)." />
     <MESSAGE value="Add custom conf section to README." />
@@ -867,7 +874,8 @@
     <MESSAGE value="Migrate to spring boot 2.2.0." />
     <MESSAGE value="Add packaging tools. Execute as standalone App." />
     <MESSAGE value="First docker version." />
-    <option name="LAST_COMMIT_MESSAGE" value="First docker version." />
+    <MESSAGE value="Work on external file configuration." />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on external file configuration." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1166,27 +1174,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/packageDispatcher.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/buildRunDispatcher.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/producer/Sender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1210,13 +1197,6 @@
     <entry file="file://$PROJECT_DIR$/docker.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/buildDockerImage.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1226,29 +1206,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="30" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
+        <state relative-caret-position="285">
+          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/runApp.sh">
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="59" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
+        <state relative-caret-position="45">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/runContainer.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" column="67" selection-start-line="1" selection-start-column="67" selection-end-line="1" selection-end-column="67" />
+          <caret line="1" column="94" selection-start-line="1" selection-start-column="94" selection-end-line="1" selection-end-column="94" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/runApp.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="105" selection-start-line="4" selection-start-column="105" selection-end-line="4" selection-end-column="105" />
+        <state relative-caret-position="15">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildRunDispatcher.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/packageDispatcher.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/buildDockerImage.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
         </state>
       </provider>
     </entry>
