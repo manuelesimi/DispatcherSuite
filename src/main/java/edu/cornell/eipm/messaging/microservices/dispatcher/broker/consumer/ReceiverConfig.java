@@ -1,5 +1,6 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.broker.consumer;
 
+import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
@@ -61,6 +62,8 @@ public class ReceiverConfig {
     factory.setConsumerFactory(consumerFactory());
       // enable batch listening
       factory.setBatchListener(true);
+      // do NOT prevent the container from starting if any of the configured topics are not present on the broker
+      factory.setMissingTopicsFatal(false);
       return factory;
   }
 
