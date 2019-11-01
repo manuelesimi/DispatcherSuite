@@ -26,10 +26,18 @@ public class LocalCommand extends BaseExecutor {
     @Override
     protected boolean run(String command) throws IOException {
         logger.info("Local execution for: {}", command );
-        ProcessBuilder processBuilder = new ProcessBuilder(command);
-        if (Objects.nonNull(action.getWorkingDir()))
-            processBuilder.directory(new File(action.getWorkingDir()));
-        Process process = processBuilder.start();
+        String ssh_command;
+        if (Objects.nonNull(System.getenv("HOST_HOSTNAME"))) {
+            // we are running inside a docker container
+            ssh_command = String.format("ssh -t %s@%s '%s'",
+                    System.getenv("HOST_USER"),
+                    System.getenv("HOST_HOSTNAME"),
+                    command);
+        } else {
+            // we go with a local execution
+            ssh_command = command;
+        }
+        Process process = Runtime.getRuntime().exec(ssh_command);
         logger.info("Local Command Dispatched");
         return process.isAlive();
     }
