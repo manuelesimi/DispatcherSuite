@@ -4,10 +4,7 @@ import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -33,6 +30,7 @@ public class LocalCommand extends BaseExecutor {
                     System.getenv("HOST_USER"),
                     System.getenv("HOST_HOSTNAME"),
                     command);
+            logger.info("Command wrapped as: {}", ssh_command);
         } else {
             // we go with a local execution
             ssh_command = command;

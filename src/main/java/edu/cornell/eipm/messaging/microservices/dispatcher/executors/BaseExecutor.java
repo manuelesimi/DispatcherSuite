@@ -5,6 +5,10 @@ import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * Base logic commond to all {@link Executor}s
+ * @author Manuele Simi
+ */
 public abstract class BaseExecutor implements Executor {
 
     protected Action action;
