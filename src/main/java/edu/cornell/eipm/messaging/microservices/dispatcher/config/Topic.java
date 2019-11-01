@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * A topic with registered actions to trigger
  * @author Manuele Simi
  */
 public class Topic {

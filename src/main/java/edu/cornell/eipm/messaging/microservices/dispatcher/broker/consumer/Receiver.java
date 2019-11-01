@@ -3,7 +3,6 @@ package edu.cornell.eipm.messaging.microservices.dispatcher.broker.consumer;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
 import edu.cornell.eipm.messaging.microservices.dispatcher.executors.ExecutorService;
 import edu.cornell.eipm.messaging.microservices.dispatcher.executors.JSONPayloadDeserializer;
-import edu.cornell.eipm.messaging.microservices.dispatcher.executors.JSONPayloadSerializer;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

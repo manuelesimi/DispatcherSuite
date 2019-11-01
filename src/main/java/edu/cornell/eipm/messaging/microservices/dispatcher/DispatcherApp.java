@@ -1,7 +1,5 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher;
 
-import edu.cornell.eipm.messaging.microservices.dispatcher.broker.consumer.Receiver;
-import edu.cornell.eipm.messaging.microservices.dispatcher.broker.producer.Sender;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +21,6 @@ public class DispatcherApp implements CommandLineRunner {
 
     private final Logger logger = LoggerFactory.getLogger(DispatcherApp.class);
 
-
     @Autowired
     private TopicConfigurations topicConfigurations;
 
@@ -38,7 +35,6 @@ public class DispatcherApp implements CommandLineRunner {
 
     @PostConstruct
     private void init() throws IOException {
-        //ConfigParser.parse();
     }
 
 }
