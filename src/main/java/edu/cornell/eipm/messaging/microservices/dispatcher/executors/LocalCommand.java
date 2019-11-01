@@ -22,13 +22,16 @@ public class LocalCommand extends BaseExecutor {
 
     @Override
     protected boolean run(String command) throws IOException {
-        logger.info("Local execution for: {}", command );
+        logger.info("Local execution for: {}", command);
         String ssh_command;
-        if (Objects.nonNull(System.getenv("HOST_HOSTNAME"))) {
+        String hostname = System.getenv("HOST_HOSTNAME");
+        String hostuser = System.getenv("HOST_USER");
+        if (hostname != null && !hostname.isEmpty() &&
+                hostuser != null && !hostuser.isEmpty()) {
             // we are running inside a docker container
             ssh_command = String.format("ssh -t %s@%s '%s'",
-                    System.getenv("HOST_USER"),
-                    System.getenv("HOST_HOSTNAME"),
+                    hostuser,
+                    hostname,
                     command);
             logger.info("Command wrapped as: {}", ssh_command);
         } else {
