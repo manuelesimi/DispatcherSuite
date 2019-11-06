@@ -4,8 +4,10 @@ import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.Objects;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * A command to execute on the local machine.
@@ -29,7 +31,7 @@ public class LocalCommand extends BaseExecutor {
         if (hostname != null && !hostname.isEmpty() &&
                 hostuser != null && !hostuser.isEmpty()) {
             // we are running inside a docker container
-            ssh_command = String.format("ssh -t %s@%s '%s'",
+            ssh_command = String.format("ssh -o StrictHostKeyChecking=no -i /ssh/id_rsa -t %s@%s '%s'",
                     hostuser,
                     hostname,
                     command);
@@ -40,6 +42,36 @@ public class LocalCommand extends BaseExecutor {
         }
         Process process = Runtime.getRuntime().exec(ssh_command);
         logger.info("Local Command Dispatched");
+        InputStream stdIn = process.getInputStream();
+        InputStreamReader isr = new InputStreamReader(stdIn);
+        BufferedReader br = new BufferedReader(isr);
+
+        String line = null;
+        logger.info("<OUTPUT>");
+
+        while ((line = br.readLine()) != null)
+            logger.info(line);
+
+        logger.info("</OUTPUT>");
+
+        BufferedReader stdError = new BufferedReader(new
+                InputStreamReader(process.getErrorStream()));
+
+        logger.info("<ERROR>");
+
+        while ((line = stdError.readLine()) != null)
+            logger.info(line);
+
+        logger.info("</ERROR>");
+
+        int exitVal = 0;
+        try {
+            exitVal = process.waitFor();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        logger.info("Process exitValue: " + exitVal);
+
         return process.isAlive();
     }
 
