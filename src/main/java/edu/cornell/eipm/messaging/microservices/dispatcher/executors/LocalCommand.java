@@ -31,7 +31,7 @@ public class LocalCommand extends BaseExecutor {
         if (hostname != null && !hostname.isEmpty() &&
                 hostuser != null && !hostuser.isEmpty()) {
             // we are running inside a docker container
-            ssh_command = String.format("ssh -o StrictHostKeyChecking=no -i /ssh/id_rsa -t %s@%s '%s'",
+            ssh_command = String.format("ssh -o StrictHostKeyChecking=no -i /ssh/id_rsa -T -v %s@%s %s",
                     hostuser,
                     hostname,
                     command);
