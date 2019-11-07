@@ -1,8 +1,11 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.broker.consumer;
 
+import edu.cornell.eipm.messaging.microservices.dispatcher.broker.producer.Sender;
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.Reply;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
 import edu.cornell.eipm.messaging.microservices.dispatcher.executors.ExecutorService;
 import edu.cornell.eipm.messaging.microservices.dispatcher.executors.JSONPayloadDeserializer;
+import edu.cornell.eipm.messaging.microservices.dispatcher.executors.ReplyPayloadParser;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +15,8 @@ import org.springframework.kafka.annotation.KafkaListener;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -33,6 +38,9 @@ public class Receiver {
     private String groupId;
 
     @Autowired
+    private Sender sender;
+
+    @Autowired
     private TopicConfigurations topicConfigurations;
 
     public CountDownLatch getLatch() {
@@ -51,7 +59,11 @@ public class Receiver {
                     message.topic(), message.value());
             topicConfigurations.getActions(message.topic()).forEach( action -> {
                 try {
+                    Map<String, String> values = new JSONPayloadDeserializer(message.value()).fromJSON();
                     ExecutorService.select(action).execute(new JSONPayloadDeserializer(message.value()).fromJSON());
+                    Reply actionReply = action.getReply();
+                    if (Objects.nonNull(actionReply.getTopic()))
+                        sender.send(actionReply.getTopic(),ReplyPayloadParser.parse(actionReply.getPayload(), values));
                 } catch (IOException e) {
                     LOGGER.error("Failed to dispatch action '{}'",action.getTrigger(),e);
                 }
