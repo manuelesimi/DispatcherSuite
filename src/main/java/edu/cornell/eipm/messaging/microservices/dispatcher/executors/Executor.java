@@ -6,11 +6,11 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * Inteface for all Executors.
+ * Interface for all Executors.
  * @author Manuele Simi
  */
 public interface Executor {
 
     void setAction(Action action);
-    boolean execute( Map<String,String> values) throws IOException;
+    boolean execute( Map<String,String> values, MODE mode) throws IOException;
 }

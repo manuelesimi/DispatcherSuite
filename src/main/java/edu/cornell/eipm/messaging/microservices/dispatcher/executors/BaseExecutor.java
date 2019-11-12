@@ -19,9 +19,9 @@ public abstract class BaseExecutor implements Executor {
     }
 
     @Override
-    public boolean execute(Map<String, String> values) throws IOException {
+    public boolean execute(Map<String, String> values, MODE mode) throws IOException {
         String actualTrigger = new TriggerValue(action.getTrigger()).getActualValue(values);
-        return this.run(actualTrigger);
+        return this.run(actualTrigger,mode);
     }
 
     /**
@@ -30,6 +30,6 @@ public abstract class BaseExecutor implements Executor {
      * @return
      * @throws IOException
      */
-    protected abstract boolean run(String actualTrigger) throws IOException;
+    protected abstract boolean run(String actualTrigger, MODE mode) throws IOException;
 
 }

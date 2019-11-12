@@ -12,6 +12,7 @@ server:
     context-path: /dispatcher
 
 dispatcher:
+  mode: NON_BLOCKING
   topics:
     - name: oncorseq_sequencing_in_progress
       actions:

@@ -23,7 +23,7 @@ public class LocalCommand extends BaseExecutor {
     }
 
     @Override
-    protected boolean run(String command) throws IOException {
+    protected boolean run(String command, MODE mode) throws IOException {
         logger.info("Local execution for: {}", command);
         String ssh_command;
         String hostname = System.getenv("HOST_HOSTNAME");
@@ -42,35 +42,37 @@ public class LocalCommand extends BaseExecutor {
         }
         Process process = Runtime.getRuntime().exec(ssh_command);
         logger.info("Local Command Dispatched");
-        InputStream stdIn = process.getInputStream();
-        InputStreamReader isr = new InputStreamReader(stdIn);
-        BufferedReader br = new BufferedReader(isr);
+        if (mode == MODE.BLOCKING) {
+            InputStream stdIn = process.getInputStream();
+            InputStreamReader isr = new InputStreamReader(stdIn);
+            BufferedReader br = new BufferedReader(isr);
 
-        String line = null;
-        logger.info("<OUTPUT>");
+            String line = null;
+            logger.info("<OUTPUT>");
 
-        while ((line = br.readLine()) != null)
-            logger.info(line);
+            while ((line = br.readLine()) != null)
+                logger.info(line);
 
-        logger.info("</OUTPUT>");
+            logger.info("</OUTPUT>");
 
-        BufferedReader stdError = new BufferedReader(new
-                InputStreamReader(process.getErrorStream()));
+            BufferedReader stdError = new BufferedReader(new
+                    InputStreamReader(process.getErrorStream()));
 
-        logger.info("<ERROR>");
+            logger.info("<ERROR>");
 
-        while ((line = stdError.readLine()) != null)
-            logger.info(line);
+            while ((line = stdError.readLine()) != null)
+                logger.info(line);
 
-        logger.info("</ERROR>");
+            logger.info("</ERROR>");
 
-        int exitVal = 0;
-        try {
-            exitVal = process.waitFor();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            int exitVal = 0;
+            try {
+                exitVal = process.waitFor();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            logger.info("Process exitValue: " + exitVal);
         }
-        logger.info("Process exitValue: " + exitVal);
 
         return process.isAlive();
     }

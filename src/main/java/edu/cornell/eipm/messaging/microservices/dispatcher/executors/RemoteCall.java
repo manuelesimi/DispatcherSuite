@@ -23,7 +23,7 @@ public class RemoteCall extends BaseExecutor {
     }
 
     @Override
-    protected boolean run(String url) {
+    protected boolean run(String url, MODE mode) {
         logger.info("Remote call to: {}", url );
         // Fire the request.
         ResponseEntity<String> response

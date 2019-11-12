@@ -5,6 +5,7 @@ import edu.cornell.eipm.messaging.microservices.dispatcher.config.Reply;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.TopicConfigurations;
 import edu.cornell.eipm.messaging.microservices.dispatcher.executors.ExecutorService;
 import edu.cornell.eipm.messaging.microservices.dispatcher.executors.JSONPayloadDeserializer;
+import edu.cornell.eipm.messaging.microservices.dispatcher.executors.MODE;
 import edu.cornell.eipm.messaging.microservices.dispatcher.executors.ReplyPayloadParser;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
@@ -37,6 +38,9 @@ public class Receiver {
     @Value("${kafka.consumer.group-id}")
     private String groupId;
 
+    @Value("${dispatcher.mode}")
+    private MODE mode;
+
     @Autowired
     private Sender sender;
 
@@ -60,7 +64,7 @@ public class Receiver {
             topicConfigurations.getActions(message.topic()).forEach( action -> {
                 try {
                     Map<String, String> values = new JSONPayloadDeserializer(message.value()).fromJSON();
-                    ExecutorService.select(action).execute(new JSONPayloadDeserializer(message.value()).fromJSON());
+                    ExecutorService.select(action).execute(new JSONPayloadDeserializer(message.value()).fromJSON(), mode);
                     //send back the reply, if configured
                     Reply actionReply = action.getReply();
                     if (Objects.nonNull(actionReply.getTopic()))
