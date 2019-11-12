@@ -2,7 +2,12 @@ Kafka Dispatcher Service
 ----
 A microservice project based on Spring Boot.
 
-## Configuration
+* [Configuration](CONFIGURATION.md)
+* [Running as App](APPLICATION.md)
+* [Running with Docker](DOCKER.md)
+* [Interface](INTERFACE.md)
+* [Setting up an Apacke Kafka instance](APACHE_KAFKA.md)
+
 ### For the embedded Tomcat server
 The configuration is available in  _application.yml_ inside the app distribution:
 ```yaml

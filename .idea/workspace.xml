@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Fix ssh wrapper.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/MODE.java" afterDir="false" />
+    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Send back the reply message only if the process is still alive or exit value is zero.">
+      <change afterPath="$PROJECT_DIR$/APPLICATION.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CONFIGURATION.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DOCKER.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/INTERFACE.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/BaseExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/BaseExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/Executor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/LocalCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/LocalCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/RemoteCall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/RemoteCall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -25,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Receiver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Receiver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="66" column="120" selection-start-line="66" selection-start-column="120" selection-end-line="66" selection-end-column="120" />
+            <state relative-caret-position="538">
+              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1581#1582#0" expanded="true" />
@@ -39,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReceiverConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/ReceiverConfig.java">
+      <file leaf-file-name="BaseExecutor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/BaseExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+            <state relative-caret-position="330">
+              <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,43 +52,8 @@
       <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BaseExecutor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/BaseExecutor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MODE.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/MODE.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JSONPayloadSerializer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/JSONPayloadSerializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#462#463#0" expanded="true" />
-                <element signature="e#494#495#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="375">
+              <caret line="25" column="72" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -98,26 +61,10 @@
       <file leaf-file-name="LocalCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/LocalCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            <state relative-caret-position="541">
+              <caret line="77" column="73" lean-forward="true" selection-start-line="77" selection-start-column="73" selection-end-line="77" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JSONPayloadDeserializer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/JSONPayloadDeserializer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="11" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#405#406#0" expanded="true" />
-                <element signature="e#437#438#0" expanded="true" />
-                <element signature="e#482#483#0" expanded="true" />
-                <element signature="e#541#542#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -135,11 +82,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Executor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/Executor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="285">
+                <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="7" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CONFIGURATION.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CONFIGURATION.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="540">
+                <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DOCKER.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DOCKER.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="585">
+                <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="INTERFACE.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/INTERFACE.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="APPLICATION.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/APPLICATION.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -172,8 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherAppTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/DispatcherConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TocpicAdministrator.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicAdministrator.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicConfigurations.java" />
@@ -197,7 +189,6 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/producer/SenderConfig.java" />
         <option value="$PROJECT_DIR$/packageDispatcher.sh" />
         <option value="$PROJECT_DIR$/runPackage.sh" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/DOCKERFILE" />
         <option value="$PROJECT_DIR$/docker/Dockerfile" />
         <option value="$PROJECT_DIR$/docker/buildDockerImage.sh" />
@@ -220,9 +211,12 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/RemoteCall.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/Executor.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/BaseExecutor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/LocalCommand.java" />
         <option value="$PROJECT_DIR$/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/LocalCommand.java" />
+        <option value="$PROJECT_DIR$/DOCKER.md" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/CONFIGURATION.md" />
       </list>
     </option>
   </component>
@@ -258,79 +252,6 @@
             <path>
               <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
               <item name="KafkaDispatcher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KafkaDispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KafkaDispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KafkaDispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KafkaDispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KafkaDispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="broker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KafkaDispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="broker" type="462c0819:PsiDirectoryNode" />
-              <item name="consumer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KafkaDispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="broker" type="462c0819:PsiDirectoryNode" />
-              <item name="producer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KafkaDispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="KafkaDispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
-              <item name="executors" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -452,20 +373,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568814651162</updated>
-    </task>
-    <task id="LOCAL-00020" summary="More doc.">
-      <created>1569610660721</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1569610660721</updated>
-    </task>
-    <task id="LOCAL-00021" summary="Tweak YAML in the README&gt;">
-      <created>1569612823159</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1569612823159</updated>
     </task>
     <task id="LOCAL-00022" summary="Tweak doc.">
       <created>1569612939736</created>
@@ -796,7 +703,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573077722945</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="New MODE setting for executors. If set to BLOCKING, the executor waits until the process triggered by the message terminates and logs its output.">
+      <created>1573573854003</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1573573854004</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Send back the reply message only if the process is still alive or exit value is zero.">
+      <created>1573581515459</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1573581515459</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -833,6 +754,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -840,16 +762,16 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="10" visible="true" weight="0.32962668" />
+      <window_info anchor="right" id="Maven Projects" order="10" visible="true" weight="0.13661636" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.51343703" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3281471" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.53725785" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.40536514" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.16640191" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49749374" visible="true" weight="0.16640191" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32637855" />
-      <window_info id="Structure" order="1" sideWeight="0.5011287" side_tool="true" weight="0.22859451" />
+      <window_info id="Structure" order="1" sideWeight="0.50250626" side_tool="true" weight="0.16640191" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
@@ -956,8 +878,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Autowire sender/receiver in the controller instead of the app." />
-    <MESSAGE value="Enable autocommit." />
     <MESSAGE value="Remove obsolete info from README." />
     <MESSAGE value="Preliminary work on Executors." />
     <MESSAGE value="Change the receiver to get json-serialized payloads." />
@@ -981,7 +901,9 @@
     <MESSAGE value="Check also that the user host is set." />
     <MESSAGE value="Do not check the host key when submitting the ssh wrapper. Log sterr/out from the command." />
     <MESSAGE value="Fix ssh wrapper." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix ssh wrapper." />
+    <MESSAGE value="New MODE setting for executors. If set to BLOCKING, the executor waits until the process triggered by the message terminates and logs its output." />
+    <MESSAGE value="Send back the reply message only if the process is still alive or exit value is zero." />
+    <option name="LAST_COMMIT_MESSAGE" value="Send back the reply message only if the process is still alive or exit value is zero." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1001,37 +923,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/DispatcherAppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="23" column="9" lean-forward="true" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/edu/cornell/eipm/messaging/microservices/dispatcher/SpringKafkaApplicationTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1910#1911#0" expanded="true" />
-            <element signature="e#1962#1963#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/APACHE_KAFKA.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="101">
-            <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/src.zip!/java/lang/ProcessBuilder.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/src.zip!/java/lang/Process.java" />
     <entry file="file://$PROJECT_DIR$/src/test/resources/logback-test.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1165,16 +1056,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="279">
-            <caret line="116" column="40" selection-start-line="116" selection-start-column="33" selection-end-line="116" selection-end-column="40" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1320,6 +1201,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/src.zip!/java/lang/Process.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="214" column="24" selection-start-line="214" selection-start-column="24" selection-end-line="214" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/RemoteCall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -1330,42 +1218,88 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/LocalCommand.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        <state relative-caret-position="538">
+          <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1581#1582#0" expanded="true" />
+            <element signature="e#1609#1610#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/BaseExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="21" column="54" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+        <state relative-caret-position="330">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/LocalCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="77" column="73" lean-forward="true" selection-start-line="77" selection-start-column="73" selection-end-line="77" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/APPLICATION.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INTERFACE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DOCKER.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="585">
+            <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="285">
+            <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        <state relative-caret-position="375">
+          <caret line="25" column="72" lean-forward="true" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="72" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="66" column="120" selection-start-line="66" selection-start-column="120" selection-end-line="66" selection-end-column="120" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1581#1582#0" expanded="true" />
-            <element signature="e#1609#1610#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/CONFIGURATION.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="540">
+            <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
