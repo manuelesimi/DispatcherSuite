@@ -19,9 +19,9 @@ public abstract class BaseExecutor implements Executor {
     }
 
     @Override
-    public void execute(Map<String, String> values) throws IOException {
+    public boolean execute(Map<String, String> values) throws IOException {
         String actualTrigger = new TriggerValue(action.getTrigger()).getActualValue(values);
-        this.run(actualTrigger);
+        return this.run(actualTrigger);
     }
 
     /**

@@ -12,5 +12,5 @@ import java.util.Map;
 public interface Executor {
 
     void setAction(Action action);
-    void execute( Map<String,String> values) throws IOException;
+    boolean execute( Map<String,String> values) throws IOException;
 }

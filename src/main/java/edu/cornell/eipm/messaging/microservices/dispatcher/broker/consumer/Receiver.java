@@ -61,6 +61,7 @@ public class Receiver {
                 try {
                     Map<String, String> values = new JSONPayloadDeserializer(message.value()).fromJSON();
                     ExecutorService.select(action).execute(new JSONPayloadDeserializer(message.value()).fromJSON());
+                    //send back the reply, if configured
                     Reply actionReply = action.getReply();
                     if (Objects.nonNull(actionReply.getTopic()))
                         sender.send(actionReply.getTopic(),ReplyPayloadParser.parse(actionReply.getPayload(), values));

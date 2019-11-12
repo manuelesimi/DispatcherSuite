@@ -3,7 +3,7 @@ package edu.cornell.eipm.messaging.microservices.dispatcher.executors;
 import java.util.Map;
 
 /**
- * Handle trigger values by considering the actual values of the placeholders (if any).
+ * Handle trigger values by evaluating the actual values of the placeholders (if any).
  *
  * @author Manuele Simi
  */
