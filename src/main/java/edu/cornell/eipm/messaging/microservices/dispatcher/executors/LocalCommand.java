@@ -8,6 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Objects;
 
 /**
  * A command to execute on the local machine.
@@ -71,10 +72,18 @@ public class LocalCommand extends BaseExecutor {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            logger.info("Process exitValue: " + exitVal);
+            logger.info("Process exit value: " + exitVal);
+        } else {
+            try {
+                //wait few seconds befor to check if the process is alive
+                Thread.sleep(5000);
+            } catch (InterruptedException e) {
+                logger.error("Unable to wait ",e);
+            }
         }
-
-        return process.isAlive();
+        logger.debug("Process is alive? " + process.isAlive());
+        logger.debug("Process exit value: " + process.exitValue());
+        return (process.isAlive() || process.exitValue()==0);
     }
 
 }
