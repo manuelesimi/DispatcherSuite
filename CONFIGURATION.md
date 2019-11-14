@@ -8,7 +8,6 @@ The file is composed by 3 main sections:
 * server
 * dispatcher
 
-
 ## Section: kafka
 This section configure the interaction with the kafka server.
 
@@ -23,24 +22,36 @@ kafka:
     topics: list of comma-separated topics
 ```
 Where:
-* bootstrap-servers: the contact point for the kafka server
-* group-id: the dispatcher will register to the kafka server with this identifier
-* enable-auto-commit: automatically acknowledge the kafka server that a message has been received 
-* topics: the list of topics the dispatcher will register for notifications
+* _bootstrap-servers_ is the list of kafka brokers to connect to (see [Apache Kafka instructions](APACHE_KAFKA.md))
+* _group-id_ is the identifier used by the dispatcher to register to the kafka server
+* _enable-auto-commit_: automatically acknowledge the kafka server that a message has been received 
+* _topics_ is the list of topics the dispatcher will register for notifications
+
  
 ## Section: server
+This section defines the endpoint for the dispatcher.
+
 ```yml
 server:
   port: 8080
   servlet:
     context-path: /dispatcher
 ```
-* port: the port where the application can be reached
-* context-path: the context path
+Where:
+
+* _port_ is the port of the embedded Tomcat server where the application can be reached
+* _context-path_ is the context path of the webapp
 
 The dispatcher is reached at _http://hostname:8080/dispatcher_
 
 ## Section: dispatcher
+This section configures the behavior of the dispatcher as consumer of messages from Kafka. When acting as producer of messages the dispatcher does not need any specific configuration.
+
+What we configure here are basically the actions we want the dispatcher performs upon receiving a message from the topics of interest (see kakfka section).
+
+For each topic (defined at the first level) we configure a list of triggers (something that the dispatcher will launch) and an optional reply message to send back to kafka if the trigger has successfully started. The format of the reply message is the same of query parameters in a URL (param=value&param=value...).
+
+
 ```yaml
 dispatcher:
   topics:
@@ -50,13 +61,26 @@ dispatcher:
           reply:
             topic: TopicA
             payload: anotherParam1=${param1}&anotherParam2=${param2}
+        - trigger: command2 ${param2} ... 
+           reply:
+            topic: TopicC
+            payload: anotherParam1=${param1}
     - name: Topic2
       ...
     - name: Topic3
       ...
 ```
 
-## A Complete Sample
+**IMPORTANT**: The topic's names in the dispatcher section must be included in the topic list configured in the kafka section. This section only defines the actions, not what topics the dispatcher will listen from.
+
+## A Complete Configuration Example
+The following example configures a dispatcher instance as follows:
+
+* it registers the instance to be notified for messages published in 2 topics of interests 
+* for the each topic, one action is defined:
+  * when a message from oncorseq.sequencing.in_progress is received, a nextflow process is triggered. If the [payload](PAYLOAD.md) includes a _sampleID_ key, its value is replaced in the trigger before executing it. 
+  * when a message from oncorseq.sequencing.pipeline_initialized is received, a command echoing the value of the _pipeline_ parameter is executed.
+
 ```yaml
 kafka:
   bootstrap-servers: hostname.med.cornell.edu:29092
@@ -64,7 +88,7 @@ kafka:
     auto-offset-reset: earliest
     group-id: kafka-dispatcher-ipmhpcd01
     enable-auto-commit: true
-    topics: Topic1,Topic2,Topic3
+    topics: oncorseq.sequencing.in_progress,oncorseq.sequencing.pipeline_initialized
 
 server:
   port: 8080
@@ -73,23 +97,13 @@ server:
 
 dispatcher:
   topics:
-    - name: Topic1
+    - name: oncorseq.sequencing.in_progress
       actions:
-        - trigger: nextflow  main.nf --param1 ${param1} --param2 ${param2} ... 
+        - trigger: nextflow /path/main.nf -w /workingDir -c /path/nextflow-manuele.config --sampleID ${sampleID} --dispatcherURL http://localhost:8080/dispatcher/ --resourceDir /path    
           reply:
-            topic: TopicA
-            payload: started=${param1}
-    - name: Topic2
+            topic: oncorseq.sequencing.pipeline_initialized
+            payload: sampleID=${sampleID}&status=initialized
+    - name: oncorseq.sequencing.pipeline_initialized
       actions:
-        - trigger: echo "Good job with ${anotherParam1}"
-          reply:
-            topic: TopicB
-            payload: name=${anotherParam1}&name2=started
-     - name: Topic3
-       actions:
-         - trigger:  https://dzone.com/articles/kafka-cluster-1?q=${query}
-           reply:
-             topic: TopicC
-             payload: name=query_started&query=${query}
+        - trigger: echo "Good job with ${pipeline}"
 ```
-
