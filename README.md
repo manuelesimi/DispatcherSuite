@@ -3,70 +3,13 @@ Kafka Dispatcher Service
 A microservice project based on Spring Boot.
 
 * [Configuration](CONFIGURATION.md)
+* [Message Payload](PAYLOAD.md)
 * [Running as App](APPLICATION.md)
 * [Running with Docker](DOCKER.md)
 * [Interface](INTERFACE.md)
 * [Setting up an Apacke Kafka instance](APACHE_KAFKA.md)
 
-### For the embedded Tomcat server
-The configuration is available in  _application.yml_ inside the app distribution:
-```yaml
-server:
-    port: 8080
-    servlet:
-        context-path: /topics
-```
-### For the Kafka broker
-```yaml
-kafka:
-  bootstrap-servers: localhost:9092
-  consumer:
-    auto-offset-reset: earliest
-    group-id: kafka-dispatcher
-    topics: oncorseq_sequencing_pipeline_initialized,oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
-```
-Where:
-* _bootstrap-servers_ is the list of kafka brokers to connect to (see [Apache Kafka instructions](APACHE_KAFKA.md))
-* _group_id_ is the ID of the consumer group
-* _topics_ is the comma-separated list of topics of interest (see next section)
 
-### For the application logic:
-For each message under the topic of interest, the Dispatcher launches the associated trigger(s). The following sample instance shows the expected format for this part of the configuration:
-
-```yaml
-dispatcher:
-  topics:
-    - name: oncorseq_sequencing_in_progress
-      actions:
-        - trigger: nextflow main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
-          reply:
-            topic: oncorseq.sequencing.pipeline_initialized
-            payload: sampleID=${sampleID}
-        - trigger: https://mymicroservice/name/api?run=${runID}&sampleID=${sampleID}&sayHello=${sayHello}
-          reply:
-             topic: oncorseq.sequencing.pipeline_initialized
-             payload: sampleID=${sampleID}
-        - trigger: whatever you want with "${sampleID}" "${runID}" and "${sayHello}"
-          reply:
-            topic: oncorseq.sequencing.pipeline_initialized
-            payload: sampleID=${sampleID}
-    - name: oncorseq_sequencing_pipeline_initialized
-      actions:
-        - trigger: do something with "${sampleID}"
-          reply:
-            topic: annotation_started
-            payload: ${sampleID}
-        - trigger: do something else with "${sampleID}"
-          reply:
-            topic: annotation_started
-            payload: ${sampleID}
-    - name: oncorseq_sequencing_analysis_started
-      actions:
-        - trigger: command/URL for analysis_started
-          reply:
-            topic: analysis_in_progress
-            payload: ${sampleID} 
-```
    
 ## Building and Packaging
 ~~~
@@ -102,71 +45,7 @@ We can also configure a different file at runtime if we need to, using an enviro
 	
     ./runApp.sh --spring.config.location=classpath:/another-location/application.yml
 
-### Interface
 
-Sample invocations:
-~~~
-http://localhost:8080/topics/ (welcome message)
-http://localhost:8080/topics/configuration (shows the entire configuration)
-http://localhost:8080/topics/configuration/topics (shows all topics of interest)
-http://localhost:8080/topics/configuration/actions?topic=topicA (shows all actions of interest for the topic)
-http://localhost:8080/topics/publish/annotation_done&payload=sample123 (send a message to the topic)
-
-~~~
-
-### Sample invocations with logs
-**Topic**: oncorseq_sequencing_in_progress
-
-~~~
-
-http://localhost:8080/dispatcher/publish/oncorseq_sequencing_in_progress?sampleID=sample123ID123565&runID=foo&sayHello=ciao
-
---- sender ---
-16:22:26.730 [http-nio-8080-exec-4] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_in_progress
-16:22:26.730 [http-nio-8080-exec-4] INFO  e.c.e.m.m.d.DispatcherController - Parameters are [sampleID=sample123ID123565, runID=foo, sayHello=ciao]
-16:22:26.731 [http-nio-8080-exec-4] INFO  e.c.e.m.m.d.broker.producer.Sender - sending payload='{
-  "sampleID": "sample123ID123565",
-  "runID": "foo",
-  "sayHello": "ciao"
-}' to topic oncorseq_sequencing_in_progress
-
-
---- receiver---
-16:22:26.741 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - Received messages on topic [oncorseq_sequencing_in_progress]: [{
-  "sampleID": "sample123ID123565",
-  "runID": "foo",
-  "sayHello": "ciao"
-}] 
-16:22:26.742 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: nextflow main.nf --sampleID sample123ID123565 --run foo --sayHello ciao
-16:22:26.743 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.RemoteCall - Remote call to: https://mymicroservice/name/api?run=foo&sampleID=sample123ID123565&sayHello=ciao
-16:22:26.744 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: whatever you want with "sample123ID123565" "foo" and "ciao"
-
-~~~
-
-**Topic**: oncorseq_sequencing_pipeline_initialized
-
-~~~
-
-http://localhost:8080/dispatcher/publish/oncorseq_sequencing_pipeline_initialized?sampleID=sample123ID123565
-
---- sender ---
-16:20:28.884 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_pipeline_initialized
-16:20:28.884 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.DispatcherController - Parameters are [sampleID=sample123ID123565, runID=foo, sayHello=ciao]
-16:20:28.909 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.broker.producer.Sender - sending payload='{
-  "sampleID": "sample123ID123565",
-  "runID": "foo",
-  "sayHello": "ciao"
-}' to topic oncorseq_sequencing_pipeline_initialized
-
---- receiver---
-16:20:28.983 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.broker.consumer.Receiver - Received messages on topic [oncorseq_sequencing_pipeline_initialized]: [{
-  "sampleID": "sample123ID123565",
-  "runID": "foo",
-  "sayHello": "ciao"
-}] 
-16:20:29.006 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: do something with "sample123ID123565"
-16:20:29.006 [kafka-dispatcher-0-C-1] INFO  e.c.e.m.m.d.executors.LocalCommand - Local execution for: do something else with "sample123ID123565"
-~~~
 
 ## Built With
 * [Spring Boot](https://spring.io/projects/spring-boot) - A framework that makes it easy to create stand-alone, production-grade Spring-based Applications

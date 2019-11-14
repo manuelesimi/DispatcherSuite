@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Send back the reply message only if the process is still alive or exit value is zero.">
-      <change afterPath="$PROJECT_DIR$/APPLICATION.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CONFIGURATION.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DOCKER.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INTERFACE.md" afterDir="false" />
+    <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="Extend configuration doc.">
+      <change afterPath="$PROJECT_DIR$/PAYLOAD.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INTERFACE.md" beforeDir="false" afterPath="$PROJECT_DIR$/INTERFACE.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -70,37 +68,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemoteCall.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/RemoteCall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="285">
-                <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="7" />
+              <first_editor relative-caret-position="360">
+                <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CONFIGURATION.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CONFIGURATION.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CONFIGURATION.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="540">
-                <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
+              <first_editor relative-caret-position="253">
+                <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
               </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PAYLOAD.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PAYLOAD.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
               <second_editor />
             </state>
           </provider>
@@ -122,7 +118,9 @@
         <entry file="file://$PROJECT_DIR$/INTERFACE.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor />
+              <first_editor relative-caret-position="234">
+                <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+              </first_editor>
               <second_editor />
             </state>
           </provider>
@@ -166,7 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TocpicAdministrator.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicAdministrator.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/config/TopicConfigurations.java" />
         <option value="$PROJECT_DIR$/INSTALL.md" />
@@ -215,8 +212,9 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/broker/consumer/Receiver.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/cornell/eipm/messaging/microservices/dispatcher/executors/LocalCommand.java" />
         <option value="$PROJECT_DIR$/DOCKER.md" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/CONFIGURATION.md" />
+        <option value="$PROJECT_DIR$/INTERFACE.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -373,34 +371,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568814651162</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Tweak doc.">
-      <created>1569612939736</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1569612939736</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Introduce and manage the ${payload] placeholder in the triggers.">
-      <created>1569616348865</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1569616348865</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Parse the configuration in the PostConstruct step.">
-      <created>1569616958597</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1569616958598</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Error handling of invalid messages and topics.">
-      <created>1569618819531</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1569618819532</updated>
     </task>
     <task id="LOCAL-00026" summary="Add draft kafka configuration.">
       <created>1569870432550</created>
@@ -717,7 +687,35 @@
       <option name="project" value="LOCAL" />
       <updated>1573581515459</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Reorganize documentation. Add information to start an instance with Docker.">
+      <created>1573595957407</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1573595957408</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Extend configuration doc.">
+      <created>1573679395328</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1573679395328</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Complete the configuration section of the documentation.">
+      <created>1573746648585</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1573746648585</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Add info on remoted calls.">
+      <created>1573748699261</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1573748699261</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -878,10 +876,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove obsolete info from README." />
-    <MESSAGE value="Preliminary work on Executors." />
-    <MESSAGE value="Change the receiver to get json-serialized payloads." />
-    <MESSAGE value="Simplify the Executor interface." />
     <MESSAGE value="New signature for publish method. It accepts now an open list of parameters to convert to a JSON payload." />
     <MESSAGE value="Tweak documentation and logs." />
     <MESSAGE value="Pretty printing of json and set placeholders." />
@@ -903,7 +897,11 @@
     <MESSAGE value="Fix ssh wrapper." />
     <MESSAGE value="New MODE setting for executors. If set to BLOCKING, the executor waits until the process triggered by the message terminates and logs its output." />
     <MESSAGE value="Send back the reply message only if the process is still alive or exit value is zero." />
-    <option name="LAST_COMMIT_MESSAGE" value="Send back the reply message only if the process is still alive or exit value is zero." />
+    <MESSAGE value="Reorganize documentation. Add information to start an instance with Docker." />
+    <MESSAGE value="Extend configuration doc." />
+    <MESSAGE value="Complete the configuration section of the documentation." />
+    <MESSAGE value="Add info on remoted calls." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add info on remoted calls." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -923,13 +921,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/resources/logback-test.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1258,29 +1249,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/INTERFACE.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DOCKER.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="585">
             <caret line="39" column="3" lean-forward="true" selection-start-line="39" selection-start-column="3" selection-end-line="39" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="285">
-            <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="7" />
           </first_editor>
           <second_editor />
         </state>
@@ -1293,11 +1266,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/PAYLOAD.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CONFIGURATION.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="540">
-            <caret line="36" column="6" selection-start-line="36" selection-start-column="6" selection-end-line="36" selection-end-column="6" />
+          <first_editor relative-caret-position="253">
+            <caret line="78" column="38" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/INTERFACE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="234">
+            <caret line="33" column="17" lean-forward="true" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="360">
+            <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
           </first_editor>
           <second_editor />
         </state>
