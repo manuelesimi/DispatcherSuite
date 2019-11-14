@@ -66,12 +66,18 @@ dispatcher:
             topic: TopicC
             payload: anotherParam1=${param1}
     - name: Topic2
-      ...
+      actions:
+         - trigger: http://url?param=${param1}&param2=${param2}                     
     - name: Topic3
       ...
 ```
 
 **IMPORTANT**: The topic's names in the dispatcher section must be included in the topic list configured in the kafka section. This section only defines the actions, not what topics the dispatcher will listen from.
+
+### Type of triggers
+Version 1.x of the dispatcher supports two types of trigger:
+* _Local Command_ A command executed on the machine where the dispatcher is running
+* _Remote Call_ An URL to invoke (e.g. http//:www.google.com?query${terms})
 
 ## A Complete Configuration Example
 The following example configures a dispatcher instance as follows:
