@@ -8,16 +8,7 @@ package edu.cornell.eipm.messaging.microservices.dispatcher.config;
 public class Action {
 
     private String trigger;
-    private String workingDir;
     private Reply reply;
-
-    public String getWorkingDir() {
-        return workingDir;
-    }
-
-    public void setWorkingDir(String workingDir) {
-        this.workingDir = workingDir;
-    }
 
     public String getTrigger() {
         return trigger;
