@@ -6,11 +6,22 @@ import org.slf4j.LoggerFactory;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Build map of values from the configured payload of a {@link edu.cornell.eipm.messaging.microservices.dispatcher.config.Reply}
+ *
+ * @author Manuele Simi
+ */
 public class ReplyPayloadParser {
 
     private static final Logger LOGGER =
             LoggerFactory.getLogger(ReplyPayloadParser.class);
 
+    /**
+     * Parses the payload and creates the map ov values for the message payload
+     * @param payload
+     * @param requestValues
+     * @return
+     */
     public static Map<String, String> parse(String payload, final Map<String, String> requestValues) {
 
         Map<String, String> values = new HashMap<>();

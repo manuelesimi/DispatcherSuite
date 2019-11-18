@@ -6,7 +6,7 @@ Main features:
 * publish messages to any topic
 * register for notifications for messages on selected topics
 * for each message received, trigger one or more actions
-* generic and configurable with respect to the topics and actions
+* generic and configurable with respect to topics and actions
 
 ## Documentation
 

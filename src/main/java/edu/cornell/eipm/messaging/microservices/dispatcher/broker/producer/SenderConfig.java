@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Configuration for the @{@link Sender} bean.
+ * Configuration for the {@link Sender} bean.
  *
  * @author Manuele Simi
  */

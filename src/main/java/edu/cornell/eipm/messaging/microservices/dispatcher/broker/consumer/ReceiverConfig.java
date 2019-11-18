@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Configuration for the batch @{@link Receiver} bean.
+ * Configuration for the batch {@link Receiver} bean.
  *
  * @author Manuele Simi
  */
