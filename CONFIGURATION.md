@@ -44,6 +44,21 @@ Where:
 
 The dispatcher is reached at _http://hostname:8080/dispatcher_
 
+## Section: server with SSL
+```yml
+server:
+  port: 8443
+  ssl:
+    key-store: /keystore.p12
+    key-store-password: <password of the keystore>
+    keyStoreType: PKCS12
+    keyAlias: tomcat
+  servlet:
+    context-path: /dispatcher
+```
+Reference: 
+* To generate a self-signed certificate for the keystore, see https://docs.oracle.com/javase/7/docs/technotes/tools/solaris/keytool.html
+
 ## Section: dispatcher
 This section configures the behavior of the dispatcher as consumer of messages from Kafka. When acting as producer of messages the dispatcher does not need any specific configuration.
 
