@@ -11,7 +11,7 @@ Main features:
 ## Documentation
 
 * [Configuration](CONFIGURATION.md)
-* [Message Payload](PAYLOAD.md)
+* [Message Payload and Actions](PAYLOAD.md)
 * [Running as App](APPLICATION.md)
 * [Running with Docker](DOCKER.md)
 * [Interface](INTERFACE.md)

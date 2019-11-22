@@ -94,6 +94,10 @@ Version 1.x of the dispatcher supports two types of trigger:
 * _Local Command_ A command executed on the machine where the dispatcher is running
 * _Remote Call_ An URL to invoke (e.g. http//:www.google.com?query${terms})
 
+### Trigger configuration
+
+TBP
+
 ## A Complete Configuration Example
 The following example configures a dispatcher instance as follows:
 

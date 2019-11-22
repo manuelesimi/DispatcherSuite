@@ -1,17 +1,14 @@
 ## How to Publish Messages
 
+### Syntax
 
-Sample invocations:
-~~~
-http://localhost:8080/topics/ (welcome message)
-http://localhost:8080/topics/configuration (shows the entire configuration)
-http://localhost:8080/topics/configuration/topics (shows all topics of interest)
-http://localhost:8080/topics/configuration/actions?topic=topicA (shows all actions of interest for the topic)
-http://localhost:8080/topics/publish/annotation_done&payload=sample123 (send a message to the topic)
+    http://host:port/dispatcher/publish/<topic name>?sampleID=sample123ID123565&runID=foo&sayHello=ciao
 
-~~~
+* the topic name is the last path parameter
+* the parameters for the action(s) associated to the topic are the query parameters
 
-### Sample invocations with logs
+### Examples
+
 **Topic**: oncorseq_sequencing_in_progress
 
 ~~~
