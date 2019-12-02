@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.io.IOException;
  * @author Manuele Simi
  */
 @SpringBootApplication
+@EnableScheduling
 public class DispatcherApp implements CommandLineRunner {
 
     private final Logger logger = LoggerFactory.getLogger(DispatcherApp.class);
