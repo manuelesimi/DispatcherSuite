@@ -26,38 +26,38 @@ public class Scheduler {
     @Autowired
     private SchedulerConfigurations schedulerConfigurations;
 
-    @Scheduled(fixedRateString = "#{'${scheduler.cron1.rate}'}")
-    public void cronJob1() throws Exception {
+    @Scheduled(fixedRateString = "#{'${scheduler.fixedRate1.rate}'}")
+    public void rateJob1() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date now = new Date();
         String strDate = sdf.format(now);
         logger.info("Java cron1 job started at: " + strDate);
         Objects.requireNonNull(schedulerConfigurations);
-        for (Action action : schedulerConfigurations.getCron(1).getActions()) {
+        for (Action action : schedulerConfigurations.getRate(1).getActions()) {
             logger.info("About to launch: " + action.getTrigger());
         }
     }
 
-    @Scheduled(fixedRateString = "#{'${scheduler.cron2.rate}'}")
-    public void cronJob2() throws Exception {
+    @Scheduled(fixedRateString = "#{'${scheduler.fixedRate2.rate}'}")
+    public void rateJob2() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date now = new Date();
         String strDate = sdf.format(now);
         logger.info("Java cron2 job started at: " + strDate);
         Objects.requireNonNull(schedulerConfigurations);
-        for (Action action : schedulerConfigurations.getCron(2).getActions()) {
+        for (Action action : schedulerConfigurations.getRate(2).getActions()) {
             logger.info("About to launch: " + action.getTrigger());
         }
     }
 
-    @Scheduled(fixedRateString = "#{'${scheduler.cron3.rate}'}")
-    public void cronJob3() throws Exception {
+    @Scheduled(fixedRateString = "#{'${scheduler.fixedRate3.rate}'}")
+    public void rateJob3() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date now = new Date();
         String strDate = sdf.format(now);
         logger.info("Java cron3 job started at: " + strDate);
         Objects.requireNonNull(schedulerConfigurations);
-        for (Action action : schedulerConfigurations.getCron(3).getActions()){
+        for (Action action : schedulerConfigurations.getRate(3).getActions()){
             logger.info("About to launch: " + action.getTrigger());
         }
     }

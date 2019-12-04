@@ -34,17 +34,17 @@ dispatcher:
             payload: ${sampleID}
 
 scheduler:
-  cron1:
+  fixedRate1:
     rate: 5000
     actions:
       - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
       - trigger: echo "hello"
-  cron2:
+  fixedRate2:
     rate: 5000
     actions:
       - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
       - trigger: echo "hello"
-  cron3:
+  fixedRate3:
     rate: 5000
     actions:
       - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}

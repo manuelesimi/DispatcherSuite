@@ -1,6 +1,6 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.config;
 
-import edu.cornell.eipm.messaging.microservices.dispatcher.config.cron.Cron;
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.cron.FixedRate;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -15,33 +15,34 @@ import org.springframework.validation.annotation.Validated;
 @ConfigurationProperties("scheduler")
 public class SchedulerConfigurations {
 
-    Cron cron1;
-    Cron cron2;
-    Cron cron3;
+    FixedRate fixedRate1;
+    FixedRate fixedRate2;
+    FixedRate fixedRate3;
 
-    public void setCron1(Cron cron1) {
-        this.cron1 = cron1;
+    public void setFixedRate1(FixedRate fixedRate1) {
+        this.fixedRate1 = fixedRate1;
     }
 
-    public void setCron2(Cron cron2) {
-        this.cron2 = cron2;
+    public void setFixedRate2(FixedRate fixedRate2) {
+        this.fixedRate2 = fixedRate2;
     }
 
-    public void setCron3(Cron cron3) {
-        this.cron3 = cron3;
+    public void setFixedRate3(FixedRate fixedRate3) {
+        this.fixedRate3 = fixedRate3;
     }
 
-    public Cron getCron(int number) {
-        Cron selected = null;
+
+    public FixedRate getRate(int number) {
+        FixedRate selected = null;
         switch (number) {
             case 1:
-                selected = cron1;
+                selected = fixedRate1;
                 break;
             case 2:
-                selected = cron2;
+                selected = fixedRate2;
                 break;
             case 3:
-                selected= cron3;
+                selected= fixedRate3;
                 break;
         }
 
