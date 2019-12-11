@@ -16,7 +16,7 @@ dispatcher:
   topics:
     - name: exact2.ready-to-transfer.completed
       actions:
-        - trigger: /home/mas2182/EXaCT-1/submit_transfer.sh ${sampleID}
+        - trigger: /home/mas2182/EXaCT-1/submit/submit_transfer.sh ${sampleID}
           reply:
             topic: exact2.transfer.progress
             payload: sampleID=${sampleID}
