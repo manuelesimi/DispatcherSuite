@@ -1,0 +1,28 @@
+kafka:
+  bootstrap-servers: xits-ipmd02.med.cornell.edu:29092
+  consumer:
+    auto-offset-reset: earliest
+    group-id: kafka-dispatcher-ipmhpcd01
+    enable-auto-commit: true
+    topics: exact2.ready-to-transfer.completed,exact2.transfer.completed
+
+server:
+  port: 80
+  servlet:
+    context-path: /dispatcher
+
+dispatcher:
+  mode: BLOCKING
+  topics:
+    - name: exact2.ready-to-transfer.completed
+      actions:
+        - trigger: /home/mas2182/EXaCT-1/submit/submit_transfer.sh ${sampleID}
+          reply:
+            topic: exact2.transfer.progress
+            payload: sampleID=${sampleID}
+    - name: exact2.transfer.completed
+      actions:
+        - trigger: python /home/mas2182/EXaCT-1/launch.wes_p1.py --sample_id ${sampleID} --ref_dir /ipm-staging/analysis/EXaCT-1/cache/ExACT2_resources --fastq_dir /gx-dev/analytical-storage/EXaCT-1_phase2_results/${sampleID}
+          reply:
+            topic: exact2.alignment.progress
+            payload: sampleID=${sampleID}
