@@ -1,6 +1,6 @@
 package edu.cornell.eipm.messaging.microservices.dispatcher.config;
 
-import edu.cornell.eipm.messaging.microservices.dispatcher.config.cron.FixedRate;
+import edu.cornell.eipm.messaging.microservices.dispatcher.config.scheduler.FixedRate;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;

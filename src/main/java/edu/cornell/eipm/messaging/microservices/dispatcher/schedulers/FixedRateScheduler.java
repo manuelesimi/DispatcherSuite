@@ -1,4 +1,4 @@
-package edu.cornell.eipm.messaging.microservices.dispatcher.jobs;
+package edu.cornell.eipm.messaging.microservices.dispatcher.schedulers;
 
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.SchedulerConfigurations;
@@ -13,20 +13,20 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * Scheduler for configured jobs.
+ * FixedRateScheduler for configured schedulers.
  *
  * @author Manuele Simi
  */
 @Configuration
 @Component
-public class Scheduler {
+public class FixedRateScheduler {
 
-    private final Logger logger = LoggerFactory.getLogger(Scheduler.class);
+    private final Logger logger = LoggerFactory.getLogger(FixedRateScheduler.class);
 
     @Autowired
     private SchedulerConfigurations schedulerConfigurations;
 
-    @Scheduled(fixedRateString = "#{'${scheduler.fixedRate1.rate}'}")
+    //@Scheduled(fixedRateString = "#{'${scheduler.fixedRate1.rate}'}")
     public void rateJob1() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date now = new Date();
@@ -38,7 +38,7 @@ public class Scheduler {
         }
     }
 
-    @Scheduled(fixedRateString = "#{'${scheduler.fixedRate2.rate}'}")
+    //@Scheduled(fixedRateString = "#{'${scheduler.fixedRate2.rate}'}")
     public void rateJob2() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date now = new Date();
@@ -50,7 +50,7 @@ public class Scheduler {
         }
     }
 
-    @Scheduled(fixedRateString = "#{'${scheduler.fixedRate3.rate}'}")
+    //@Scheduled(fixedRateString = "#{'${scheduler.fixedRate3.rate}'}")
     public void rateJob3() throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
         Date now = new Date();

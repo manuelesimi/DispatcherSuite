@@ -1,4 +1,4 @@
-package edu.cornell.eipm.messaging.microservices.dispatcher.config.cron;
+package edu.cornell.eipm.messaging.microservices.dispatcher.config.scheduler;
 
 import edu.cornell.eipm.messaging.microservices.dispatcher.config.Action;
 
