@@ -6,6 +6,7 @@
     <modules>
         <module>executors</module>
         <module>kafka-service</module>
+        <module>eventhubs-service</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

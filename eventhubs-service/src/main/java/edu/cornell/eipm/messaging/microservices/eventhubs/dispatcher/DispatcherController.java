@@ -1,9 +1,7 @@
-package edu.cornell.eipm.messaging.microservices.kafka.dispatcher;
+package edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher;
 
+import edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher.config.EventHubsService;
 import edu.cornell.eipm.messaging.microservices.executors.model.service.Action;
-import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.broker.consumer.Receiver;
-import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.broker.producer.Sender;
-import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.config.KafkaService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,48 +24,31 @@ public class DispatcherController {
     private final Logger logger = LoggerFactory.getLogger(DispatcherController.class);
 
     @Autowired
-    private KafkaService kafkaService;
+    private EventHubsService service;
 
-    @Autowired
-    private Receiver receiver;
-
-    @Autowired
-    private Sender sender;
 
     @RequestMapping("/")
     public String home() {
-        return "Hello from the Kafka-Dispatcher Service";
+        return "Hello from the EventHubs-Dispatcher Service";
     }
 
     @RequestMapping("/configuration")
     public Set<String> config() throws IOException {
-        return kafkaService.getService().getTopicNames();
+        return service.getService().getTopicNames();
     }
 
     @RequestMapping("/configuration/topics")
     public Set<String> configTopics() throws IOException {
-        return kafkaService.getService().getTopicNames();
+        return service.getService().getTopicNames();
     }
 
     @RequestMapping("/configuration/actions")
     public List<Action> configMessages(@RequestParam(required = true, value="topic") String topic) throws IOException {
         if (topic.isEmpty())
             return Collections.emptyList();
-        return kafkaService.getService().getActions(topic);
+        return service.getService().getActions(topic);
     }
 
-    @RequestMapping("/dispatch")
-    public DispatchReply dispatch(@RequestParam(required = true, value="topic") String topic,
-                                @RequestParam(required = false, value="payload") String payload
-            ) throws IOException {
-
-        List<Action> actions = kafkaService.getService().getActions(topic);
-        DispatchReply dispatchReply = new DispatchReply();
-        actions.forEach(action -> dispatchReply.addTrigger(action.getTrigger().replace("${payload}",payload) ));
-        actions.forEach(action -> dispatchReply.addReply(action.getReply().getTopic(), action.getReply().getPayload().replace("${payload}",payload) ));
-
-        return dispatchReply;
-    }
 
     @RequestMapping("/publish/{topic}")
     public String publish(@PathVariable(value="topic") String topic,
@@ -78,7 +59,7 @@ public class DispatcherController {
         logger.info("Sending new message to topic: " + topic);
         logger.info("Parameters are " + allRequestParams.entrySet());
 
-        sender.send(topic,allRequestParams);
+        //sender.send(topic,allRequestParams);
         return "Sent payload " + allRequestParams.entrySet() + " to Topic " + topic;
     }
 

@@ -1,0 +1,36 @@
+kafka:
+  bootstrap-servers: localhost:9092
+  consumer:
+    auto-offset-reset: earliest
+    group-id: kafka-dispatcher
+    enable-auto-commit: true
+    topics: oncorseq_sequencing_pipeline_initialized,oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
+
+server:
+  port: 8080
+  servlet:
+    context-path: /dispatcher
+
+dispatcher:
+  mode: NON_BLOCKING
+  service:
+    topics:
+      - name: oncorseq_sequencing_in_progress
+        actions:
+          - trigger: nextflow main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
+            reply:
+              topic:  oncorseq_sequencing_pipeline_initialized
+              payload: sampleID=${sampleID}
+      - name: oncorseq_sequencing_pipeline_initialized
+        actions:
+          - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
+            reply:
+              topic: annotation_started
+              payload: search started with ${query}
+      - name: oncorseq_sequencing_analysis_started
+        actions:
+          - trigger: command/URL for analysis_started
+            reply:
+              topic: analysis_in_progress
+              payload: ${sampleID}
+

@@ -7,8 +7,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dispatcher" />
-        <module name="executors" />
-        <module name="kafka-service" />
+        <module name="EventHubs Service" />
+        <module name="Executors Backend" />
+        <module name="Kafka Service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,9 +19,10 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Dispatcher" options="-parameters" />
+      <module name="EventHubs Service" options="-parameters" />
+      <module name="Executors Backend" options="-parameters" />
+      <module name="Kafka Service" options="-parameters" />
       <module name="dispatcher" options="-parameters" />
-      <module name="executors" options="-parameters" />
-      <module name="kafka-service" options="-parameters" />
     </option>
   </component>
 </project>

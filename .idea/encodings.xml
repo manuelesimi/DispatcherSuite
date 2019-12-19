@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eventhubs-service" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/executors" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kafka-service" charset="UTF-8" />
   </component>
