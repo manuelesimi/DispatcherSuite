@@ -1,4 +1,4 @@
-Kafka Dispatcher Service
+EventHubs Dispatcher Service
 ----
 A microservice project based on Spring Boot to send/receive/manage messages to/from [Microsoft Azure EventHubs](https://azure.microsoft.com/en-us/services/event-hubs/).
 
