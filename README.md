@@ -1,7 +1,6 @@
 Suite of Dispatcher Services
 ----
-A set of microservices to interface different messaging systems.
-
+A set of microservices to interface with different messaging systems.
 
 
 ## Modules
