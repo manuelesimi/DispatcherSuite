@@ -5,6 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
+import org.springframework.util.concurrent.ListenableFuture;
+import org.springframework.util.concurrent.ListenableFutureCallback;
 
 import java.util.Map;
 
@@ -22,12 +25,28 @@ public class Sender {
   private KafkaTemplate<String, String> kafkaTemplate;
 
   /**
-   * Sends the payload.
-   * @param values
+   * Sends the payload to the selected topic.
+   * @param topic the target topic
+   * @param values the values to send as message's payload
    */
   public void send(String topic, Map<String, String> values) {
     String json = new JSONPayloadSerializer(values).toJSON();
     LOGGER.info("sending payload='{}' to topic {}", json, topic);
-    kafkaTemplate.send(topic, json);
+    ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, json);
+    future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
+
+      @Override
+      public void onSuccess(SendResult<String, String> result) {
+        LOGGER.info("Sent message to =[" + topic +
+                "] with offset=[" + result.getRecordMetadata().offset() + "]");
+      }
+
+      @Override
+      public void onFailure(Throwable ex) {
+        LOGGER.error("Unable to send message to =["
+                + topic + "] due to : " + ex.getMessage());
+      }
+    });
+
   }
 }
