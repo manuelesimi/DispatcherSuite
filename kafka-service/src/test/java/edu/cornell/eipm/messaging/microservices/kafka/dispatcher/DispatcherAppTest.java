@@ -24,14 +24,7 @@ public class DispatcherAppTest {
     @Test
     public void noParamAboutShouldReturnDefaultMessage() throws Exception {
         this.mockMvc.perform(get("/about")).andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("DispatcherApp 1.0 says: hello client"));
-    }
-
-    @Test
-    public void paramGreetingShouldReturnTailoredMessage() throws Exception {
-        this.mockMvc.perform(get("/about").param("name", "EIPM"))
-                .andDo(print()).andExpect(status().isOk())
-                .andExpect(jsonPath("$.content").value("DispatcherApp 1.0 says: hello EIPM"));
+                .andExpect(jsonPath("$.content").value("Kafka-Dispatcher Service 1.1"));
     }
 
     @Test

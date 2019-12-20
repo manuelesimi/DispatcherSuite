@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/broker/producer/Sender.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/broker/producer/Sender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherAppTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -37,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="256">
+              <caret line="67" column="27" lean-forward="true" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2175#2176#0" expanded="true" />
@@ -49,10 +50,50 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherControllerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="77">
+              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherAppTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-108">
+              <caret line="16" selection-start-line="16" selection-end-line="17" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/About.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="60" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="60" />
+              <folding>
+                <element signature="e#248#249#0" expanded="true" />
+                <element signature="e#321#322#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/SpringKafkaApplicationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/broker/producer/Sender.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+            <state relative-caret-position="285">
+              <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -94,6 +135,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -123,8 +165,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/PAYLOAD.md" />
-        <option value="$PROJECT_DIR$/CONFIGURATION.md" />
         <option value="$PROJECT_DIR$/run_transfer.sh" />
         <option value="$PROJECT_DIR$/EXaCT-1/run_transfer_manifest_template.sh" />
         <option value="$PROJECT_DIR$/EXaCT-1/run_transfer_template.sh" />
@@ -174,6 +214,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/broker/producer/Sender.java" />
         <option value="$PROJECT_DIR$/kafka-service/src/main/resources/logback.xml" />
+        <option value="$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherAppTest.java" />
+        <option value="$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherControllerTest.java" />
       </list>
     </option>
   </component>
@@ -191,12 +233,14 @@
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="Azure Event Hubs Dispatcher service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
         </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="Azure Event Hubs Dispatcher service" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
       </expand>
       <select />
     </treeState>
-  </component>
-  <component name="MavenRunner">
-    <option name="skipTests" value="true" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
@@ -250,6 +294,30 @@
               <item name="eventhubs-service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="eventhubs-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="eventhubs-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="eventhubs-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -332,6 +400,30 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="kafka-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dispatcher" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -341,15 +433,27 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576856748908" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576859217475" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="edu.cornell.eipm.messaging.microservices.dispatcher.executors" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/eventhubs-service" />
+      <recent name="$PROJECT_DIR$/kafka-service" />
+      <recent name="$PROJECT_DIR$/executors" />
+      <recent name="$PROJECT_DIR$/kafka-service/src/test" />
+      <recent name="$PROJECT_DIR$/kafka-service/src/main/resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="edu.cornell.eipm.messaging.microservices.kafka.dispatcher" />
@@ -368,12 +472,8 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="edu.cornell.eipm.messaging.microservices.dispatcher.helloworld" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/eventhubs-service" />
-      <recent name="$PROJECT_DIR$/kafka-service" />
-      <recent name="$PROJECT_DIR$/executors" />
-      <recent name="$PROJECT_DIR$/kafka-service/src/test" />
-      <recent name="$PROJECT_DIR$/kafka-service/src/main/resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="edu.cornell.eipm.messaging.microservices.dispatcher.executors" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -388,7 +488,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SpringKafkaApplicationTest.testSendReceive">
+  <component name="RunManager" selected="JUnit.DispatcherControllerTest">
     <configuration name="DispatcherApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.cornell.eipm.messaging.microservices.kafka.dispatcher.DispatcherApp" />
       <module name="Kafka Service" />
@@ -402,7 +502,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpringKafkaApplicationTest.testSendReceive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DispatcherAppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Kafka Service" />
       <extension name="coverage">
         <pattern>
@@ -411,25 +511,54 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.cornell.eipm.messaging.microservices.kafka.dispatcher" />
-      <option name="MAIN_CLASS_NAME" value="edu.cornell.eipm.messaging.microservices.kafka.dispatcher.SpringKafkaApplicationTest" />
-      <option name="METHOD_NAME" value="testSendReceive" />
+      <option name="MAIN_CLASS_NAME" value="edu.cornell.eipm.messaging.microservices.kafka.dispatcher.DispatcherAppTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DispatcherControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EventHubs Service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher" />
+      <option name="MAIN_CLASS_NAME" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher.DispatcherControllerTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DispatcherControllerTest.aboutShouldReturnDefaultMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="EventHubs Service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher" />
+      <option name="MAIN_CLASS_NAME" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher.DispatcherControllerTest" />
+      <option name="METHOD_NAME" value="aboutShouldReturnDefaultMessage" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.DispatcherApp" />
-      <item itemvalue="JUnit.SpringKafkaApplicationTest.testSendReceive" />
+      <item itemvalue="JUnit.DispatcherControllerTest.aboutShouldReturnDefaultMessage" />
+      <item itemvalue="JUnit.DispatcherAppTest" />
+      <item itemvalue="JUnit.DispatcherControllerTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SpringKafkaApplicationTest.testSendReceive" />
+        <item itemvalue="JUnit.DispatcherControllerTest" />
+        <item itemvalue="JUnit.DispatcherAppTest" />
+        <item itemvalue="JUnit.DispatcherControllerTest.aboutShouldReturnDefaultMessage" />
         <item itemvalue="Application.DispatcherApp" />
         <item itemvalue="JUnit.SpringKafkaApplicationTest.testSendReceive" />
-        <item itemvalue="Application.DispatcherApp" />
       </list>
     </recent_temporary>
   </component>
@@ -443,13 +572,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568814651162</updated>
-    </task>
-    <task id="LOCAL-00039" summary="More doc on custom configuration.">
-      <created>1571688656998</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1571688656998</updated>
     </task>
     <task id="LOCAL-00040" summary="Autowire TopicConfigurations (in progress).">
       <created>1571691511502</created>
@@ -787,46 +909,53 @@
       <option name="project" value="LOCAL" />
       <updated>1576855835853</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Add callback to send method to log failures when messages are sent.">
+      <created>1576858262560</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1576858262560</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.22 at 11h 51m 06s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.23 at 16h 31m 20s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.23 at 16h 31m 31s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.23 at 16h 40m 20s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.23 at 16h 41m 42s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.23 at 16h 59m 05s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.24 at 21h 11m 17s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.24 at 21h 12m 15s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.24 at 21h 13m 40s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.24 at 21h 18m 52s.xml">
       <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispatcherControllerTest_noParamAboutShouldReturnDefaultMessage - 2019.12.20 at 11h 20m 02s.xml">
+      <configuration name="DispatcherControllerTest.noParamAboutShouldReturnDefaultMessage" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispatcherControllerTest_noParamAboutShouldReturnDefaultMessage - 2019.12.20 at 11h 20m 24s.xml">
+      <configuration name="DispatcherControllerTest.noParamAboutShouldReturnDefaultMessage" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispatcherControllerTest_noParamAboutShouldReturnDefaultMessage - 2019.12.20 at 11h 20m 59s.xml">
+      <configuration name="DispatcherControllerTest.noParamAboutShouldReturnDefaultMessage" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispatcherControllerTest_noParamAboutShouldReturnDefaultMessage - 2019.12.20 at 11h 21m 12s.xml">
+      <configuration name="DispatcherControllerTest.noParamAboutShouldReturnDefaultMessage" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispatcherControllerTest_aboutShouldReturnDefaultMessage - 2019.12.20 at 11h 21m 59s.xml">
+      <configuration name="DispatcherControllerTest.aboutShouldReturnDefaultMessage" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispatcherAppTest - 2019.12.20 at 11h 23m 27s.xml">
+      <configuration name="DispatcherAppTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispatcherAppTest - 2019.12.20 at 11h 24m 33s.xml">
+      <configuration name="DispatcherAppTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispatcherControllerTest - 2019.12.20 at 11h 25m 39s.xml">
+      <configuration name="DispatcherControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DispatcherControllerTest - 2019.12.20 at 11h 26m 28s.xml">
+      <configuration name="DispatcherControllerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.19386107" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.3029079" />
       <window_info id="Structure" order="1" sideWeight="0.5011287" side_tool="true" weight="0.22859451" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -835,15 +964,15 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32522798" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.41185412" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.33628318" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5699088" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33586627" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.27355623" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.27355623" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.4574468" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32673267" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32522798" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -858,32 +987,36 @@
       <window_info anchor="right" id="Maven Projects" order="10" visible="true" weight="0.32962668" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26398212" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.3029079" />
+      <window_info id="Structure" order="1" sideWeight="0.5011287" side_tool="true" weight="0.22859451" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.56342185" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.33628318" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32522798" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.20668693" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33586627" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.29056048" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.27355623" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32890856" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.4574468" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32522798" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" weight="0.24906786" />
+      <window_info anchor="right" id="Maven" order="4" visible="true" weight="0.19547658" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="R Graphics" order="8" />
+      <window_info anchor="right" id="R Packages" order="9" />
+      <window_info anchor="right" id="Maven Projects" order="10" visible="true" weight="0.32962668" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -938,7 +1071,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Execute local commands with an SSH wrapper when running inside a docker container." />
     <MESSAGE value="Install openSSH inside the docker image." />
     <MESSAGE value="Log the wrapped command." />
     <MESSAGE value="Check also that the user host is set." />
@@ -963,7 +1095,8 @@
     <MESSAGE value="Update gitignore." />
     <MESSAGE value="Tweak readme." />
     <MESSAGE value="Define a file log appender for the kafka-service." />
-    <option name="LAST_COMMIT_MESSAGE" value="Define a file log appender for the kafka-service." />
+    <MESSAGE value="Add callback to send method to log failures when messages are sent." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add callback to send method to log failures when messages are sent." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -979,34 +1112,22 @@
           <properties />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherController.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherControllerTest.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/runtime/TriggerValue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/broker/consumer/ReceiverConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="49" column="3" selection-start-line="49" selection-start-column="3" selection-end-line="49" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.2.0.RELEASE/spring-boot-2.2.0.RELEASE.jar!/org/springframework/boot/context/properties/ConfigurationProperties.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/runtime/JSONPayloadSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -1237,16 +1358,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/About.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#279#280#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -1334,28 +1445,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2175#2176#0" expanded="true" />
-            <element signature="e#2209#2210#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.3.1.RELEASE/spring-kafka-2.3.1.RELEASE.jar!/org/springframework/kafka/core/KafkaTemplate.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
@@ -1379,11 +1468,65 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/broker/producer/Sender.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="39" column="18" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="39" selection-end-column="18" />
+        <state relative-caret-position="285">
+          <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/About.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="60" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="60" />
+          <folding>
+            <element signature="e#248#249#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/SpringKafkaApplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherAppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="16" selection-start-line="16" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="67" column="27" lean-forward="true" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2175#2176#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
         </state>
       </provider>
     </entry>
