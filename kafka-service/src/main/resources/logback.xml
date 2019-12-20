@@ -6,6 +6,24 @@
         </encoder>
     </appender>
 
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>dispatcherFile.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover -->
+            <fileNamePattern>dispatcherFile.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!-- or whenever the file size reaches 100MB -->
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- keep 30 hours' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%-4r [%thread] %X{clientIP} %d{HH:mm:ss.SSS} [%p] [%thread@%C{1}:%L] - %m%n</pattern>
+        </encoder>
+    </appender>
+
     <logger name="edu.cornell.eipm.messaging" level="DEBUG" />
     <logger name="org.springframework" level="INFO" />
     <logger name="org.springframework.kafka.listener" level="DEBUG"/>
@@ -13,6 +31,8 @@
 
     <root level="WARN">
         <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+
     </root>
 
 </configuration>
