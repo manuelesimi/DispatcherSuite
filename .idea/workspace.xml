@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherAppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherAppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventhubs-service/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eventhubs-service/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsControllerTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,10 +25,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherApp.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eventhubs-service/application.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="-345">
+              <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsApp.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
               <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -36,10 +47,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherController.java">
+        <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="67" column="27" lean-forward="true" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+            <state relative-caret-position="33">
+              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2175#2176#0" expanded="true" />
@@ -49,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherControllerTest.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            <state relative-caret-position="168">
+              <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -61,8 +72,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherAppTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-108">
-              <caret line="16" selection-start-line="16" selection-end-line="17" selection-end-column="21" />
+            <state relative-caret-position="150">
+              <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -70,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/About.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="60" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="60" />
+            <state relative-caret-position="90">
+              <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
               <folding>
                 <element signature="e#248#249#0" expanded="true" />
                 <element signature="e#321#322#0" expanded="true" />
@@ -106,15 +117,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/kafka/spring-kafka/2.3.1.RELEASE/spring-kafka-2.3.1.RELEASE.jar!/org/springframework/kafka/core/KafkaTemplate.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="294" column="18" lean-forward="true" selection-start-line="294" selection-start-column="18" selection-end-line="294" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -165,8 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/run_transfer.sh" />
-        <option value="$PROJECT_DIR$/EXaCT-1/run_transfer_manifest_template.sh" />
         <option value="$PROJECT_DIR$/EXaCT-1/run_transfer_template.sh" />
         <option value="$PROJECT_DIR$/EXaCT-1/application.yml" />
         <option value="$PROJECT_DIR$/EXaCT-1/submit_transfer.sh" />
@@ -207,7 +207,6 @@
         <option value="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/About.java" />
         <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherController.java" />
         <option value="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherController.java" />
-        <option value="$PROJECT_DIR$/eventhubs-service/application.yml" />
         <option value="$PROJECT_DIR$/executors/README.md" />
         <option value="$PROJECT_DIR$/eventhubs-service/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -215,7 +214,10 @@
         <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/broker/producer/Sender.java" />
         <option value="$PROJECT_DIR$/kafka-service/src/main/resources/logback.xml" />
         <option value="$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherAppTest.java" />
+        <option value="$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsApp.java" />
         <option value="$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherControllerTest.java" />
+        <option value="$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsControllerTest.java" />
+        <option value="$PROJECT_DIR$/eventhubs-service/application.yml" />
       </list>
     </option>
   </component>
@@ -433,7 +435,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576859217475" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576859814042" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -488,7 +490,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DispatcherControllerTest">
+  <component name="RunManager">
     <configuration name="DispatcherApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="edu.cornell.eipm.messaging.microservices.kafka.dispatcher.DispatcherApp" />
       <module name="Kafka Service" />
@@ -516,7 +518,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DispatcherControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EventHubsControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EventHubs Service" />
       <extension name="coverage">
         <pattern>
@@ -525,12 +527,12 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher" />
-      <option name="MAIN_CLASS_NAME" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher.DispatcherControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher.EventHubsControllerTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DispatcherControllerTest.aboutShouldReturnDefaultMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EventHubsControllerTest.aboutShouldReturnDefaultMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="EventHubs Service" />
       <extension name="coverage">
         <pattern>
@@ -539,7 +541,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher" />
-      <option name="MAIN_CLASS_NAME" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher.DispatcherControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher.EventHubsControllerTest" />
       <option name="METHOD_NAME" value="aboutShouldReturnDefaultMessage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -548,15 +550,15 @@
     </configuration>
     <list>
       <item itemvalue="Application.DispatcherApp" />
-      <item itemvalue="JUnit.DispatcherControllerTest.aboutShouldReturnDefaultMessage" />
+      <item itemvalue="JUnit.EventHubsControllerTest.aboutShouldReturnDefaultMessage" />
       <item itemvalue="JUnit.DispatcherAppTest" />
-      <item itemvalue="JUnit.DispatcherControllerTest" />
+      <item itemvalue="JUnit.EventHubsControllerTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DispatcherControllerTest" />
+        <item itemvalue="JUnit.EventHubsControllerTest.aboutShouldReturnDefaultMessage" />
+        <item itemvalue="JUnit.EventHubsControllerTest" />
         <item itemvalue="JUnit.DispatcherAppTest" />
-        <item itemvalue="JUnit.DispatcherControllerTest.aboutShouldReturnDefaultMessage" />
         <item itemvalue="Application.DispatcherApp" />
         <item itemvalue="JUnit.SpringKafkaApplicationTest.testSendReceive" />
       </list>
@@ -572,13 +574,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568814651162</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Autowire TopicConfigurations (in progress).">
-      <created>1571691511502</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1571691511502</updated>
     </task>
     <task id="LOCAL-00041" summary="Remove previous config classes (all autowired now).">
       <created>1571767563972</created>
@@ -916,13 +911,17 @@
       <option name="project" value="LOCAL" />
       <updated>1576858262560</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="Add and configure a Junit test for the EventHubs' DispatcherController.">
+      <created>1576859271070</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1576859271070</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SpringKafkaApplicationTest_testSendReceive - 2019.10.24 at 21h 18m 52s.xml">
-      <configuration name="SpringKafkaApplicationTest.testSendReceive" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DispatcherControllerTest_noParamAboutShouldReturnDefaultMessage - 2019.12.20 at 11h 20m 02s.xml">
       <configuration name="DispatcherControllerTest.noParamAboutShouldReturnDefaultMessage" configurationId="JUnit" />
     </history-entry>
@@ -950,6 +949,9 @@
     <history-entry file="DispatcherControllerTest - 2019.12.20 at 11h 26m 28s.xml">
       <configuration name="DispatcherControllerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EventHubsControllerTest_aboutShouldReturnDefaultMessage - 2019.12.20 at 11h 37m 13s.xml">
+      <configuration name="EventHubsControllerTest.aboutShouldReturnDefaultMessage" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
@@ -964,8 +966,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32522798" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.5699088" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.33586627" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39969605" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.44072947" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -1071,7 +1073,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Install openSSH inside the docker image." />
     <MESSAGE value="Log the wrapped command." />
     <MESSAGE value="Check also that the user host is set." />
     <MESSAGE value="Do not check the host key when submitting the ssh wrapper. Log sterr/out from the command." />
@@ -1096,7 +1097,8 @@
     <MESSAGE value="Tweak readme." />
     <MESSAGE value="Define a file log appender for the kafka-service." />
     <MESSAGE value="Add callback to send method to log failures when messages are sent." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add callback to send method to log failures when messages are sent." />
+    <MESSAGE value="Add and configure a Junit test for the EventHubs' DispatcherController." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add and configure a Junit test for the EventHubs' DispatcherController." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1113,14 +1115,14 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherController.java</url>
+          <url>file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsController.java</url>
           <line>67</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherControllerTest.java</url>
-          <line>34</line>
+          <url>file://$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsControllerTest.java</url>
+          <line>32</line>
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
@@ -1380,13 +1382,6 @@
     <entry file="file://$PROJECT_DIR$/EXaCT-1_files/application.yml" />
     <entry file="file://$PROJECT_DIR$/EXaCT-1_files/run_transfer_manifest_template.sh" />
     <entry file="file://$PROJECT_DIR$/EXaCT-1_files/run_transfer_template.sh" />
-    <entry file="file://$PROJECT_DIR$/eventhubs-service/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -1476,27 +1471,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/About.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="60" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="60" />
-          <folding>
-            <element signature="e#248#249#0" expanded="true" />
-            <element signature="e#321#322#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/SpringKafkaApplicationTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1506,15 +1480,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/kafka-service/src/test/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherAppTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-108">
-          <caret line="16" selection-start-line="16" selection-end-line="17" selection-end-column="21" />
+        <state relative-caret-position="150">
+          <caret line="21" column="14" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherController.java">
+    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="67" column="27" lean-forward="true" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+        <state relative-caret-position="33">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2175#2176#0" expanded="true" />
@@ -1523,10 +1497,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/DispatcherControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/About.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="90">
+          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
+          <folding>
+            <element signature="e#248#249#0" expanded="true" />
+            <element signature="e#321#322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/main/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventhubs-service/src/test/java/edu/cornell/eipm/messaging/microservices/eventhubs/dispatcher/EventHubsControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventhubs-service/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
         </state>
       </provider>
     </entry>

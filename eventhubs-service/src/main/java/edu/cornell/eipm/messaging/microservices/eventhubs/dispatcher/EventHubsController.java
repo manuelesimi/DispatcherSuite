@@ -14,14 +14,14 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Rest Controller for the DispatcherApp service.
+ * Rest Controller for the EventHubsApp service.
  *
  * @author Manuele Simi
  */
 @RestController
-public class DispatcherController {
+public class EventHubsController {
 
-    private final Logger logger = LoggerFactory.getLogger(DispatcherController.class);
+    private final Logger logger = LoggerFactory.getLogger(EventHubsController.class);
 
     @Autowired
     private EventHubsService service;

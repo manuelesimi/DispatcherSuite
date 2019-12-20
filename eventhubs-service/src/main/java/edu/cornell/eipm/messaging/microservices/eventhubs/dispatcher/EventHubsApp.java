@@ -17,15 +17,15 @@ import java.io.IOException;
  * @author Manuele Simi
  */
 @SpringBootApplication
-public class DispatcherApp  implements CommandLineRunner {
+public class EventHubsApp implements CommandLineRunner {
 
-    private final Logger logger = LoggerFactory.getLogger(DispatcherApp.class);
+    private final Logger logger = LoggerFactory.getLogger(EventHubsApp.class);
 
     @Autowired
     private EventHubsService service;
 
     public static void main(String[] args) {
-        SpringApplication.run(DispatcherApp.class, args);
+        SpringApplication.run(EventHubsApp.class, args);
     }
 
     @Override
