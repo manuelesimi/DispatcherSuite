@@ -11,6 +11,23 @@ server:
   servlet:
     context-path: /dispatcher
 
+#spring:
+#  cloud:
+#    azure:
+#      credential-file-path: value
+#      resource-group: value
+#      resource: value
+#      region: value
+#      eventhub:
+#        namespace: value
+#    stream:
+#      bindings:
+#        input:
+#          destination: value
+#          group: $Default
+#        output:
+#          destination: value
+
 dispatcher:
   mode: NON_BLOCKING
   service:

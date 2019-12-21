@@ -1,10 +1,14 @@
 package edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher;
 
+import edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher.broker.Sender;
 import edu.cornell.eipm.messaging.microservices.eventhubs.dispatcher.config.EventHubsService;
 import edu.cornell.eipm.messaging.microservices.executors.model.service.Action;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.EnableBinding;
+import org.springframework.cloud.stream.messaging.Source;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -26,6 +30,8 @@ public class EventHubsController {
     @Autowired
     private EventHubsService service;
 
+    @Autowired
+    private Sender sender;
 
     @RequestMapping("/")
     public String home() {
@@ -49,6 +55,11 @@ public class EventHubsController {
         return service.getService().getActions(topic);
     }
 
+    /*@PostMapping("/messages")
+    public String sendMessage(@RequestBody String message) {
+        this.source.output().send(new GenericMessage<>(message));
+        return message;
+    }*/
 
     @RequestMapping("/publish/{topic}")
     public String publish(@PathVariable(value="topic") String topic,
@@ -58,8 +69,7 @@ public class EventHubsController {
             return "Topic cannot be empty";
         logger.info("Sending new message to topic: " + topic);
         logger.info("Parameters are " + allRequestParams.entrySet());
-
-        //sender.send(topic,allRequestParams);
+        sender.send(topic,allRequestParams);
         return "Sent payload " + allRequestParams.entrySet() + " to Topic " + topic;
     }
 

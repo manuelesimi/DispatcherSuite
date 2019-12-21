@@ -1,3 +1,5 @@
 target
 *.class
+*.log
 data
+eventhubs-service/azure-credentials.json
