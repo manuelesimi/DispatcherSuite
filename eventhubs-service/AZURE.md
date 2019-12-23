@@ -10,6 +10,23 @@ Ref:
 ## Generate the file with the credentials
 ~~~
     > az login
-    > az account set -s 11111111-1111-1111-1111-111111111111
+        You have logged in. Now let us find all the subscriptions to which you have access...
+        [
+          {
+            "cloudName": "AzureCloud",
+            "id": "...id...",
+            "isDefault": true,
+            "name": "Microsoft Azure Sponsorship",
+            "state": "Enabled",
+            "tenantId": "...tenant id...",
+            "user": {
+              "name": "...email...",
+              "type": "user"
+            }
+          }
+        ]
+    > az account set -s ...id...
     > az ad sp create-for-rbac --sdk-auth > azure-credentials.json
+        Creating a role assignment
+
 ~~~

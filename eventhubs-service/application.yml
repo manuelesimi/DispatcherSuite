@@ -2,7 +2,7 @@ kafka:
   bootstrap-servers: localhost:9092
   consumer:
     auto-offset-reset: earliest
-    group-id: kafka-dispatcher
+    group-id: eventhub-dispatcher
     enable-auto-commit: true
     topics: oncorseq_sequencing_pipeline_initialized,oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
 
@@ -11,22 +11,21 @@ server:
   servlet:
     context-path: /dispatcher
 
-#spring:
-#  cloud:
-#    azure:
-#      credential-file-path: value
-#      resource-group: value
-#      resource: value
-#      region: value
-#      eventhub:
-#        namespace: value
-#    stream:
-#      bindings:
-#        input:
-#          destination: value
-#          group: $Default
-#        output:
-#          destination: value
+spring:
+  cloud:
+    azure:
+      credential-file-path: azure-credentials.json
+      resource-group: LIMS
+      region: West US 2
+      eventhub:
+        namespace: eipm-lims
+    stream:
+      bindings:
+        input:
+          destination: lims-messages
+          group: eventhubdispatcherservice
+        output:
+          destination: lims-messages
 
 dispatcher:
   mode: NON_BLOCKING
