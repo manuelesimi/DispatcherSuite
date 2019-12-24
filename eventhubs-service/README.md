@@ -2,6 +2,11 @@ EventHubs Dispatcher Service
 ----
 A microservice project based on Spring Boot to send/receive/manage messages to/from [Microsoft Azure EventHubs](https://azure.microsoft.com/en-us/services/event-hubs/).
 
+## Documentation
+
+* [Configuration](CONFIGURATION.md)
+* [Azure credential file](AZURE.md)
+
 ## Built With
 * [Spring Boot](https://spring.io/projects/spring-boot) - A framework that makes it easy to create stand-alone, production-grade Spring-based Applications
 * [Spring Cloud Stream Kafka Binder](https://cloud.spring.io/spring-cloud-stream-binder-kafka/spring-cloud-stream-binder-kafka.html) - Stream Cloud Stream concepts mapped onto Apache Kafka specific constructs.
