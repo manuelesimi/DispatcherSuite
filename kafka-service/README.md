@@ -2,12 +2,6 @@ Kafka Dispatcher Service
 ----
 A microservice project based on Spring Boot to send/receive/manage messages to/from a Kafka Broker.
 
-Main features:
-* publish messages to any topic
-* register for notifications for messages on selected topics
-* for each message received, trigger one or more actions
-* generic and configurable with respect to topics and actions
-
 ## Documentation
 
 * [Configuration](CONFIGURATION.md)

@@ -2,6 +2,12 @@ Suite of Dispatcher Services
 ----
 A set of microservices to interface with different messaging systems.
 
+Each service delivers the following main features:
+* publish messages to any topic
+* register for notifications for messages on selected topics
+* for each message received, trigger one or more actions
+* generic and configurable with respect to topics and actions
+
 
 ## Modules
 
