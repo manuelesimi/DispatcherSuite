@@ -1,6 +1,6 @@
 EventHubs-Dispatcher Configuration
 --
-A Kafka-Dispatcher instance is configured with a file in a YAML format. 
+An EventHubs-Dispatcher instance is configured with a file in a YAML format. 
 
 The file is composed by 3 main sections:
 
