@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CONFIGURATION.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eventhubs-service/CONFIGURATION.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eventhubs-service/EventHubs Service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/executors/Executors Backend.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eventhubs-service/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/eventhubs-service/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/CONFIGURATION.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/CONFIGURATION.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -97,8 +92,8 @@
         <entry file="file://$PROJECT_DIR$/CONFIGURATION.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="361">
-                <caret line="84" column="3" lean-forward="true" selection-start-line="84" selection-start-column="3" selection-end-line="84" selection-end-column="3" />
+              <first_editor relative-caret-position="804">
+                <caret line="80" column="22" lean-forward="true" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
               </first_editor>
               <second_editor />
             </state>
@@ -282,6 +277,11 @@
             <path>
               <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
               <item name="Dispatcher" type="462c0819:PsiDirectoryNode" />
+              <item name="executors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dispatcher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Dispatcher" type="462c0819:PsiDirectoryNode" />
               <item name="kafka-service" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -295,7 +295,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577199806304" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1577200127256" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -433,13 +433,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568814651162</updated>
-    </task>
-    <task id="LOCAL-00047" summary="Change the receiver to get json-serialized payloads.">
-      <created>1571927901490</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1571927901490</updated>
     </task>
     <task id="LOCAL-00048" summary="Simplify the Executor interface.">
       <created>1571929479744</created>
@@ -777,7 +770,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577197827200</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Expand configuration doc.">
+      <created>1577200123741</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1577200123741</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -814,7 +814,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.30775446" />
       <window_info id="Structure" order="1" sideWeight="0.5011287" side_tool="true" weight="0.22859451" />
@@ -932,7 +931,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reorganize documentation. Add information to start an instance with Docker." />
     <MESSAGE value="Extend configuration doc." />
     <MESSAGE value="Complete the configuration section of the documentation." />
     <MESSAGE value="Add info on remoted calls." />
@@ -957,7 +955,8 @@
     <MESSAGE value="Configure Spring/EventHubs interface." />
     <MESSAGE value="Run app script for EventHub service." />
     <MESSAGE value="Update READMEs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update READMEs." />
+    <MESSAGE value="Expand configuration doc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Expand configuration doc." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1374,8 +1373,8 @@
     <entry file="file://$PROJECT_DIR$/CONFIGURATION.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="361">
-            <caret line="84" column="3" lean-forward="true" selection-start-line="84" selection-start-column="3" selection-end-line="84" selection-end-column="3" />
+          <first_editor relative-caret-position="804">
+            <caret line="80" column="22" lean-forward="true" selection-start-line="80" selection-start-column="22" selection-end-line="80" selection-end-column="22" />
           </first_editor>
           <second_editor />
         </state>
