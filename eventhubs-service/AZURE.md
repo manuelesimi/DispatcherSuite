@@ -1,3 +1,5 @@
+# How to generate the Azure credential file
+
 ## Install Azure CLI on MacOs
 Install with HomeBrew:
 ~~~
@@ -30,3 +32,21 @@ Ref:
         Creating a role assignment
 
 ~~~
+
+## Template of credential file
+
+The `azure-credentials.json` generated with the above instructions should have the following structure:
+```json
+{
+  "clientId": "...",
+  "clientSecret": "...",
+  "subscriptionId": "...",
+  "tenantId": "...",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}
+```

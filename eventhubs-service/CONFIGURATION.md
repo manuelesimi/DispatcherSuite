@@ -30,7 +30,11 @@ spring:
           destination: lims-messages
 ```
 Where:
-* _credential-file-path_ is ...
+* _credential-file-path_ is the path to the Azure credential file
+
+### Azure credential file
+
+See [Azure credentials](AZURE.md).
 
 ## Other sections
 The remaining two sections (server and dispatcher) are common across all the dispatcher services and are documenter [here](../CONFIGURATION.md).
