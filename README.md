@@ -11,12 +11,10 @@ Each service delivers the following main features:
 
 ## Modules
 
-* [Executors Backend](executors)
-* [Kafka-Dispatcher Service](kafka-service/README.md)
-* [Azure EventHubs-Dispatcher Service](eventhubs-service)
+* [Kafka-Dispatcher Service](kafka-service/README.md) - to interface with an Apache Kafka broker
+* [Azure EventHubs-Dispatcher Service](eventhubs-service) - to interface with a Microsoft EventHubs service on the cloud (Azure)
+* [Executors Backend](executors) - the common backend for all services
 
-## Documentation
-* [Configuration](CONFIGURATION.md)
 
 ## Built With
 * [Spring Boot](https://spring.io/projects/spring-boot) - A framework that makes it easy to create stand-alone, production-grade Spring-based Applications

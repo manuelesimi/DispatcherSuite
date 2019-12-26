@@ -28,7 +28,7 @@ Where:
 * _topics_ is the list of topics the dispatcher will register for notifications
  
 ## Other sections
-The remaining two sections (server and dispatcher) are common across all the dispatcher services and are documenter [here](../CONFIGURATION.md).
+The remaining two sections (server and dispatcher) are common across all the dispatcher services and are documented [here](../CONFIGURATION.md).
 
 ## A Complete Configuration Example
 The following example configures a dispatcher instance as follows:
