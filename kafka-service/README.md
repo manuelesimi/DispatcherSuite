@@ -14,10 +14,10 @@ a running Apache Kafka instance
 ## Documentation
 
 * [Configuration](CONFIGURATION.md)
-* [Message Payload and Actions](PAYLOAD.md)
+* [Message Payload and Actions](../PAYLOAD.md)
 * [Running as App](APPLICATION.md)
 * [Running with Docker](DOCKER.md)
-* [Interface](INTERFACE.md)
+* [Interface](../INTERFACE.md)
 * [Setting up an Apacke Kafka instance](APACHE_KAFKA.md)
 
 ## Built With
