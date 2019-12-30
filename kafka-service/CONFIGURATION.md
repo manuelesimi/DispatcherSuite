@@ -35,7 +35,7 @@ The following example configures a dispatcher instance as follows:
 
 * it registers the instance to be notified for messages published in 2 topics of interests 
 * for the each topic, one action is defined:
-  * when a message from oncorseq.sequencing.in_progress is received, a nextflow process is triggered. If the [payload](PAYLOAD.md) includes a _sampleID_ key, its value is replaced in the trigger before executing it. 
+  * when a message from oncorseq.sequencing.in_progress is received, a nextflow process is triggered. If the [payload](../PAYLOAD.md) includes a _sampleID_ key, its value is replaced in the trigger before executing it. 
   * when a message from oncorseq.sequencing.pipeline_initialized is received, a command echoing the value of the _pipeline_ parameter is executed.
 
 ```yaml
