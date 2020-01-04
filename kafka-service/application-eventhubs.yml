@@ -11,7 +11,7 @@ kafka:
   consumer:
     auto-offset-reset: earliest
     enable-auto-commit: true
-    group-id: "$Default"
+    group-id: kafka-dispatcher
     missing-topics-fatal: false
     topics: lims-messages,oncorseq_sequencing_in_progress
 
