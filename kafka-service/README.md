@@ -4,7 +4,7 @@ A microservice project based on Spring Boot to send/receive/manage messages to/f
 
 ## Quick Start
 1.  Prerequisites:
-a running Apache Kafka instance
+a running Apache Kafka instance or a Microsoft EventHubs service on the cloud
 . If none is available, you can  follow these [instructions](APACHE_KAFKA.md) to set up a Kafka instance on your machine.
 
 2. Prepare the [configuration](CONFIGURATION.md) file.
