@@ -27,6 +27,9 @@ public class ReceiverConfig {
   @Value("${kafka.bootstrap-servers}")
   private String bootstrapServers;
 
+  @Value("${kafka.properties.sasl.jaas.config}")
+  private String jaasConfig;
+
   @Bean
   public Map<String, Object> consumerConfigs() {
     Map<String, Object> props = new HashMap<>();
@@ -45,6 +48,10 @@ public class ReceiverConfig {
     props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "10");
     //If true the consumer's offset will be periodically committed in the background.
     props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
+
+    props.put("sasl.mechanism", "PLAIN");
+    props.put("security.protocol", "SASL_SSL");
+    props.put("sasl.jaas.config", jaasConfig);
 
     return props;
   }

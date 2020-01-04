@@ -1,0 +1,62 @@
+event-hubs-connection-string: "Endpoint=sb://XXX.servicebus.windows.net/;SharedAccessKeyName=XXX;SharedAccessKey=XXX"
+event-hubs-fqdn: "XXX.servicebus.windows.net"
+
+
+kafka:
+  bootstrap-servers: ${event-hubs-fqdn}:9093
+  properties:
+    sasl.mechanism: PLAIN
+    sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="${event-hubs-connection-string}";'
+    security.protocol: SASL_SSL
+  consumer:
+    group-id: "$Default"
+    topics: lims-messages,oncorseq_sequencing_in_progress
+
+server:
+  port: 8080
+  servlet:
+    context-path: /dispatcher
+
+dispatcher:
+  mode: NON_BLOCKING
+  service:
+    topics:
+      - name: oncorseq_sequencing_in_progress
+        actions:
+          - trigger: nextflow main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
+            reply:
+              topic:  oncorseq_sequencing_pipeline_initialized
+              payload: sampleID=${sampleID}
+      - name: oncorseq_sequencing_pipeline_initialized
+        actions:
+          - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
+            reply:
+              topic: annotation_started
+              payload: search started with ${query}
+      - name: oncorseq_sequencing_analysis_started
+        actions:
+          - trigger: command/URL for analysis_started
+            reply:
+              topic: analysis_in_progress
+              payload: ${sampleID}
+
+  scheduler:
+    fixedRate1:
+      rate: 5000
+      actions:
+        - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
+        - trigger: echo "hello"
+    fixedRate2:
+      rate: 5000
+      actions:
+        - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
+        - trigger: echo "hello"
+    fixedRate3:
+      rate: 5000
+      actions:
+        - trigger: https://dzone.com/articles/kafka-cluster-1?q=${query}
+        - trigger: echo "hello"
+
+logging:
+  level:
+    org.apache.kafka: INFO

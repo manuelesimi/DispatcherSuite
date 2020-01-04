@@ -32,7 +32,7 @@ public class Sender {
   public void send(String topic, Map<String, String> values) {
     String json = new JSONPayloadSerializer(values).toJSON();
     LOGGER.info("sending payload='{}' to topic {}", json, topic);
-    ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, json);
+    ListenableFuture<SendResult<String, String>> future = kafkaTemplate.send(topic, topic, json);
     future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
 
       @Override
