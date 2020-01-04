@@ -1,9 +1,14 @@
 kafka:
-  bootstrap-servers: xits-ipmd02.med.cornell.edu:29092
+  bootstrap-servers: localhost:9092
+  properties:
+    sasl.mechanism: PLAIN
+    sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="" password="";'
+    security.protocol: SASL_SSL
   consumer:
     auto-offset-reset: earliest
-    group-id: kafka-dispatcher-manuele
+    group-id: kafka-dispatcher
     enable-auto-commit: true
+    missing-topics-fatal: false
     topics: oncorseq_sequencing_pipeline_initialized,oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
 
 server:
