@@ -61,7 +61,7 @@ public class Receiver {
             ConsumerRecord<?, String> message = messages.get(i);
             LOGGER.info("Received messages on topic [{}]: [{}] ",
                     message.topic(), message.value());
-            kafkaService.getService().getActions(message.topic()).forEach( action -> {
+            kafkaService.getService().getActions(message.topic()).forEach(action -> {
                 try {
                     Map<String, String> values = new JSONPayloadDeserializer(message.value()).fromJSON();
                     boolean needReply = ExecutorService.select(action).execute(new JSONPayloadDeserializer(message.value()).fromJSON(), mode);
@@ -72,7 +72,7 @@ public class Receiver {
                             sender.send(actionReply.getTopic(), ReplyPayloadParser.parse(actionReply.getPayload(), values));
                     }
                 } catch (IOException e) {
-                    LOGGER.error("Failed to dispatch action '{}'",action.getTrigger(),e);
+                    LOGGER.error("Failed to dispatch action '{}'", action.getTrigger(), e);
                 }
             });
         }

@@ -24,57 +24,68 @@ import java.util.Map;
 @EnableKafka
 public class ReceiverConfig {
 
-  @Value("${kafka.bootstrap-servers}")
-  private String bootstrapServers;
+    @Value("${kafka.bootstrap-servers}")
+    private String bootstrapServers;
 
-  @Value("${kafka.properties.sasl.jaas.config}")
-  private String jaasConfig;
+    @Value("${kafka.properties.sasl.jaas.config}")
+    private String jaasConfig;
 
-  @Bean
-  public Map<String, Object> consumerConfigs() {
-    Map<String, Object> props = new HashMap<>();
-    // list of host:port pairs used for establishing the initial connections to the Kafka cluster
-    props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
-        bootstrapServers);
-    props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
-        StringDeserializer.class);
-    props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
-        StringDeserializer.class);
-    // allows a pool of processes to divide the work of consuming and processing records
-    props.put(ConsumerConfig.GROUP_ID_CONFIG, "receiver");
-    // automatically reset the offset to the earliest offset
-    props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
-    // maximum records per poll
-    props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "10");
-    //If true the consumer's offset will be periodically committed in the background.
-    props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
+    @Value("${kafka.properties.sasl.mechanism}")
+    private String saslMechanism;
 
-    props.put("sasl.mechanism", "PLAIN");
-    props.put("security.protocol", "SASL_SSL");
-    props.put("sasl.jaas.config", jaasConfig);
+    @Value("${kafka.properties.security.protocol}")
+    private String securityProtocol;
 
-    return props;
-  }
+    @Value("${kafka.consumer.missing-topics-fatal}")
+    private boolean missingTopicsFatal;
 
-  @Bean
-  public ConsumerFactory<String, String> consumerFactory() {
-    return new DefaultKafkaConsumerFactory<>(consumerConfigs());
-  }
+    @Value("${kafka.consumer.group-id}")
+    private String groupID;
 
-  @Bean
-  public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> kafkaListenerContainerFactory() {
-    ConcurrentKafkaListenerContainerFactory<String, String> factory =
-        new ConcurrentKafkaListenerContainerFactory<>();
-    factory.setConsumerFactory(consumerFactory());
-      // enable batch listening
-      factory.setBatchListener(true);
-      // do NOT prevent the container from starting if any of the configured topics are not present on the broker
-      factory.setMissingTopicsFatal(false);
-      return factory;
-  }
+    @Bean
+    public Map<String, Object> consumerConfigs() {
+        Map<String, Object> props = new HashMap<>();
+        // list of host:port pairs used for establishing the initial connections to the Kafka cluster
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
+                bootstrapServers);
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
+                StringDeserializer.class);
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
+                StringDeserializer.class);
+        // allows a pool of processes to divide the work of consuming and processing records
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, groupID);
+        // automatically reset the offset to the earliest offset
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+        // maximum records per poll
+        props.put(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "10");
+        //If true the consumer's offset will be periodically committed in the background.
+        props.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "true");
+        props.put("sasl.mechanism", saslMechanism);
+        props.put("security.protocol", securityProtocol);
+        props.put("sasl.jaas.config", jaasConfig);
 
-  @Bean
-  public Receiver receiver() {
-    return new Receiver();
-  }
+        return props;
+    }
+
+    @Bean
+    public ConsumerFactory<String, String> consumerFactory() {
+        return new DefaultKafkaConsumerFactory<>(consumerConfigs());
+    }
+
+    @Bean
+    public KafkaListenerContainerFactory<ConcurrentMessageListenerContainer<String, String>> kafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, String> factory =
+                new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(consumerFactory());
+        // enable batch listening
+        factory.setBatchListener(true);
+        // do NOT prevent the container from starting if any of the configured topics are not present on the broker
+        factory.setMissingTopicsFatal(missingTopicsFatal);
+        return factory;
+    }
+
+    @Bean
+    public Receiver receiver() {
+        return new Receiver();
+    }
 }
