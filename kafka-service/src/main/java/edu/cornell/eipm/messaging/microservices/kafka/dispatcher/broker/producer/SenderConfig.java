@@ -23,6 +23,9 @@ public class SenderConfig {
   @Value("${kafka.bootstrap-servers}")
   private String bootstrapServers;
 
+  @Value("${kafka.properties.sasl.jaas.config}")
+  private String jaasConfig;
+
   @Bean
   public Map<String, Object> producerConfigs() {
     Map<String, Object> props = new HashMap<>();
@@ -30,6 +33,9 @@ public class SenderConfig {
     props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
     props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
     props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+    props.put("sasl.mechanism", "PLAIN");
+    props.put("security.protocol", "SASL_SSL");
+    props.put("sasl.jaas.config", jaasConfig);
 
     return props;
   }
