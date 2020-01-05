@@ -22,7 +22,7 @@ kafka:
     topics: list of comma-separated topics
 ```
 Where:
-* _bootstrap-servers_ is the list of kafka brokers to connect to (see [Apache Kafka instructions](APACHE_KAFKA.md))
+* _bootstrap-servers_ is the list of kafka brokers to connect to (see [Apache Kafka instructions](doc/APACHE_KAFKA.md))
 * _group-id_ is the identifier used by the dispatcher to register to the kafka server
 * _enable-auto-commit_: automatically acknowledge the kafka server that a message has been received 
 * _topics_ is the list of topics the dispatcher will register for notifications
