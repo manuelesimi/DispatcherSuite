@@ -16,13 +16,13 @@ the Event Hubs for Kafka feature enabled
 by using the [Kafka Protocol](https://kafka.apache.org/protocol).
 
 ## Quick Start
-1. Prepare the [configuration](CONFIGURATION.md) file.
+1. Prepare the [configuration](doc/CONFIGURATION.md) file.
 
 2. Start the Kafka-Dispatcher as [local application](APPLICATION.md) or with [Docker](DOCKER.md).
 
 ## Documentation
 
-* [Configuration](CONFIGURATION.md)
+* [Configuration](doc/CONFIGURATION.md)
 * [Message Payload and Actions](../PAYLOAD.md)
 * [Running as App](APPLICATION.md)
 * [Running with Docker](DOCKER.md)

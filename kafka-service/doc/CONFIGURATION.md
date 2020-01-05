@@ -16,35 +16,47 @@ Syntax:
 kafka:
   bootstrap-servers: host:port
   consumer:
-    auto-offset-reset: earliest
-    group-id: arbitrary name for this dispatcher
-    enable-auto-commit: true/false
-    topics: list of comma-separated topics
+    properties:
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="${event-hubs-connection-string}";'
+      security.protocol: SASL_SSL
+    consumer:
+      auto-offset-reset: earliest
+      enable-auto-commit: true/false
+      group-id: arbitrary name for this dispatcher
+      missing-topics-fatal: true/false
+      topics: list of comma-separated topics
 ```
 Where:
-* _bootstrap-servers_ is the list of kafka brokers to connect to (see [Apache Kafka instructions](doc/APACHE_KAFKA.md))
+* _bootstrap-servers_ is the list of kafka brokers to connect to (see [Apache Kafka instructions](APACHE_KAFKA.md))
 * _group-id_ is the identifier used by the dispatcher to register to the kafka server
 * _enable-auto-commit_: automatically acknowledge the kafka server that a message has been received 
+* _missing-topics-fatal_: if true, the service exits if any of the consumer topics does not exist
 * _topics_ is the list of topics the dispatcher will register for notifications
  
 ## Other sections
-The remaining two sections (server and dispatcher) are common across all the dispatcher services and are documented [here](../CONFIGURATION.md).
+The remaining two sections (server and dispatcher) are common across all the dispatcher services and are documented [here](../../CONFIGURATION.md).
 
 ## A Complete Configuration Example
 The following example configures a dispatcher instance as follows:
 
 * it registers the instance to be notified for messages published in 2 topics of interests 
 * for the each topic, one action is defined:
-  * when a message from oncorseq.sequencing.in_progress is received, a nextflow process is triggered. If the [payload](../PAYLOAD.md) includes a _sampleID_ key, its value is replaced in the trigger before executing it. 
+  * when a message from oncorseq.sequencing.in_progress is received, a nextflow process is triggered. If the [payload](../../PAYLOAD.md) includes a _sampleID_ key, its value is replaced in the trigger before executing it. 
   * when a message from oncorseq.sequencing.pipeline_initialized is received, a command echoing the value of the _pipeline_ parameter is executed.
 
 ```yaml
 kafka:
   bootstrap-servers: hostname.med.cornell.edu:29092
+  properties:
+        sasl.mechanism: PLAIN
+        sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="..." password="...";'
+        security.protocol: SASL_SSL
   consumer:
     auto-offset-reset: earliest
     group-id: kafka-dispatcher-ipmhpcd01
     enable-auto-commit: true
+    missing-topics-fatal: false
     topics: oncorseq.sequencing.in_progress,oncorseq.sequencing.pipeline_initialized
 
 server:

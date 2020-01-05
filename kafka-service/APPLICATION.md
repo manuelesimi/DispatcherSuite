@@ -8,4 +8,4 @@ Then, you can simply execute:
 
     ./runApp.sh
     
-To start the application. By default, it uses the `application.yml` file in the current folder as [configuration](CONFIGURATION.md) file.
+to start the application. By default, it uses the `application.yml` file in the current folder as [configuration](doc/CONFIGURATION.md) file.
