@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CONFIGURATION.md" beforeDir="false" afterPath="$PROJECT_DIR$/CONFIGURATION.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INTERFACE.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/doc/INTERFACE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PAYLOAD.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/doc/PAYLOAD.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/APPLICATION.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/doc/APPLICATION.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/DOCKER.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/doc/DOCKER.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/FOR_DEVELOPERS.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/doc/FOR_DEVELOPERS.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-service/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,14 +23,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="633">
-                <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
+              <first_editor relative-caret-position="1050">
+                <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-service/application-eventhubs.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="31" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -46,9 +49,18 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="595">
-                <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+                <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-service/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -82,18 +94,9 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="148">
-                <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+                <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               </first_editor>
               <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kafka-service/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -110,12 +113,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CONFIGURATION.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-167">
-                <caret line="87" column="26" lean-forward="true" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+              <first_editor relative-caret-position="328">
+                <caret line="120" column="32" selection-start-line="120" selection-start-column="32" selection-end-line="120" selection-end-column="32" />
               </first_editor>
               <second_editor />
             </state>
@@ -127,19 +130,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="330">
-                <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kafka-service/doc/DOCKER.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="165">
-                <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+                <caret line="22" selection-start-line="22" selection-end-line="22" />
               </first_editor>
               <second_editor />
             </state>
@@ -223,7 +214,6 @@
         <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/broker/producer/SenderConfig.java" />
         <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/broker/consumer/ReceiverConfig.java" />
         <option value="$PROJECT_DIR$/kafka-service/runApp.sh" />
-        <option value="$PROJECT_DIR$/kafka-service/application.yml" />
         <option value="$PROJECT_DIR$/kafka-service/application-eventhubs.yml" />
         <option value="$PROJECT_DIR$/kafka-service/application-ssl.yml" />
         <option value="$PROJECT_DIR$/kafka-service/EVENTHUBS.md" />
@@ -238,8 +228,9 @@
         <option value="$PROJECT_DIR$/INTERFACE.md" />
         <option value="$PROJECT_DIR$/CONFIGURATION.md" />
         <option value="$PROJECT_DIR$/kafka-service/doc/PAYLOAD.md" />
-        <option value="$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md" />
         <option value="$PROJECT_DIR$/kafka-service/doc/INTERFACE.md" />
+        <option value="$PROJECT_DIR$/kafka-service/application.yml" />
+        <option value="$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md" />
       </list>
     </option>
   </component>
@@ -327,7 +318,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578344795842" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578347345514" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -466,13 +457,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568814651162</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Install openSSH inside the docker image.">
-      <created>1572627630304</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1572627630304</updated>
     </task>
     <task id="LOCAL-00065" summary="Log the wrapped command.">
       <created>1572628237812</created>
@@ -810,7 +794,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578332928841</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Rework and expand the documentation.">
+      <created>1578345723099</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1578345723099</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -863,7 +854,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.26139817" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.1656535" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.4574468" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32522798" />
@@ -960,7 +951,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add callback to send method to log failures when messages are sent." />
     <MESSAGE value="Add and configure a Junit test for the EventHubs' DispatcherController." />
     <MESSAGE value="Refactor App and Controller classes." />
     <MESSAGE value="Sketch interface with EventHubs." />
@@ -985,7 +975,8 @@
     <MESSAGE value="Update documentation for config file." />
     <MESSAGE value="Update Event Hubs documentation." />
     <MESSAGE value="Describe the settings for the bootstrap-servers option." />
-    <option name="LAST_COMMIT_MESSAGE" value="Describe the settings for the bootstrap-servers option." />
+    <MESSAGE value="Rework and expand the documentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rework and expand the documentation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1272,13 +1263,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/application-eventhubs.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="15" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kafka-service/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1286,13 +1270,6 @@
             <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1341,7 +1318,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="330">
-            <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <caret line="22" selection-start-line="22" selection-end-line="22" />
           </first_editor>
           <second_editor />
         </state>
@@ -1351,7 +1328,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="148">
-            <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+            <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           </first_editor>
           <second_editor />
         </state>
@@ -1361,7 +1338,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="595">
-            <caret line="41" column="18" lean-forward="true" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+            <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
           </first_editor>
           <second_editor />
         </state>
@@ -1372,16 +1349,6 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="150">
             <caret line="10" column="137" selection-start-line="10" selection-start-column="137" selection-end-line="10" selection-end-column="137" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="633">
-            <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
           </first_editor>
           <second_editor />
         </state>
@@ -1400,8 +1367,32 @@
     <entry file="file://$PROJECT_DIR$/CONFIGURATION.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-167">
-            <caret line="87" column="26" lean-forward="true" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+          <first_editor relative-caret-position="328">
+            <caret line="120" column="32" selection-start-line="120" selection-start-column="32" selection-end-line="120" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/application-eventhubs.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="31" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" lean-forward="true" selection-start-line="2" selection-start-column="2" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1050">
+            <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
           </first_editor>
           <second_editor />
         </state>
