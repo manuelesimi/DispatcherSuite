@@ -21,7 +21,16 @@ Once a namespace is created, you can create Kafka-enabled Event Hubs in the name
 
 https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create-kafka-enabled
 
+# Configuration 
+## The Namespace Fully Qualified Domain Name (FQDN)
+
+The FQND of a namespace is: 
+`<name>.servicebus.windows.net`
+
 ## How to get the Connection String for a Namespace
 Once a namespace is created, you can obtain the connection string required to communicate with Event Hubs:
 
 https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-string
+
+The connection string should have the following format:
+  `Endpoint=sb://<FQDN>/;SharedAccessKeyName=<KeyName>;SharedAccessKey=<KeyValue>`

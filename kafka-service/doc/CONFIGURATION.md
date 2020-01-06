@@ -28,7 +28,12 @@ kafka:
       topics: list of comma-separated topics
 ```
 Where:
-* _bootstrap-servers_ is the list of kafka brokers to connect to (see [Apache Kafka instructions](APACHE_KAFKA.md))
+* _bootstrap-servers_ is the list of kafka brokers to connect to:
+    * for a Kafka broker, hostname and port of the kafka server instance
+    * for an Event Hubs namespace, [FQDN namespace](EVENT_HUBS.md):9093
+* _sasl.jaas.config_  is the  SASL configuration for the brokers:
+    * for a Kafka broker, if authentication is required, specify username and password
+    * for an Event Hubs namespace: use _$ConnectionString_ as username and the [connection string ](EVENT_HUBS.md) as password
 * _group-id_ is the identifier used by the dispatcher to register to the kafka server
 * _enable-auto-commit_: automatically acknowledge the kafka server that a message has been received 
 * _missing-topics-fatal_: if true, the service exits if any of the consumer topics does not exist

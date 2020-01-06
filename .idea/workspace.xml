@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/APPLICATION.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/APPLICATION.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/CONFIGURATION.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/DOCKER.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/DOCKER.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kafka-service/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kafka-service/doc/EVENT_HUBS.md" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/doc/EVENT_HUBS.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -41,8 +39,29 @@
         <entry file="file://$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="210">
-                <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+              <first_editor relative-caret-position="-60">
+                <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-service/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kafka-service/doc/EVENT_HUBS.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="208">
+                <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
               </first_editor>
               <second_editor />
             </state>
@@ -92,30 +111,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PAYLOAD.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="148">
-                <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/INTERFACE.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="225">
-                <caret line="15" column="41" selection-start-line="15" selection-end-line="16" />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -175,7 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/kafka-service/src/main/java/edu/cornell/eipm/messaging/microservices/kafka/dispatcher/DispatcherApp.java" />
         <option value="$PROJECT_DIR$/runContainer.sh" />
         <option value="$PROJECT_DIR$/runSSLContainer.sh" />
         <option value="$PROJECT_DIR$/eventhubs-dispatcher/pom.xml" />
@@ -225,6 +219,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/kafka-service/APPLICATION.md" />
         <option value="$PROJECT_DIR$/kafka-service/CONFIGURATION.md" />
+        <option value="$PROJECT_DIR$/kafka-service/doc/EVENT_HUBS.md" />
         <option value="$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md" />
       </list>
     </option>
@@ -302,7 +297,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578197248740" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578332755954" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -441,20 +436,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568814651162</updated>
-    </task>
-    <task id="LOCAL-00061" summary="Work on external file configuration.">
-      <created>1572449424923</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1572449424923</updated>
-    </task>
-    <task id="LOCAL-00062" summary="Advance version to 1.0.">
-      <created>1572456073849</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1572456073849</updated>
     </task>
     <task id="LOCAL-00063" summary="Execute local commands with an SSH wrapper when running inside a docker container.">
       <created>1572623912289</created>
@@ -785,7 +766,21 @@
       <option name="project" value="LOCAL" />
       <updated>1578196741566</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="Update documentation for config file.">
+      <created>1578197145495</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1578197145496</updated>
+    </task>
+    <task id="LOCAL-00111" summary="Update Event Hubs documentation.">
+      <created>1578197314577</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1578197314577</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -824,7 +819,7 @@
     <frame x="0" y="23" width="1280" height="773" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.25282714" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49887133" visible="true" weight="0.19063005" />
       <window_info id="Structure" order="1" sideWeight="0.5011287" side_tool="true" weight="0.22859451" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -935,8 +930,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update gitignore." />
-    <MESSAGE value="Tweak readme." />
     <MESSAGE value="Define a file log appender for the kafka-service." />
     <MESSAGE value="Add callback to send method to log failures when messages are sent." />
     <MESSAGE value="Add and configure a Junit test for the EventHubs' DispatcherController." />
@@ -960,7 +953,9 @@
     <MESSAGE value="Set the default group-id." />
     <MESSAGE value="Update sample SSL configuration file." />
     <MESSAGE value="Update documentation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update documentation." />
+    <MESSAGE value="Update documentation for config file." />
+    <MESSAGE value="Update Event Hubs documentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Event Hubs documentation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1253,27 +1248,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/kafka-service/application-ssl.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="91">
           <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kafka-service/doc/EVENT_HUBS.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="330">
-            <caret line="22" selection-start-line="22" selection-end-line="22" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1364,11 +1342,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kafka-service/doc/EVENT_HUBS.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="208">
+            <caret line="27" column="31" selection-start-line="27" selection-start-column="31" selection-end-line="27" selection-end-column="31" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kafka-service/doc/CONFIGURATION.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="210">
-            <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+          <first_editor relative-caret-position="-60">
+            <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
           </first_editor>
           <second_editor />
         </state>
