@@ -75,21 +75,28 @@ dispatcher:
 
 **IMPORTANT**: The topic's names in the dispatcher section must be included in the topic list configured in the kafka section. This section only defines the actions, not what topics the dispatcher will listen from.
 
-### Type of triggers
+### Actions
+When the instance of Dispatcher service is configured to be notified about messages published in a selected topic,
+one or more triggers can be started upon the reception of each message.
+
+A trigger is "something" executed by the Dispatcher.
+
 Version 1.x of the dispatcher supports two types of trigger:
 * _Local Command_ A command executed on the machine where the dispatcher is running
 * _Remote Call_ An URL to invoke (e.g. http//:www.google.com?query${terms})
 
-### Trigger configuration
+#### Trigger configuration
 
-TBP
+A trigger is a string representing a command to execute locally or an URL.
+
+A trigger may have placeholders in the format `$name`. If `name` is a valid key in the [payload](kafka-service/doc/PAYLOAD.md) of the message, then it is replaced with its associated value.
 
 ## A Complete Configuration Example
 The following example configures a dispatcher instance as follows:
 
 * it registers the instance to be notified for messages published in 2 topics of interests 
 * for the each topic, one action is defined:
-  * when a message from oncorseq.sequencing.in_progress is received, a nextflow process is triggered. If the [payload](PAYLOAD.md) includes a _sampleID_ key, its value is replaced in the trigger before executing it. 
+  * when a message from oncorseq.sequencing.in_progress is received, a nextflow process is triggered. If the [payload](kafka-service/doc/PAYLOAD.md) includes a _sampleID_ key, its value is replaced in the trigger before executing it. 
   * when a message from oncorseq.sequencing.pipeline_initialized is received, a command echoing the value of the _pipeline_ parameter is executed.
 
 ```yaml

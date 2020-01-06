@@ -1,6 +1,8 @@
 Running Kakfa-Dispatcher with Docker
 ---
-Kafka-Dispatcher can run inside its Docker image (_eipm/kafka-dispatcher_)
+Kafka-Dispatcher can run inside its Docker image (_eipm/kafka-dispatcher_).
+
+**Requirement**: the container must be able to ssh the hosting machine to launch local commands.
 
 You can start a container with an instance of the dispatcher as follows:
 
@@ -11,8 +13,8 @@ You can start a container with an instance of the dispatcher as follows:
         -v /home/mas2182/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
  
 where 
-* 8080 is the port configured for the Dispatcher (see [CONFIGURATION](doc/CONFIGURATION.md))
-* the file mounted as _/config/application.yml_ is the YAML configuration file (see [CONFIGURATION](doc/CONFIGURATION.md))
+* 8080 is the port configured for the Dispatcher (see [CONFIGURATION](CONFIGURATION.md))
+* the file mounted as _/config/application.yml_ is the YAML configuration file (see [CONFIGURATION](CONFIGURATION.md))
 * the folder mounted under _/ssh_ must include a public key (_id_rsa.pub_) authorized to access the hosting machine (this is needed to execute local actions)
 
 If the configuration passed to the instance is correct, you should see the following output:

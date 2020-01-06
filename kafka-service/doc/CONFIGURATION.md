@@ -29,13 +29,13 @@ kafka:
 ```
 Where:
 * _bootstrap-servers_ is the list of kafka brokers to connect to:
-    * for a Kafka broker, hostname and port of the kafka server instance
+    * for a Kafka broker, hostname and port of the kafka server instance(s)
     * for an Event Hubs namespace, [FQDN namespace](EVENT_HUBS.md):9093
 * _sasl.jaas.config_  is the  SASL configuration for the brokers:
     * for a Kafka broker, if authentication is required, specify username and password
     * for an Event Hubs namespace: use _$ConnectionString_ as username and the [connection string ](EVENT_HUBS.md) as password
-* _group-id_ is the identifier used by the dispatcher to register to the kafka server
 * _enable-auto-commit_: automatically acknowledge the kafka server that a message has been received 
+* _group-id_ is the identifier used by the dispatcher to register to the kafka server
 * _missing-topics-fatal_: if true, the service exits if any of the consumer topics does not exist
 * _topics_ is the list of topics the dispatcher will register for notifications
  
@@ -54,9 +54,9 @@ The following example configures a dispatcher instance as follows:
 kafka:
   bootstrap-servers: hostname.med.cornell.edu:29092
   properties:
-        sasl.mechanism: PLAIN
-        sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="..." password="...";'
-        security.protocol: SASL_SSL
+    sasl.mechanism: PLAIN
+    sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="..." password="...";'
+    security.protocol: SASL_SSL
   consumer:
     auto-offset-reset: earliest
     group-id: kafka-dispatcher-ipmhpcd01

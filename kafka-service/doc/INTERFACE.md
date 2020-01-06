@@ -4,8 +4,9 @@
 
     http://host:port/dispatcher/publish/<topic name>?sampleID=sample123ID123565&runID=foo&sayHello=ciao
 
-* the topic name is the last path parameter
-* the parameters for the action(s) associated to the topic are the query parameters
+where:
+* the last path parameter is the topic name
+* the query parameters are used to configure the trigger(s) associated to the message (if any) 
 
 ### Examples
 

@@ -18,14 +18,14 @@ by using the [Kafka Protocol](https://kafka.apache.org/protocol).
 ## Quick Start
 1. Prepare the [configuration](doc/CONFIGURATION.md) file.
 
-2. Start the Kafka-Dispatcher as [local application](APPLICATION.md) or with [Docker](DOCKER.md).
+2. Start the Kafka-Dispatcher as [local application](doc/APPLICATION.md) or with [Docker](doc/DOCKER.md).
 
 ## Documentation
 
 * [Configuration](doc/CONFIGURATION.md)
 * [Message Payload and Actions](../PAYLOAD.md)
-* [Running as App](APPLICATION.md)
-* [Running with Docker](DOCKER.md)
+* [Running as App](doc/APPLICATION.md)
+* [Running with Docker](doc/DOCKER.md)
 * [How to publish messages](../INTERFACE.md)
 
 ## Messaging systems

@@ -2,7 +2,7 @@
 
 A message payload is encoded with the JSON format. 
 
-When the _publish_ method is invoked (see [INTERFACE](INTERFACE.md)), its query parameters are converted into a set of key-value pairs.
+When the _publish_ method is invoked (see [INTERFACE](../../INTERFACE.md)), its query parameters are converted into a set of key-value pairs.
 
 For instance, this call:
 
