@@ -22,8 +22,9 @@ Once a namespace is created, you can create Kafka-enabled Event Hubs in the name
 https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-create-kafka-enabled
 
 # Configuration 
-## The Namespace Fully Qualified Domain Name (FQDN)
+The following information is needed when configuring a Dispatcher instance.
 
+## The Fully Qualified Domain Name (FQDN) of the Namespace
 The FQND of a namespace is: 
 `<name>.servicebus.windows.net`
 
