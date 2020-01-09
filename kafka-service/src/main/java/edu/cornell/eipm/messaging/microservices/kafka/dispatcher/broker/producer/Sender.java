@@ -38,7 +38,7 @@ public class Sender {
 
             @Override
             public void onSuccess(SendResult<String, String> result) {
-                LOGGER.info("Sent message to =[" + topic +
+                LOGGER.info("Sent message to topic=[" + topic +
                         "] with offset=[" + result.getRecordMetadata().offset() + "]");
             }
 

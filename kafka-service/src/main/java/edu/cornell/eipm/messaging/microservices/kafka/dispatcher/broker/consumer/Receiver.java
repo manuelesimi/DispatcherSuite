@@ -68,7 +68,8 @@ public class Receiver {
                     if (needReply) {
                         //send back the reply, if configured
                         Reply actionReply = action.getReply();
-                        if (Objects.nonNull(actionReply.getTopic()))
+                        if (Objects.nonNull(actionReply)
+                                && Objects.nonNull(actionReply.getTopic()))
                             sender.send(actionReply.getTopic(), ReplyPayloadParser.parse(actionReply.getPayload(), values));
                     }
                 } catch (IOException e) {
