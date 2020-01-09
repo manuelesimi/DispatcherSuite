@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dae2f7e8-1246-45f6-adfc-bd5a285a7c0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/runtime/LocalCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/executors/src/main/java/edu/cornell/eipm/messaging/microservices/executors/runtime/LocalCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kafka-service/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/kafka-service/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -64,7 +63,11 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/kafka-service/packageDispatcher.sh">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -393,7 +396,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578543896955" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1578544345666" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -532,13 +535,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1568814651162</updated>
-    </task>
-    <task id="LOCAL-00067" summary="Do not check the host key when submitting the ssh wrapper. Log sterr/out from the command.">
-      <created>1573076765877</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1573076765877</updated>
     </task>
     <task id="LOCAL-00068" summary="Fix ssh wrapper.">
       <created>1573077722944</created>
@@ -876,7 +872,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578432339685</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Avoid to invoke exitValue on an alive process.">
+      <created>1578543981390</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1578543981391</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1025,7 +1028,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sketch interface with EventHubs." />
     <MESSAGE value="Resolve dependency conflicts." />
     <MESSAGE value="Configure Spring/EventHubs interface." />
     <MESSAGE value="Run app script for EventHub service." />
@@ -1050,7 +1052,8 @@
     <MESSAGE value="Rework and expand the documentation." />
     <MESSAGE value="Set configuration for a local Kafka broker. Explain the values in the documentation." />
     <MESSAGE value="Tweak event hubs doc." />
-    <option name="LAST_COMMIT_MESSAGE" value="Tweak event hubs doc." />
+    <MESSAGE value="Avoid to invoke exitValue on an alive process." />
+    <option name="LAST_COMMIT_MESSAGE" value="Avoid to invoke exitValue on an alive process." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1467,7 +1470,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kafka-service/packageDispatcher.sh">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

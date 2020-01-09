@@ -35,3 +35,10 @@ https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-get-connection-stri
 
 The connection string should have the following format:
   `Endpoint=sb://<FQDN>/;SharedAccessKeyName=<KeyName>;SharedAccessKey=<KeyValue>`
+
+## Ports to Open
+There are some outbound ports to open to use kafka protocol to communicate with Azure Event Hubs:
+
+https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-faq#what-ports-do-i-need-to-open-on-the-firewall
+
+In particular 9093 is the port used by the Kafka-Dispatcher.
