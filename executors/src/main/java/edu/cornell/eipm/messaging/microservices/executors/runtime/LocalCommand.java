@@ -81,7 +81,7 @@ public class LocalCommand extends BaseExecutor {
             }
         }
         logger.debug("Process is alive? " + process.isAlive());
-        logger.debug("Process exit value: " + process.exitValue());
+        //calling exitValue if alive results in a IllegalThreadStateException.
         return (process.isAlive() || process.exitValue()==0);
     }
 
