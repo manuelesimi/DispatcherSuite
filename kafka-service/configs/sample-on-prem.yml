@@ -1,0 +1,31 @@
+kafka:
+  bootstrap-servers: hostname:port
+  properties:
+    sasl.mechanism: GSSAPI
+    sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="" password="";'
+    security.protocol: PLAINTEXT
+  consumer:
+    auto-offset-reset: earliest
+    enable-auto-commit: true
+    group-id: kafka-dispatcher
+    missing-topics-fatal: false
+    topics: topicC,topicD, topicE
+
+server:
+  port: 8080
+  servlet:
+    context-path: /dispatcher
+
+dispatcher:
+  mode: NON_BLOCKING
+  service:
+    topics:
+      - name: topicC
+        actions:
+          - trigger: echo "Message from kafka/topicC '${message}'"
+      - name: topicD
+        actions:
+          - trigger: echo "Received message from kafka/topicD '${message}'"
+      - name: topicE
+        actions:
+            - trigger: echo "Message from kafka/topicE '${message}'"

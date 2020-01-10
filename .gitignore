@@ -4,4 +4,6 @@ target
 data
 eventhubs-service/src/main/resources/azure-credentials.json
 eventhubs-service/azure-credentials.auth
-kafka-service/demo*
+kafka-service/configs/demo-*.yml
+kafka-service/demo-*.yml
+kafka-service/sample-*.yml

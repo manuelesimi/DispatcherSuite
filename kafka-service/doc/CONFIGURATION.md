@@ -87,3 +87,5 @@ dispatcher:
       actions:
         - trigger: echo "Good job with ${pipeline}"
 ```
+
+See further configuration examples [here](../configs)
