@@ -21,8 +21,8 @@ public class TriggerValue {
      * @return
      */
     private String validate(String replacement) {
-        if (replacement.contains(" "))
-            throw new IllegalArgumentException("Parameters with space(s) are not accepted");
+        //if (replacement.contains(" "))
+        //    throw new IllegalArgumentException("Parameters with space(s) are not accepted");
         if (replacement.toLowerCase().contains("bash"))
             throw new IllegalArgumentException("Looks like the parameter is trying to execute a script");
         return replacement;
