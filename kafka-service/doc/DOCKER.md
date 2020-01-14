@@ -7,7 +7,7 @@ Kafka-Dispatcher can run inside its Docker image (_eipm/kafka-dispatcher_).
 You can start a container with an instance of the dispatcher as follows:
 
     docker run -p 8080:8080 --rm \
-        -e HOST_HOSTNAME=`hostname` \
+        -e HOST_HOSTNAME=$(hostname) \
         -e HOST_USER=$LOGNAME \
         -v /home/mas2182/.ssh/:/ssh/ \
         -v /home/mas2182/application.yml:/config/application.yml eipm/kafka-dispatcher:latest
@@ -51,7 +51,7 @@ See https://www.digitalocean.com/community/tutorials/java-keytool-essentials-wor
 You can start a container with an instance of the dispatcher on HTTPS as follows:
 
     docker run -p 8443:8443 --rm \
-        -e HOST_HOSTNAME=`hostname` \
+        -e HOST_HOSTNAME=$(hostname) \
         -e HOST_USER=$LOGNAME \
         -v /home/mas2182/.ssh/:/ssh/ \
         -v <my keystore location>:/keystore.p12
