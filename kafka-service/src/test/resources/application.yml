@@ -1,24 +1,25 @@
 kafka:
   bootstrap-servers: ${spring.embedded.kafka.brokers}
+  properties:
+    sasl.mechanism: GSSAPI
+    sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="" password="";'
+    security.protocol: PLAINTEXT
   consumer:
     auto-offset-reset: earliest
     group-id: kafka-dispatcher
-    topics: oncorseq_sequencing_in_progress,oncorseq_sequencing_analysis_started
+    enable-auto-commit: true
+    missing-topics-fatal: false
+    topics: oncorseq_sequencing_in_progress
+
 
 dispatcher:
-  topics:
-    - name: oncorseq_sequencing_in_progress
-      actions:
-        - trigger: nextflow main.nf --sampleID ${sampleID} --run ${runID} --sayHello ${sayHello}
-          workingDir: /home/manuele
-          reply:
-            topic: oncorseq.sequencing.pipeline_initialized
-            payload: sampleID=${sampleID}
-        - trigger: https://mymicroservice/name/api?run=${runID}&sampleID=${sampleID}&sayHello=${sayHello}
-          reply:
-            topic: oncorseq.sequencing.pipeline_initialized
-            payload: sampleID=${sampleID}
-        - trigger: whatever you want with "${sampleID}" "${runID}" and "${sayHello}"
-          reply:
-            topic: oncorseq.sequencing.pipeline_initialized
-            payload: sampleID=${sampleID}
+  mode: BLOCKING
+  service:
+    topics:
+      - name: oncorseq_sequencing_in_progress
+        actions:
+          - trigger: echo "Message received"
+            workingDir: /home/manuele
+            reply:
+              topic: oncorseq.sequencing.pipeline_initialized
+              payload: sampleID=${sampleID}
