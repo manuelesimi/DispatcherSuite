@@ -1,12 +1,22 @@
 ## How to Publish Messages
 
-### Syntax
+### Publish messages with GET requests
+
+    curl --header "Content-Type: text/plain" \
+    --request POST \
+    --data '{"sampleID":"value1","runID":"value2","sayHello":"value3"}' \
+    "http://localhost:8080/dispatcher/publish-data/oncorseq_sequencing_in_progress"
+
+where:
+* the last path parameter is the topic name
+* the data are the body of the payload
+### Publish messages with POST requests
 
     http://host:port/dispatcher/publish/<topic name>?sampleID=sample123ID123565&runID=foo&sayHello=ciao
 
 where:
 * the last path parameter is the topic name
-* the query parameters are used to configure the trigger(s) associated to the message (if any) 
+* the query parameters are the body of the payload
 
 ### Examples
 
@@ -14,7 +24,7 @@ where:
 
 ~~~
 
-http://localhost:8080/dispatcher/publish/oncorseq_sequencing_in_progress?sampleID=sample123ID123565&runID=foo&sayHello=ciao
+http://host:port/dispatcher/publish/oncorseq_sequencing_in_progress?sampleID=sample123ID123565&runID=foo&sayHello=ciao
 
 --- sender ---
 16:22:26.730 [http-nio-8080-exec-4] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_in_progress
@@ -42,7 +52,7 @@ http://localhost:8080/dispatcher/publish/oncorseq_sequencing_in_progress?sampleI
 
 ~~~
 
-http://localhost:8080/dispatcher/publish/oncorseq_sequencing_pipeline_initialized?sampleID=sample123ID123565
+http://host:port/dispatcher/publish/oncorseq_sequencing_pipeline_initialized?sampleID=sample123ID123565
 
 --- sender ---
 16:20:28.884 [http-nio-8080-exec-1] INFO  e.c.e.m.m.d.DispatcherController - Sending new message to topic: oncorseq_sequencing_pipeline_initialized

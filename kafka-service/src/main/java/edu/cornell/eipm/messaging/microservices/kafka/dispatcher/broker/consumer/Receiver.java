@@ -50,6 +50,10 @@ public class Receiver {
     public CountDownLatch getLatch() {
         return latch;
     }
+    public CountDownLatch resetLatch() {
+        return latch = new CountDownLatch(1);
+    }
+
 
     @KafkaListener(id = "#{'${kafka.consumer.group-id}'}",
             clientIdPrefix = "receiver",

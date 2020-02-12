@@ -1,12 +1,14 @@
 package edu.cornell.eipm.messaging.microservices.kafka.dispatcher;
 
 import edu.cornell.eipm.messaging.microservices.executors.model.service.Action;
+import edu.cornell.eipm.messaging.microservices.executors.runtime.JSONPayloadDeserializer;
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.broker.consumer.Receiver;
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.broker.producer.Sender;
 import edu.cornell.eipm.messaging.microservices.kafka.dispatcher.config.KafkaService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
@@ -78,6 +80,21 @@ public class DispatcherController {
         logger.info("Sending new message to topic: " + topic);
         logger.info("Parameters are " + allRequestParams.entrySet());
 
+        sender.send(topic,allRequestParams);
+        return "Sent payload " + allRequestParams.entrySet() + " to Topic " + topic;
+    }
+
+    @PostMapping(path="/publish-data/{topic}", consumes=MediaType.TEXT_PLAIN_VALUE)
+    @ResponseBody
+    public String dpublish(@PathVariable(value="topic") String topic,
+                           @RequestParam Map<String,String> unusedParams,
+                           @RequestBody String body
+    ) throws IOException {
+        if (topic.isEmpty())
+            return "Topic cannot be empty";
+        logger.info("Sending new message to topic: " + topic);
+        logger.info("Body is " + body);
+        Map<String,String> allRequestParams = new JSONPayloadDeserializer(body).fromJSON();
         sender.send(topic,allRequestParams);
         return "Sent payload " + allRequestParams.entrySet() + " to Topic " + topic;
     }
