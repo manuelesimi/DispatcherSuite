@@ -23,10 +23,10 @@ by using the [Kafka Protocol](https://kafka.apache.org/protocol).
 ## Documentation
 
 * [Configuration](doc/CONFIGURATION.md)
-* [Message Payload and Actions](../PAYLOAD.md)
+* [Message Payload and Actions](doc/PAYLOAD.md)
 * [Running as App](doc/APPLICATION.md)
 * [Running with Docker](doc/DOCKER.md)
-* [How to publish messages](../INTERFACE.md)
+* [How to publish messages](doc/INTERFACE.md)
 * [How to build the project](doc/FOR_DEVELOPERS.md)
 
 ## Messaging systems
