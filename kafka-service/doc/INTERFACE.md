@@ -1,6 +1,6 @@
 ## How to Publish Messages
 
-### Publish messages with GET requests
+### Publish messages with POST requests
 
     curl --header "Content-Type: text/plain" \
     --request POST \
@@ -10,7 +10,7 @@
 where:
 * the last path parameter is the topic name
 * the data are the body of the payload
-### Publish messages with POST requests
+### Publish messages with GET requests
 
     http://host:port/dispatcher/publish/<topic name>?sampleID=sample123ID123565&runID=foo&sayHello=ciao
 
