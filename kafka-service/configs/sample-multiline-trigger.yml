@@ -1,0 +1,34 @@
+event-hubs-connection-string: "Endpoint=sb://<namespace>.servicebus.windows.net/;SharedAccessKeyName=...;SharedAccessKey=..."
+event-hubs-fqdn: "<namespace>.servicebus.windows.net"
+
+kafka:
+  bootstrap-servers: ${event-hubs-fqdn}:9093
+  properties:
+    sasl.mechanism: PLAIN
+    sasl.jaas.config: 'org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="${event-hubs-connection-string}";'
+    security.protocol: SASL_SSL
+  consumer:
+    auto-offset-reset: earliest
+    enable-auto-commit: true
+    group-id: kafka-dispatcher
+    missing-topics-fatal: false
+    topics: topicA,TopicB
+
+server:
+  port: 8080
+  servlet:
+    context-path: /dispatcher
+
+dispatcher:
+  mode: BLOCKING
+  service:
+    topics:
+      - name: oncorseq.sequencing.lims_updated
+        actions:
+          - trigger: >
+              nextflow run main.nf
+              -c /path/nextflow.config --sampleID ${sampleID}
+              --runID ${runID}
+            reply:
+              topic: oncorseq.sequencing.pipeline_initialized
+              payload: message=${sampleID}

@@ -83,11 +83,11 @@ A trigger is "something" executed by the Dispatcher.
 
 Version 1.x of the dispatcher supports two types of trigger:
 * _Local Command_ A command executed on the machine where the dispatcher is running
-* _Remote Call_ An URL to invoke (e.g. http//:www.google.com?query${terms})
+* _Remote Call_ A URL to invoke (e.g. http//:www.google.com?query${terms})
 
 #### Trigger configuration
 
-A trigger is a string representing a command to execute locally or an URL.
+A trigger is a string representing a command to execute locally or a URL.
 
 A trigger may have placeholders in the format `$name`. If `name` is a valid key in the [payload](kafka-service/doc/PAYLOAD.md) of the message, then it is replaced with its associated value.
 

@@ -19,6 +19,7 @@ where:
 * the query parameters are the body of the payload
 
 ### Examples
+Some logs when things work :)
 
 **Topic**: oncorseq_sequencing_in_progress
 
