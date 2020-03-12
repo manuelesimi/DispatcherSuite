@@ -4,10 +4,11 @@ import edu.cornell.eipm.messaging.microservices.executors.model.service.Action;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.attribute.PosixFilePermissions;
+import java.util.Objects;
 
 /**
  * A command to execute on the local machine.
@@ -28,6 +29,8 @@ public class LocalCommand extends BaseExecutor {
         String ssh_command;
         String hostname = System.getenv("HOST_HOSTNAME");
         String hostuser = System.getenv("HOST_USER");
+        Path tmpFile = Files.createTempFile("kd", ".sh",
+                PosixFilePermissions.asFileAttribute(PosixFilePermissions.fromString("rwx------")));
         if (hostname != null && !hostname.isEmpty() &&
                 hostuser != null && !hostuser.isEmpty()) {
             // we are running inside a docker container
@@ -35,10 +38,15 @@ public class LocalCommand extends BaseExecutor {
                     hostuser,
                     hostname,
                     command);
-            logger.info("Command wrapped as: {}", ssh_command);
+            logger.info("SSH command wrapped as: {}", ssh_command);
         } else {
             // we go with a local execution
-            ssh_command = command;
+            String wrappedCommand = "#!/usr/bin/env sh \n";
+            wrappedCommand += command + "\n";
+            byte[] strToBytes = wrappedCommand.getBytes();
+            Files.write(tmpFile, strToBytes);
+            ssh_command = tmpFile.toAbsolutePath().toString();
+            logger.info("Local command wrapped as: {}", ssh_command);
         }
         Process process = Runtime.getRuntime().exec(ssh_command);
         logger.info("Local Command Dispatched");
@@ -48,23 +56,22 @@ public class LocalCommand extends BaseExecutor {
             BufferedReader br = new BufferedReader(isr);
 
             String line = null;
-            logger.info("<OUTPUT>");
 
+            //catch the std output
+            logger.info("<OUTPUT>");
             while ((line = br.readLine()) != null)
                 logger.info(line);
-
             logger.info("</OUTPUT>");
-
             BufferedReader stdError = new BufferedReader(new
                     InputStreamReader(process.getErrorStream()));
 
+            //catch the std error
             logger.info("<ERROR>");
-
             while ((line = stdError.readLine()) != null)
                 logger.info(line);
-
             logger.info("</ERROR>");
 
+            //check if the process is done
             int exitVal = 0;
             try {
                 exitVal = process.waitFor();
@@ -74,7 +81,7 @@ public class LocalCommand extends BaseExecutor {
             logger.info("Process exit value: " + exitVal);
         } else {
             try {
-                //wait few seconds befor to check if the process is alive
+                //wait few seconds before to check if the process is alive
                 Thread.sleep(5000);
             } catch (InterruptedException e) {
                 logger.error("Unable to wait ",e);
@@ -82,6 +89,8 @@ public class LocalCommand extends BaseExecutor {
         }
         logger.debug("Process is alive? " + process.isAlive());
         //calling exitValue if alive results in a IllegalThreadStateException.
+        if (Objects.nonNull(tmpFile))
+            tmpFile.toFile().delete();
         return (process.isAlive() || process.exitValue()==0);
     }
 
