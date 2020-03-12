@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>kafka-service</artifactId>
-    <version>1.1</version>
+    <version>1.1.1</version>
     <name>Kafka Dispatcher service</name>
     <packaging>war</packaging>
 
@@ -70,7 +70,7 @@
         <dependency>
             <groupId>edu.cornell.eipm.messaging.microservices</groupId>
             <artifactId>executors</artifactId>
-            <version>1.0</version>
+            <version>1.0.1</version>
         </dependency>
 
 
