@@ -5,7 +5,7 @@
     curl --header "Content-Type: text/plain" \
     --request POST \
     --data '{"sampleID":"value1","runID":"value2","sayHello":"value3"}' \
-    "http://host:port/dispatcher/publish-data/oncorseq_sequencing_in_progress"
+    "http://host:port/dispatcher/publish-data/<topic name>"
 
 where:
 * the last path parameter is the topic name
